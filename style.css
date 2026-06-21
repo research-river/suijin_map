@@ -1,0 +1,1513 @@
+/* ===== 変数・ベース ===== */
+:root {
+  --accent:    #007aff;
+  --green:     #34c759;
+  --glass-bg:  rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow:    0 8px 30px rgba(0, 0, 0, 0.16);
+  --text:      #1d1d1f;
+  --text-sub:  #6e6e73;
+  --sep:       rgba(0, 0, 0, 0.08);
+
+  /* メインパネル（apple_ui_proposal3 採用カラー） */
+  --bg-panel: #ffffff;
+  --bg-secondary: #f5f5f1;
+  --bg-tertiary: #ecebe5;
+  --bg-info-light: #e6f1fb;
+  --text-primary: #1c1c1a;
+  --text-secondary: #5f5e5a;
+  --text-tertiary: #888780;
+  --border-tertiary: rgba(0, 0, 0, 0.08);
+  --border-secondary: rgba(0, 0, 0, 0.15);
+  --accent-green: #1d9e75;
+  --accent-blue: #185fa5;
+  --shadow-panel: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+
+  /* 石碑種別カラー（macOSシステムカラー準拠、CLAUDE.md参照） */
+  --color-water:  #007aff;
+  --color-dragon: #34c759;
+  --color-benten: #ff9500;
+  --color-other:  #6c6c70;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-water:  #0a84ff;
+    --color-dragon: #30d158;
+    --color-benten: #ff9500;
+    --color-other:  #aeaeb2;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", sans-serif;
+  color: var(--text);
+}
+
+/* ===== 地図（全画面） ===== */
+#map {
+  position: absolute;
+  inset: 0;
+  filter: grayscale(0) brightness(1);
+  transition: filter 0.28s ease;
+}
+
+/* プレイスカード表示中はベースマップを白黒寄りにして目立たせる */
+body.place-card-active #map {
+  filter: grayscale(0.7) brightness(1.05);
+}
+
+/* ===== 著作権表示 ===== */
+#attribution {
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  font-size: 11px;
+  color: #555;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 2px 8px;
+  border-radius: 3px;
+  z-index: 990;
+  pointer-events: none;
+  line-height: 1.6;
+}
+
+/* ===== グラスモーフィズム共通 ===== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== メインパネル（右上） ===== */
+.panel-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 380px;
+  max-height: calc(100vh - 40px);
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg);
+  border: 0.5px solid var(--border-tertiary);
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}
+
+.panel-container.collapsed .tab-bar-wrap,
+.panel-container.collapsed .panel-body,
+.panel-container.collapsed #search-field {
+  display: none;
+}
+
+.panel-header {
+  padding: 14px 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid var(--border-tertiary);
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.panel-title i {
+  color: var(--accent-blue);
+  font-size: 16px;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 4px;
+  color: var(--text-tertiary);
+}
+
+.panel-actions i {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.panel-actions i:hover {
+  background: var(--bg-secondary);
+}
+
+/* セグメンテッドタブ */
+.tab-bar-wrap {
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border-bottom: 0.5px solid var(--border-tertiary);
+}
+
+.tab-bar {
+  display: flex;
+  background: var(--bg-panel);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+  border: 0.5px solid var(--border-tertiary);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 7px 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab-btn i {
+  font-size: 14px;
+}
+
+.tab-btn:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  background: var(--bg-info-light);
+  color: var(--accent-blue);
+}
+
+/* パネル本体（スクロール領域） */
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.panel-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel-body::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 3px;
+}
+
+.panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* アコーディオン行 */
+.acc-row {
+  border-bottom: 0.5px solid var(--border-tertiary);
+}
+
+.acc-row:last-child {
+  border-bottom: none;
+}
+
+.acc-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.acc-head:hover {
+  background: var(--bg-secondary);
+}
+
+.acc-row.open .acc-head {
+  background: var(--bg-secondary);
+}
+
+.acc-head .acc-icon {
+  font-size: 18px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  width: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.acc-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.acc-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.acc-summary {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.acc-chevron {
+  font-size: 16px;
+  color: var(--text-tertiary);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.acc-row.open .acc-chevron {
+  transform: rotate(180deg);
+}
+
+.acc-body {
+  display: none;
+  padding: 6px 16px 14px;
+  background: var(--bg-secondary);
+  border-top: 0.5px solid var(--border-tertiary);
+}
+
+.acc-row.open .acc-body {
+  display: block;
+}
+
+/* ===== 検索フィールド（メインパネル ヘッダ直下・初期非表示） ===== */
+#search-field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.5px solid var(--border-tertiary);
+}
+
+#search-field[hidden] {
+  display: none;
+}
+
+#search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  min-width: 0;
+}
+
+#search-input::placeholder {
+  color: var(--text-sub);
+}
+
+#search-clear {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-sub);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s;
+}
+
+#search-clear:hover {
+  background: rgba(0, 0, 0, 0.14);
+}
+
+#search-results {
+  border-top: 0.5px solid var(--sep);
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+#search-results::-webkit-scrollbar {
+  width: 3px;
+}
+
+#search-results::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.search-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.search-item:hover {
+  background: rgba(0, 122, 255, 0.07);
+}
+
+.search-item-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-item-sub {
+  font-size: 11px;
+  color: var(--text-sub);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-empty {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* ===== アコーディオン内 グループラベル ===== */
+.opt-group-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  padding: 8px 0 4px;
+  letter-spacing: 0.03em;
+  border-top: 0.5px solid var(--border-tertiary);
+  margin-top: 2px;
+}
+
+.weather-group-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#kikiculo-time {
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--bg-info-light);
+  color: var(--accent-blue);
+  border-radius: 4px;
+  padding: 1px 6px;
+  letter-spacing: 0;
+}
+
+/* ===== キキクル 凡例（ハザード情報アコーディオン内） ===== */
+#kikiculo-legend-ctrl {
+  border-top: 0.5px solid var(--border-tertiary);
+  margin: 4px 0;
+}
+
+#kikiculo-legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-sub);
+  user-select: none;
+}
+
+#kikiculo-legend-header:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+#kikiculo-legend-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  color: var(--text-sub);
+  padding: 0;
+  line-height: 1;
+}
+
+#kikiculo-legend-body {
+  display: none;
+  padding: 0 10px 10px;
+}
+
+#kikiculo-legend-body.open {
+  display: block;
+}
+
+.dk-bar {
+  display: flex;
+  gap: 3px;
+}
+
+.dk-cell {
+  flex: 1;
+  border-radius: 6px;
+  padding: 5px 2px;
+  text-align: center;
+}
+
+.dk-cell .dk-name {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dk-cell small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.dk-black  { background: #660044; color: #fff; }
+.dk-red    { background: #cc1111; color: #fff; }
+.dk-orange { background: #ff8800; color: #fff; }
+.dk-yellow { background: #ffe033; color: #5a4000; }
+.dk-white  { background: #e0e0e4; color: #444; border: 0.5px solid rgba(0, 0, 0, 0.1); }
+
+/* ===== ナウキャスト コントローラ（下部フローティング）===== */
+#nowcast-ctrl {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  padding: 14px 18px 12px;
+  min-width: 420px;
+  z-index: 990;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+#nc-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#nc-time-label {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nc-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+.nc-obs  { background: #1f6feb; color: #fff; }
+.nc-fcst { background: #9e6a03; color: #fff; }
+
+#nc-loading {
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+#nc-slider-row {
+  margin-bottom: 8px;
+}
+
+#nc-slider {
+  width: 100%;
+  height: 4px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  display: block;
+}
+
+#nc-tick-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+#nc-btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+#nc-btn-row button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  transition: background 0.15s;
+  font-family: var(--font);
+}
+
+#nc-btn-row button:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+#nc-btn-play {
+  background: var(--accent) !important;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 5px 18px !important;
+}
+
+#nc-btn-play:hover {
+  background: #0066cc !important;
+}
+
+#nc-btn-row select {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.nc-sep {
+  width: 1px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+/* ===== ベースマップ ミニタブ ===== */
+.bm-tab-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.bm-tab {
+  flex: 1;
+  padding: 5px 0;
+  border: 0.5px solid var(--border-tertiary);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.bm-tab:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.bm-tab.active {
+  background: var(--bg-info-light);
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.bm-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+/* ===== ベースマップ サムネイルグリッド ===== */
+.bm-grid {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.bm-grid.active {
+  display: grid;
+}
+
+.bm-tile {
+  position: relative;
+  aspect-ratio: 160 / 100;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  background: var(--bg-tertiary);
+  transition: border-color 0.15s ease;
+}
+
+.bm-tile input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.bm-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hydro治水地形図: pale基図の上に重ねるlcmfc2オーバーレイ */
+.bm-overlay-img {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.bm-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px 6px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  line-height: 1.3;
+}
+
+.bm-check {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 11px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.bm-tile:has(input:checked) {
+  border-color: var(--accent-green);
+}
+
+.bm-tile:has(input:checked) .bm-check {
+  display: flex;
+}
+
+/* ===== スライダー行（透明度・誇張度） ===== */
+.slider-row {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px 8px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.slider-row.visible {
+  display: flex;
+}
+
+.slider-label {
+  flex-shrink: 0;
+  min-width: 28px;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.slider-row span:last-child {
+  min-width: 32px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== シナリオカード ===== */
+.scenario-list {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scenario-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin: 2px 0 6px;
+  line-height: 1.5;
+}
+
+.scenario-card {
+  padding: 10px 12px;
+  border: 0.5px solid var(--border-tertiary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: var(--bg-panel);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scenario-card:hover {
+  border-color: var(--border-secondary);
+  background: var(--bg-secondary);
+}
+
+.scenario-card.active {
+  border-color: var(--accent-green);
+  border-width: 1.5px;
+  padding: 9.5px 11.5px;
+  background: #f0faf6;
+}
+
+.scenario-icon {
+  font-size: 18px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.scenario-card.active .scenario-icon {
+  color: var(--accent-blue);
+}
+
+.scenario-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.scenario-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.scenario-sub {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.scenario-check {
+  font-size: 16px;
+  color: var(--accent-green);
+  visibility: hidden;
+}
+
+.scenario-card.active .scenario-check {
+  visibility: visible;
+}
+
+/* ===== オプション行（アコーディオン内） ===== */
+.opt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.opt-row + .opt-row {
+  border-top: 0.5px solid var(--border-tertiary);
+}
+
+.opt-row .lbl {
+  flex: 1;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.3;
+}
+
+.opt-row .meta {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.opt-row .stat-val {
+  font-weight: 500;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-water  { background: var(--color-water); }
+.dot-dragon { background: var(--color-dragon); }
+.dot-benten { background: var(--color-benten); }
+.dot-other  { background: var(--color-other); }
+
+/* ===== トグルスイッチ（ネイティブ checkbox + :has() で視覚化） ===== */
+.sw-wrap {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.sw-wrap input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.sw-visual {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: #c8c5bd;
+  transition: background 0.2s ease;
+}
+
+.sw-visual::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.sw-wrap:has(input:checked) .sw-visual {
+  background: var(--accent-green);
+}
+
+.sw-wrap:has(input:checked) .sw-visual::after {
+  left: 16px;
+}
+
+/* ===== サブ行（設定ボタン等） ===== */
+.sub-row {
+  display: none;
+  padding: 4px 12px 8px;
+  border-top: 0.5px solid var(--sep);
+}
+
+.sub-row.visible {
+  display: block;
+}
+
+#elevation-settings-btn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 122, 255, 0.4);
+  background: rgba(0, 122, 255, 0.08);
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+#elevation-settings-btn:hover {
+  background: rgba(0, 122, 255, 0.15);
+}
+
+/* ===== プレイスカード（左上・初期非表示） ===== */
+#place-card {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  width: 300px;
+  background: rgba(214, 234, 250, 0.82);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(10, 132, 255, 0.18);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  overflow: hidden;
+  transform: translateX(-340px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.28s cubic-bezier(0.32, 0.72, 0.3, 1),
+              opacity 0.22s ease;
+}
+
+#place-card.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 種別ごとのポップアップ背景色（水神碑=薄い水色は #place-card のデフォルトを使用） */
+#place-card.type-dragon {
+  background: rgba(205, 240, 217, 0.82);
+  border-color: rgba(52, 199, 89, 0.18);
+}
+
+#place-card.type-benten {
+  background: rgba(255, 226, 189, 0.82);
+  border-color: rgba(255, 149, 0, 0.18);
+}
+
+#place-card.type-other {
+  background: rgba(225, 225, 228, 0.82);
+  border-color: rgba(108, 108, 112, 0.18);
+}
+
+#place-photo-wrap {
+  position: relative;
+  height: 160px;
+  background: #e8e0d8;
+  overflow: hidden;
+}
+
+#place-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#place-photo.is-portrait {
+  object-fit: contain;
+}
+
+#place-card-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0;
+  transition: background 0.15s;
+}
+
+#place-card-close:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+#place-content {
+  padding: 14px 16px 16px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+#place-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.place-row {
+  display: flex;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 13px;
+  border-top: 0.5px solid var(--sep);
+  line-height: 1.4;
+}
+
+.place-row:first-child {
+  border-top: none;
+}
+
+.place-key {
+  flex-shrink: 0;
+  color: var(--text-sub);
+  min-width: 52px;
+}
+
+.place-val {
+  color: var(--text);
+  flex: 1;
+  word-break: break-all;
+}
+
+/* ===== ズームコントロール（左上） ===== */
+.map-controls {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--border-tertiary);
+  overflow: hidden;
+  box-shadow: var(--shadow-panel);
+  z-index: 1000;
+}
+
+.map-ctrl-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background 0.15s;
+}
+
+.map-ctrl-btn + .map-ctrl-btn {
+  border-top: 0.5px solid var(--border-tertiary);
+}
+
+.map-ctrl-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.map-ctrl-btn i {
+  font-size: 18px;
+}
+
+/* ===== スケール表示（左下・MapLibre標準コントロール） ===== */
+.maplibregl-ctrl-bottom-left {
+  margin: 0 0 20px 20px;
+}
+
+.maplibregl-ctrl-scale {
+  background: var(--bg-panel);
+  border: 0.5px solid var(--border-tertiary) !important;
+  border-top-width: 0.5px !important;
+  box-shadow: var(--shadow-panel);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 2px 6px;
+}
+
+/* ===== 石碑種別 凡例（左下・常時表示） ===== */
+#monument-legend {
+  position: fixed;
+  bottom: 108px;
+  left: 20px;
+  z-index: 990;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+#monument-legend.hidden {
+  display: none;
+}
+
+#monument-legend .legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+#monument-legend .legend-row[hidden] {
+  display: none;
+}
+
+/* ===== 治水地形図 凡例パネル ===== */
+#hydro-legend {
+  display: none;
+  position: fixed;
+  bottom: 64px;
+  left: 20px;
+  z-index: 990;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  min-width: 160px;
+}
+
+#hydro-legend.visible {
+  display: block;
+}
+
+#hydro-legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #f0f4ff;
+  border-bottom: 1px solid #dde3ea;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3a5070;
+  user-select: none;
+}
+
+#hydro-legend-header:hover {
+  background: #e8f0fe;
+}
+
+#hydro-legend-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  color: #5b6b7b;
+  padding: 0 0 0 10px;
+  line-height: 1;
+}
+
+#hydro-legend-body {
+  display: none;
+  padding: 8px 10px;
+}
+
+#hydro-legend-body.open {
+  display: block;
+}
+
+#hydro-legend-body img {
+  display: block;
+  max-width: 240px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* ===== 色別標高図 設定パネル ===== */
+#elevation-popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 410px;
+  z-index: 1001;
+  background: #fff;
+  border: 1px solid #b0b8c4;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 290px;
+  font-size: 13px;
+  user-select: none;
+}
+
+#elevation-popup.visible {
+  display: block;
+}
+
+#elevation-popup-header {
+  background: #1565c0;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 9px 9px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: move;
+}
+
+#elevation-popup-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+#elevation-popup-close:hover {
+  opacity: 1;
+}
+
+#elevation-popup-body {
+  padding: 10px 12px 12px;
+}
+
+#elev-bands-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 4px;
+}
+
+#elev-bands-table th {
+  font-size: 11px;
+  color: #5b6b7b;
+  font-weight: 600;
+  padding: 3px 4px;
+  text-align: left;
+  border-bottom: 1px solid #dde3ea;
+}
+
+#elev-bands-table td {
+  padding: 3px 2px;
+  vertical-align: middle;
+}
+
+.elev-band-from, .elev-band-to {
+  width: 40px;
+  border: 1px solid #ccd;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 12px;
+  text-align: right;
+  color: #1d2733;
+}
+
+.elev-band-sep {
+  padding: 0 3px;
+  color: #5b6b7b;
+  font-size: 11px;
+}
+
+.elev-band-color {
+  width: 36px;
+  height: 22px;
+  border: 1px solid #ccd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.elev-band-del {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 14px;
+  padding: 0 3px;
+  line-height: 1;
+}
+
+.elev-band-del:hover { color: #b3261e; }
+
+.elev-band-add {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1565c0;
+  font-size: 16px;
+  padding: 0 3px;
+  line-height: 1;
+}
+
+.elev-band-add:hover { opacity: 0.7; }
+
+#elev-opacity-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #5b6b7b;
+  margin: 8px 0 4px;
+}
+
+#elev-opacity {
+  flex: 1;
+  accent-color: #1565c0;
+  cursor: pointer;
+}
+
+#elev-opacity-val {
+  min-width: 30px;
+  font-weight: bold;
+  color: #1d2733;
+}
+
+#elev-unit-note {
+  font-size: 11px;
+  color: #5b6b7b;
+  margin: 4px 0 8px;
+}
+
+#elev-opts {
+  display: flex;
+  gap: 14px;
+  margin: 6px 0 10px;
+  font-size: 12px;
+}
+
+#elev-opts label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+#elev-opts input { accent-color: #1565c0; }
+
+#elev-apply-btn {
+  width: 100%;
+  padding: 7px;
+  background: #1565c0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+#elev-apply-btn:hover { background: #0d4ea8; }
+
+/* ===== 開発中バッジ ===== */
+.dev-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #7a5200;
+  background: #fff3cd;
+  border: 1px solid #f0b400;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+/* ===== マーカー ===== */
+.marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #aaa;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.marker-water  { background-color: var(--color-water); }
+.marker-dragon { background-color: var(--color-dragon); }
+.marker-benten { background-color: var(--color-benten); }
+.marker-other  { background-color: var(--color-other); }
+
+/* 九頭龍碑 パルスアニメーション */
+@keyframes kuzuryu-rings {
+  0%   { box-shadow: 0 0 0 0px  rgba(0, 128, 0, 0.55),
+                     0 0 0 0px  rgba(0, 128, 0, 0),
+                     0 1px 4px  rgba(0, 0, 0, 0.4); }
+  45%  { box-shadow: 0 0 0 18px rgba(0, 128, 0, 0),
+                     0 0 0 0px  rgba(0, 128, 0, 0.55),
+                     0 1px 4px  rgba(0, 0, 0, 0.4); }
+  90%  { box-shadow: 0 0 0 18px rgba(0, 128, 0, 0),
+                     0 0 0 18px rgba(0, 128, 0, 0),
+                     0 1px 4px  rgba(0, 0, 0, 0.4); }
+  100% { box-shadow: 0 0 0 0px  rgba(0, 128, 0, 0),
+                     0 0 0 0px  rgba(0, 128, 0, 0),
+                     0 1px 4px  rgba(0, 0, 0, 0.4); }
+}
+
+.marker-dragon.pulse {
+  animation: kuzuryu-rings 2.4s ease-out infinite;
+}
+
+/* ===== MapLibre ポップアップ（河川名・破堤箇所用に保持） ===== */
+.maplibregl-popup-content {
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+}
+
+.maplibregl-popup-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.maplibregl-popup-content td {
+  padding: 3px 6px;
+  vertical-align: top;
+}
+
+.maplibregl-popup-content td:first-child {
+  white-space: nowrap;
+  color: #666;
+}
+
+.river-popup .maplibregl-popup-content {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  border-left: 3px solid #3083d7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}

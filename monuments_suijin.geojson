@@ -1,0 +1,3018 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.387287,
+          36.124283
+        ]
+      },
+      "properties": {
+        "name": "手島の水天宮碑",
+        "type": "water",
+        "year": "1977年",
+        "size": "高さ85cm 幅60cm 厚10cm",
+        "address": "熊谷市手島",
+        "inscription": "昭和五十二年三月吉日建之　大字手島氏子一同",
+        "coordinates_dd": "36.124283, 139.387287",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "手島神社境内にある「水天宮」石碑。状態はとてもよい。特に表面の文字ははっきり見える。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "tejima_suitengu_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.480485,
+          36.05742
+        ]
+      },
+      "properties": {
+        "name": "明秋神社境内の水神宮碑",
+        "type": "water",
+        "year": "1810年",
+        "size": "高さ60cm 幅30cm 厚18cm",
+        "address": "埼玉県比企郡吉見町明秋510 　明秋神社境内",
+        "inscription": "文化七　十二月吉日　願主　巣殿谷",
+        "coordinates_dd": "36.05742, 139.480485",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "笠上部に若干の地衣類付着以外、目立った劣化は見られない。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "myosyu_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.48043,
+          36.057373
+        ]
+      },
+      "properties": {
+        "name": "明秋神社の水神大神",
+        "type": "water",
+        "year": "1915年",
+        "size": "高さ52cm 幅 29cm 厚 - cm",
+        "address": "埼玉県比企郡吉見町明秋510 　明秋神社境内",
+        "inscription": "願主　宮崎由三？",
+        "coordinates_dd": "36.057373, 139.48043",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "木の根元に隠れてしまっている。側面に若干の地衣類。大正四年（1915）三月建立",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "myosyu_shrine_suijinokami.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.405692,
+          36.100362
+        ]
+      },
+      "properties": {
+        "name": "高本高城神社の水神宮碑",
+        "type": "water",
+        "year": "-",
+        "size": "高さ60cm 幅40cm 厚7cm",
+        "address": "熊谷市高本562　高城神社境内",
+        "inscription": "-",
+        "coordinates_dd": "36.100362, 139.405692",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "層状になった濃いめの地衣類付着も表面の刻まれた文字ははっきり見える。水が流れたような跡あり。「大里村の石佛」に記載。遷座された石碑が並ぶ(うち瀧祭神社祠の祭神は瀬織津姫と思われる)",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "takagi_shrine_sujingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.498238,
+          36.019682
+        ]
+      },
+      "properties": {
+        "name": "吉見町江和井の水神宮碑",
+        "type": "water",
+        "year": "1802年",
+        "size": "高さ69cm 幅34cm 厚20cm",
+        "address": "吉見町江和井",
+        "inscription": "(右)享和二戌年六月吉日　(左)江川、大和谷、⬜︎井、久保田、下細谷　新田",
+        "coordinates_dd": "36.019682, 139.498238",
+        "Survey_date": "2025年3月8日",
+        "Condition_comment": "(□井　→荒井) 笠部分に黒ずみと分厚い地衣類。表面に若干の地衣類、台座にオレンジの地衣類。洪水常襲地帯。堤防下に注連竹で囲まれ祀られている。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "ewai_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.505488,
+          36.026813
+        ]
+      },
+      "properties": {
+        "name": "高尾橋、左の水神宮碑(昭和9年)",
+        "type": "water",
+        "year": "1934年",
+        "size": "高さ74cm 幅35cm 厚6cm",
+        "address": "北本市高尾",
+        "inscription": "(裏面)\n河岸水神講中\n昭和九年三月吉日\n発起者　新井米八　□沼亀吉 \n世話人　田島太郎　新井勘次　天沼榮之助\n\n(右)、(左)側面には銘文なし",
+        "coordinates_dd": "36.026813, 139.505488",
+        "Survey_date": "2025年3月8日",
+        "Condition_comment": "側面から裏面にかけて地衣類付着。明治の水害を経験。注連竹で祀られる。JAさいたま広報誌2024年6月号表紙、特集技師にも。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "takao_bridge_suijingu(left).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.505492,
+          36.026798
+        ]
+      },
+      "properties": {
+        "name": "高尾橋、右の水神宮碑(昭和42年)",
+        "type": "water",
+        "year": "1967年",
+        "size": "高さ55cm 幅20cm 厚15cm",
+        "address": "北本市高尾",
+        "inscription": "(右)昭和四十二年七月吉日\n(左)判別不能",
+        "coordinates_dd": "36.026798, 139.505492",
+        "Survey_date": "2025年3月8日",
+        "Condition_comment": "比較的新しいはずだが各所に剥落あり。刻まれた文字ははっきり見える。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "takao_bridge_suijingu(right).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.506388,
+          36.042628
+        ]
+      },
+      "properties": {
+        "name": "冠水橋架設祈念碑よこの水神宮碑",
+        "type": "water",
+        "year": "1932年",
+        "size": "高さ110cm 幅55cm 厚10cm",
+        "address": "鴻巣市滝馬室",
+        "inscription": "架橋竣成昭和七年五月廿六？日　神宮祭祀　昭和十二年一月十五日　発起人　金子善太郎他19人の名前",
+        "coordinates_dd": "36.042628, 139.506388",
+        "Survey_date": "2025年3月8日",
+        "Condition_comment": "黄色いさびのような地衣類が覆われているが刻まれる文字ははっきり見えている。荒川方面には原間室橋(沈下橋)。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "flooding_bridge_takimamuro_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.464783,
+          36.079953
+        ]
+      },
+      "properties": {
+        "name": "小谷の水神碑",
+        "type": "water",
+        "year": "1895年",
+        "size": "高さ70cm 幅42cm 厚10cm",
+        "address": "吹上町小谷",
+        "inscription": "明治廿八年三月十七日　堤根側氏子中",
+        "coordinates_dd": "36.079953, 139.464783",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "表面が焼けたかのような色になっている。裏面の文字は鮮明。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "koya_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.436598,
+          36.107233
+        ]
+      },
+      "properties": {
+        "name": "久下八幡神社の水神宮碑",
+        "type": "water",
+        "year": "1856年",
+        "size": "高さ67cm 幅29cm 厚11cm",
+        "address": "熊谷市久下",
+        "inscription": "(左側面)安政三⬜︎年六月吉日　(裏面)江川村",
+        "coordinates_dd": "36.107233, 139.436598",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "2018年頃には亀裂部分から分離していた記録写真ががあるが、調査日には修復されていた。亀裂より下半分は地衣類多く付着。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "kuge_hachimangu_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.481125,
+          36.023975
+        ]
+      },
+      "properties": {
+        "name": "飯島新田の水神宮碑",
+        "type": "water",
+        "year": "1807年",
+        "size": "高さ52cm 幅20cm 厚11cm",
+        "address": "吉見町飯島新田",
+        "inscription": "(左)飯島新田願主　江森新五郎　(右)文化四甲子歳正月吉日",
+        "coordinates_dd": "36.023975, 139.481125",
+        "Survey_date": "2025年3月23日",
+        "Condition_comment": "洪水常襲地帯。銘文中「文□四(のこりは判別不能)」正面風化、亀裂、地衣類少し付着。側面の文字は判読可能",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "iijima_shinden_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.557457,
+          35.887497
+        ]
+      },
+      "properties": {
+        "name": "馬能堂荒工稲荷境内の水天宮碑",
+        "type": "water",
+        "year": "1894年",
+        "size": "高さ90cm 幅73cm 厚9cm",
+        "address": "さいたま市西区飯田新田２５２",
+        "inscription": "(裏面)明治二十七年九月吉日建立　北足立郡馬宮村大字飯田新田　発企人岡田由之じょう　世話人3人の名前　台座に大字植田谷本村新田6人　大字二ツ宮3人　大字西遊馬1人　大字大宮1人　入間郡東大久保2人　同郡南畑3人",
+        "coordinates_dd": "35.887497, 139.557457",
+        "Survey_date": "2025年3月23日",
+        "Condition_comment": "台座50cm 稲荷大明神境内の、水天宮。正面に地衣類付着も裏面は少ない。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "arako_sujtengu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.547833,
+          35.964945
+        ]
+      },
+      "properties": {
+        "name": "畔吉諏訪神社境内、左の水神宮碑",
+        "type": "water",
+        "year": "1843年",
+        "size": "高さ58cm 幅24cm 厚12cm",
+        "address": "上尾市大字畔吉835　諏訪神社境内",
+        "inscription": "天保十四卯九月吉日　(表面)水神⬜︎ (右側面)願主井原□",
+        "coordinates_dd": "35.964945, 139.547833",
+        "Survey_date": "2025年3月26日",
+        "Condition_comment": "【要再調査】「水神□」は判別可能だが「宮」の文字は判別不可。右側面上部地衣類付着。亀裂、剥落激しい。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "azeyoshi_suwa_shrine_suijingu(left).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.547702,
+          35.96492
+        ]
+      },
+      "properties": {
+        "name": "畔吉諏訪神社境内、右の水神宮碑",
+        "type": "water",
+        "year": "1793年",
+        "size": "高さ98cm 幅38cm 厚28cm",
+        "address": "上尾市大字畔吉835　諏訪神社境内",
+        "inscription": "(右側面)寛政五癸丑年六月吉日　(左側面)施主畔吉村中",
+        "coordinates_dd": "35.96492, 139.547702",
+        "Survey_date": "2025年3月26日",
+        "Condition_comment": "一見すると状態は良さそうだが黒ずんだ箇所が点々と見られる。左側面に欠損部あり。笠部に地衣類。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "azeyoshi_suwa_shrine_suijingu(right).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.549255,
+          35.945048
+        ]
+      },
+      "properties": {
+        "name": "橘樹神社境内の水神宮碑",
+        "type": "water",
+        "year": "1843年",
+        "size": "高さ85cm 幅55cm 厚52cm",
+        "address": "上尾市平方2124　橘樹神社境内",
+        "inscription": "(右)寛政五癸丑年正月吉日",
+        "coordinates_dd": "35.945048, 139.549255",
+        "Survey_date": "2025年3月26日",
+        "Condition_comment": "”平方村河岸出入商人衆奉納の石祠”のとなり、覆屋内3基中、一番左が水神宮。御幣で見えにくいが「宮」の字が見える。台座高さ55。埃をかぶっているのみで地衣類は見当たらない。附近に平方河岸があった。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "tachibana_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.560207,
+          35.907517
+        ]
+      },
+      "properties": {
+        "name": "西遊馬の水神宮碑",
+        "type": "water",
+        "year": "1865年",
+        "size": "高さ130cm 幅37cm 厚27cm",
+        "address": "さいたま市西区西遊馬",
+        "inscription": "慶應一丁卯歳秋九月吉日　遊馬村中",
+        "coordinates_dd": "35.907517, 139.560207",
+        "Survey_date": "2025年3月26日",
+        "Condition_comment": "表面上部黒ずみあり、地衣類は正面と右側面ともに多数。指扇駅ちかくの水神碑と、字体が似ている。さいたま市の市史では明治の水害を経験。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "nisi_asuma_sujingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.562122,
+          35.915683
+        ]
+      },
+      "properties": {
+        "name": "指扇駅ちかくの水神宮碑(陽眠眞)",
+        "type": "water",
+        "year": "1867年",
+        "size": "高さ75cm 幅59cm 厚57cm",
+        "address": "さいたま市西区西遊馬",
+        "inscription": "(表面)「水神宮」「陽眠眞」(右)慶應三丁卯歳九月吉日(左)遊馬村中　他",
+        "coordinates_dd": "35.915683, 139.562122",
+        "Survey_date": "2025年3月26日",
+        "Condition_comment": "台座との境界に黒ずみがあるが、クリーニングされている。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "sashiogi_station_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.505627,
+          36.01206
+        ]
+      },
+      "properties": {
+        "name": "権田薬師堂となりの水天宮碑",
+        "type": "water",
+        "year": "1799年",
+        "size": "高さ60cm 幅40cm 厚24cm",
+        "address": "北本市石戸宿８丁目",
+        "inscription": "(左側面)願主横田⬜︎⬜︎村中　寛政十一己未六月吉日",
+        "coordinates_dd": "36.01206, 139.505627",
+        "Survey_date": "2025年3月26日",
+        "Condition_comment": "台座20cm 、多少はあるものの地衣類の付着少ない。表面の文字しっかりしていて読める",
+        "Condition_level": "★★★★★",
+        "photo_filename": "gonda_yakushido_suitengu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.515705,
+          35.956313
+        ]
+      },
+      "properties": {
+        "name": "下大屋敷の水天宮碑",
+        "type": "water",
+        "year": "1912年",
+        "size": "高さ80cm 幅70cm 厚13cm",
+        "address": "埼玉県比企郡川島町下大屋敷",
+        "inscription": "(裏面)発起人岩田仁助他4人 世話人土橋渡船場　明治四十五年六月五日建立　昭和二年三月再建(次に続く文字は判別できない)",
+        "coordinates_dd": "35.956313, 139.515705",
+        "Survey_date": "2025年3月31日",
+        "Condition_comment": "土台高さ32cm 表面剥落激しく、剥がれた破片が下に落ち、早急に対策すべき。表面右に地衣類、裏面は地衣類大量。2019年台風19号で水没。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "simo_oyashiki_suitengu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.535092,
+          35.929838
+        ]
+      },
+      "properties": {
+        "name": "入間川堤内地の水神宮碑",
+        "type": "water",
+        "year": "",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "川越市下老袋",
+        "inscription": "",
+        "coordinates_dd": "35.929838, 139.535092",
+        "Survey_date": "2025年3月31日",
+        "Condition_comment": "右側に地衣類付着。古い。自然石で、風化があるが刻まれた文字は鮮明。銘文等確認できない。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "Iruma_river_outside_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.630667,
+          35.82715
+        ]
+      },
+      "properties": {
+        "name": "彩湖へらぶな供養塔隣の水神宮碑",
+        "type": "water",
+        "year": "-",
+        "size": "高さ80cm 幅22.5cm 厚12cm",
+        "address": "戸田市美女木",
+        "inscription": "(右、銘は月日のみ判読)\n(台座正面)西 引又ミち二リ\n(同右)北 うらわ一リ 東土手 わらび一リ",
+        "coordinates_dd": "35.82715, 139.630667",
+        "Survey_date": "2025年4月4日",
+        "Condition_comment": "荒川の中でも風化、摩耗などトップレベルで激しく状態評価を付けることができない。彩湖は洪水時に貯水池となり水没している。",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "lake_saiko_herabuna_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.623722,
+          35.827385
+        ]
+      },
+      "properties": {
+        "name": "彩湖　天保四年の水神宮碑",
+        "type": "water",
+        "year": "1833年",
+        "size": "高さ25cm 幅16cm 厚14cm",
+        "address": "戸田市重瀬",
+        "inscription": "(右側面)天保四年巳十月吉□　(左側面)寿三郎　依田平五郎",
+        "coordinates_dd": "35.827385, 139.623722",
+        "Survey_date": "2025年4月4日",
+        "Condition_comment": "彩湖は洪水時に完全に水没するが石碑の状態が悪いわけではなく、文字は鮮明に見える。左上部などに亀裂、右に欠損あり。供え物多数。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "lake_saiko_submerged_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.634953,
+          35.824377
+        ]
+      },
+      "properties": {
+        "name": "彩湖　道満の水神宮碑",
+        "type": "water",
+        "year": "1834年",
+        "size": "高さ50cm 幅21cm 厚15cm",
+        "address": "戸田市美女木7丁目19",
+        "inscription": "(左側面)天保五午七月吉日 (表面)水神宮　道満中",
+        "coordinates_dd": "35.824377, 139.634953",
+        "Survey_date": "2025年4月4日",
+        "Condition_comment": "台座に黄色の地衣類。笹目川に注ぐ揚水と彩湖堤防の間に位置する。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "lake_saiko_doman_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6173,
+          35.815568
+        ]
+      },
+      "properties": {
+        "name": "下内間木氷川神社境内、左奥の水神宮碑",
+        "type": "water",
+        "year": "1920年",
+        "size": "高さ50cm 幅24cm 厚17cm",
+        "address": "朝霞市下内間木36　下内間木神社境内",
+        "inscription": "(右側面)昭和十一年一月七日下内間木中伊藤並郎他四名　(塔身)大正九年荒川改良工事有　當字依之多年水害地一変美田成喧戦水神当時上打間木地内出現三轉",
+        "coordinates_dd": "35.815568, 139.6173",
+        "Survey_date": "2025年4月7日",
+        "Condition_comment": "昭和五十八年三月三日改修。美麗。旧地は荒川堤防上にあり、文政三年二月の記年の銘あり。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "shimouchimagi_hikawa_shrine_suijingu(back).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.617325,
+          35.815553
+        ]
+      },
+      "properties": {
+        "name": "下内間木氷川神社境内、左手前の水天宮碑",
+        "type": "water",
+        "year": "1655年",
+        "size": "高さ38cm 幅22cm 厚12cm",
+        "address": "朝霞市下内間木36　下内間木神社境内",
+        "inscription": "(正面)水天宮　(裏面)明暦元乙未　出船八九舟建之　下内間木　蕪木氏",
+        "coordinates_dd": "35.815553, 139.617325",
+        "Survey_date": "2025年4月7日",
+        "Condition_comment": "調査中、最古の水神碑碑。裏面文字は判別不可も「朝霞市史調査報告書 第9集 (朝霞の石造物 1)」より判明。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "shimouchimagi_hikawa_shrine_suijingu(front).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.649557,
+          35.795962
+        ]
+      },
+      "properties": {
+        "name": "早瀬の渡し水神宮碑",
+        "type": "water",
+        "year": "1821年",
+        "size": "高さ113cm 幅50cm 厚21cm",
+        "address": "板橋区新河岸３丁目８−８",
+        "inscription": "(表面)水神宮 (裏面)くずし字で「以怒留頃乃川久仁比所能 水神乃洞流亡春文政 依川農年巳小春再興 丹臨石工春日何某応乞 鈍筆丹石面越汚畢」。文政四年。安山岩小松石自然石型板状",
+        "coordinates_dd": "35.795962, 139.649557",
+        "Survey_date": "2025年4月7日",
+        "Condition_comment": "新河岸公園内。下部、台座に地衣類付着。正面に剥落あり。裏面文字は「いたばしの文化財第2集」より。早瀬の渡しに祀られていた(平安期から早瀬の渡しがあった？)板橋区指定文化財。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "sinkasi_park_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.117738,
+          36.088132
+        ]
+      },
+      "properties": {
+        "name": "長瀞自然の博物館前の水神祠",
+        "type": "water",
+        "year": "1966年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "秩父郡長瀞町長瀞９４７ 月の石もみじ公園",
+        "inscription": "昭和四十一年一月再建新井弥平",
+        "coordinates_dd": "36.088132, 139.117738",
+        "Survey_date": "2025年4月9日",
+        "Condition_comment": "笠部地衣類付着。銘は長瀞町史民族編1 p.326より。祭神は弥都波能売神。舟下りの船頭たちの信仰。11月に祭典があり、すぐそばの水神の井戸についても言及されている。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "nagatoro_natural_museum_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.112538,
+          36.105328
+        ]
+      },
+      "properties": {
+        "name": "金石水管橋下の水神宮碑",
+        "type": "water",
+        "year": "1868年",
+        "size": "高さ170cm 幅80cm 厚10cm",
+        "address": "長瀞町本野上",
+        "inscription": "（正面）水神宮　松籟順拝書　（裏面）慶応四年 辰九月吉日旦　本野上村、岩田、藤谷渕、井戸の賛同者氏名多数",
+        "coordinates_dd": "36.105328, 139.112538",
+        "Survey_date": "2025年4月9日",
+        "Condition_comment": "正面の地衣類付着について、その量は荒川トップクラスだが、正面、裏面とも刻まれた文字は鮮明。裏は崖で荒川が眼下に流れる。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "kanaishi_waterpipebridge_suijingu_1.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.276265,
+          36.133032
+        ]
+      },
+      "properties": {
+        "name": "畠山水神様",
+        "type": "water",
+        "year": "1810年",
+        "size": "高さ123cm 幅48cm 厚33cm",
+        "address": "深谷市畠山",
+        "inscription": "（正面）水神塔 (正面右)文化七庚午　(正面左)畠山村",
+        "coordinates_dd": "36.133032, 139.276265",
+        "Survey_date": "2025年4月9日",
+        "Condition_comment": "自然石。正面右側の文字は地衣類で判別困難も「文化」という文字が読み取れる。正面「水神塔」の文字は鮮明。川の漁師、筏師たちが水難よけに信仰したと伝えられる。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "hatakeyama_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.244875,
+          36.136627
+        ]
+      },
+      "properties": {
+        "name": "ふかや花園の水神碑",
+        "type": "water",
+        "year": "1901年",
+        "size": "高さ68cm 幅38cm 厚6cm",
+        "address": "深谷市永田",
+        "inscription": "(裏面)明治三十四年五月　永田柳出井水下中",
+        "coordinates_dd": "36.136627, 139.244875",
+        "Survey_date": "2025年4月9日",
+        "Condition_comment": "正面に、金属のさびのような黄色く細かい地衣類付着。柳出井池のほとりに建立。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "fukaya_hanazono_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.11636,
+          36.09484
+        ]
+      },
+      "properties": {
+        "name": "長瀞春日神社の水神宮碑",
+        "type": "water",
+        "year": "不明",
+        "size": "高さ60cm 幅42cm 厚25cm",
+        "address": "秩父郡長瀞町井戸1222番　春日神社境内",
+        "inscription": "銘なし",
+        "coordinates_dd": "36.09484, 139.11636",
+        "Survey_date": "2025年4月12日",
+        "Condition_comment": "剥落はなく風化よりは地衣類付着のために正面の文字判別困難。左上部に濃い地衣類。不心得者に崖下に落とされたことも。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "nagatoro_kasuga_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.113153,
+          36.104205
+        ]
+      },
+      "properties": {
+        "name": "蓬莱島の水神宮碑",
+        "type": "water",
+        "year": "1955年",
+        "size": "高さ100cm 幅120cm 厚10cm",
+        "address": "長瀞町井戸　蓬莱島公園内",
+        "inscription": "昭和三十年七月五日　風布区一同　石工中川吉三",
+        "coordinates_dd": "36.104205, 139.113153",
+        "Survey_date": "2025年4月12日",
+        "Condition_comment": "正面下部コケ付着。右側亀裂。裏面銘文は強いライトをあてて初めて判別可能となった。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "horaijima_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.14644,
+          36.13001
+        ]
+      },
+      "properties": {
+        "name": "矢那瀬地区川面の水神様",
+        "type": "water",
+        "year": "1847年",
+        "size": "高さ77cm 幅40cm 厚46cm",
+        "address": "長瀞町矢那瀬",
+        "inscription": "弘化四年未年十二月吉日　(左)矢那瀬村鮎梁連中",
+        "coordinates_dd": "36.13001, 139.14644",
+        "Survey_date": "2025年4月17日",
+        "Condition_comment": "笠部地、台座衣類付着、祠正面、左右側面中程度の剥落あり。側面の装飾に花は珍しい。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "yanase_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2987,
+          36.131148
+        ]
+      },
+      "properties": {
+        "name": "本田吉野川の水神碑",
+        "type": "water",
+        "year": "1903年",
+        "size": "高さ123cm 幅99cm 厚14cm",
+        "address": "川本町本田(現深谷市本田)",
+        "inscription": "表面「水神」明治三十六年十月",
+        "coordinates_dd": "36.131148, 139.2987",
+        "Survey_date": "2025年4月17日",
+        "Condition_comment": "正面、地衣類付着激しい方か。裏はすぐ本田吉野川。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "honda_yoshino_river_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.305938,
+          36.141453
+        ]
+      },
+      "properties": {
+        "name": "明戸八幡神社の水神碑",
+        "type": "water",
+        "year": "1870年",
+        "size": "高さ85cm 幅25cm 厚11cm",
+        "address": "深谷市川本明戸113",
+        "inscription": "(裏面)明治三年庚午六月　明戸村7人の氏名",
+        "coordinates_dd": "36.141453, 139.305938",
+        "Survey_date": "2025年4月17日",
+        "Condition_comment": "表面の地衣類付着著しい。早急に対策必要。判別不能ではないが「水神」の文字が読みにくい。裏面に欠け。2基の塞神碑の中央に位置。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "aketo_hachiman_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.307867,
+          36.134613
+        ]
+      },
+      "properties": {
+        "name": "鹿島古墳群となりの水神宮碑",
+        "type": "water",
+        "year": "1849年",
+        "size": "高さ75cm 幅32cm 厚52cm",
+        "address": "深谷市本田",
+        "inscription": "(左側面)下本田講中　(右側面)嘉永二酉年十一月吉日",
+        "coordinates_dd": "36.134613, 139.307867",
+        "Survey_date": "2025年4月17日",
+        "Condition_comment": "屋根部分に大きい亀裂、修理跡。正面剥落あり。向かって3基のうち、一番右。右隣に、同銘文の金比羅大権現碑。左には庚申塔供養塔。鹿島古墳群となり。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "kasima_tumulus_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.20064,
+          36.114312
+        ]
+      },
+      "properties": {
+        "name": "玉淀水天宮社",
+        "type": "water",
+        "year": "-",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "埼玉県大里郡寄居町寄居７０３",
+        "inscription": "-",
+        "coordinates_dd": "36.114312, 139.20064",
+        "Survey_date": "2025年4月27日",
+        "Condition_comment": "",
+        "Condition_level": "",
+        "photo_filename": "tamayodo_suitengu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.200653,
+          36.114208
+        ]
+      },
+      "properties": {
+        "name": "玉淀水天宮奥宮",
+        "type": "water",
+        "year": "",
+        "size": "高さ110cm 幅50cm 厚70cm",
+        "address": "埼玉県大里郡寄居町寄居",
+        "inscription": "",
+        "coordinates_dd": "36.114208, 139.200653",
+        "Survey_date": "2025年4月27日",
+        "Condition_comment": "地衣類付着少ない。急な斜面を降りていくと祠がある。台座に移設工事について銘がある。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "tamayodo_suitengu_okunoin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.328075,
+          36.134053
+        ]
+      },
+      "properties": {
+        "name": "押切三峯神社となりの水神宮碑",
+        "type": "water",
+        "year": "1865年",
+        "size": "高さ50cm 幅25cm 厚40cm",
+        "address": "熊谷市押切",
+        "inscription": "(右側面)慶應元□乙年　十一月吉日",
+        "coordinates_dd": "36.134053, 139.328075",
+        "Survey_date": "2025年5月4日",
+        "Condition_comment": "笠部欠損、亀裂、剥落あり。正面に刻まれた文字は鮮明。押切橋ちかく。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "oshikiri_mitsumine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.507823,
+          36.037538
+        ]
+      },
+      "properties": {
+        "name": "妙楽寺の水神宮碑",
+        "type": "water",
+        "year": "不明",
+        "size": "高さ70cm 幅33cm 厚8cm",
+        "address": "鴻巣市原馬室2965-2",
+        "inscription": "銘なし[昭和六年？]",
+        "coordinates_dd": "36.037538, 139.507823",
+        "Survey_date": "2025年5月8日",
+        "Condition_comment": "正面地衣類付着少ない。妙楽寺入り口左に3基祀られているうち、一番左。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "myoraku_temple_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.641573,
+          35.824863
+        ]
+      },
+      "properties": {
+        "name": "沖天神社境内の水神宮碑",
+        "type": "water",
+        "year": "-",
+        "size": "高さ62cm 幅19cm 厚12cm",
+        "address": "戸田市美女木3-18-7　沖天神社境内",
+        "inscription": "あじさいが横にあり右側面判別できない、左側面風化",
+        "coordinates_dd": "35.824863, 139.641573",
+        "Survey_date": "2025年5月13日",
+        "Condition_comment": "状態悪い、早急に対策必要。状態の評価は付けることができない。正面文字も「水」のみ確認できる程度",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "chuten_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.636828,
+          35.825208
+        ]
+      },
+      "properties": {
+        "name": "美女八幡社境内の水神宮碑",
+        "type": "water",
+        "year": "1910年",
+        "size": "高さ72cm 幅59cm 厚14cm",
+        "address": "戸田市美女木7-9-1　美女木八幡社境内",
+        "inscription": "明治四十三年二月",
+        "coordinates_dd": "35.825208, 139.636828",
+        "Survey_date": "2025年5月13日",
+        "Condition_comment": "濃くはっきりとした地衣類が正面に付着。正面上部、左右に剥落あり。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "bijyo_hachiman_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.638172,
+          35.829192
+        ]
+      },
+      "properties": {
+        "name": "山王神社境内の水神宮碑",
+        "type": "water",
+        "year": "1862年",
+        "size": "高さ67cm 幅32cm 厚19cm",
+        "address": "戸田市美女木1-23-15　山王神社境内",
+        "inscription": "文久二壬戌年□月吉日",
+        "coordinates_dd": "35.829192, 139.638172",
+        "Survey_date": "2025年5月13日",
+        "Condition_comment": "文久二壬戌年八月吉日と刻まれているはずだが、「八」の箇所は削り取られたかのように判別不能。左側裏面欠けあり。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "sanno_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.645528,
+          35.803412
+        ]
+      },
+      "properties": {
+        "name": "早瀬浅間社境内の水神宮碑",
+        "type": "water",
+        "year": "1812年",
+        "size": "高さ49.5cm 幅16cm 厚17cm",
+        "address": "戸田市笹目8-14-7　早瀬浅間神社境内",
+        "inscription": "(右)文化九壬申年六月吉日立 (台座)　講中",
+        "coordinates_dd": "35.803412, 139.645528",
+        "Survey_date": "2025年5月13日",
+        "Condition_comment": "地衣類が表面より下の層に浸透しているかのように見える。笠部に欠けあり。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "hayase_sengen_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.686475,
+          35.801862
+        ]
+      },
+      "properties": {
+        "name": "戸田川岸水神社の水神宮・船玉大明神",
+        "type": "water",
+        "year": "1796年",
+        "size": "高さ150cm 幅115cm 厚16cm",
+        "address": "戸田市川岸1-7-7",
+        "inscription": "寛政八年(境内説明板より)",
+        "coordinates_dd": "35.801862, 139.686475",
+        "Survey_date": "2025年5月15日",
+        "Condition_comment": "今回の調査中、一番剥落が激しく多かった。早急に対策必要、評価不可。近くには天正年中(1575年~)からあったという戸田の渡しがあった。7月に水神祭。",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "toda_suijingu_hunadama.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.686553,
+          35.801983
+        ]
+      },
+      "properties": {
+        "name": "戸田川岸水神社の水神宮・大杉大神",
+        "type": "water",
+        "year": "1890年",
+        "size": "高さ42cm 幅25cm 厚19cm",
+        "address": "戸田市川岸1-7-7",
+        "inscription": "(右)明治二十三年九月之建　永井勘次郎",
+        "coordinates_dd": "35.801983, 139.686553",
+        "Survey_date": "2025年5月15日",
+        "Condition_comment": "右上部欠けあり。樹木に隠れていて近づくことができない。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "toda_osugiokami_suijingu_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69057,
+          35.79523
+        ]
+      },
+      "properties": {
+        "name": "舟渡氷川神社の十度ノ宮",
+        "type": "water",
+        "year": "1659年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "舟渡二丁目18番1号（舟渡氷川神社境内）",
+        "inscription": "(右面)万治二巳己亥 (西南)奉修造立氷川大明神御宝前 (左面)寛保三癸亥年十二月造立武州豊島郡蓮沼村別当金剛院",
+        "coordinates_dd": "35.79523, 139.69057",
+        "Survey_date": "2025年5月15日",
+        "Condition_comment": "「このお宮は、昔から蓮沼村の西南にあったが、何度もの洪水で押流(おしなが)されて、今の場所に流寄(ながれよ)せられることが十度にも及んだので、ここに塚を築き、榎(えのき)を植えて神社とした。地域の人は今でも「十度ノ宮」と呼んでいる」",
+        "Condition_level": "★★★★★",
+        "photo_filename": "jyudo_no_miya.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.699485,
+          35.783072
+        ]
+      },
+      "properties": {
+        "name": "浮間渡船場跡の供養塔群 水神宮碑",
+        "type": "water",
+        "year": "不明",
+        "size": "高さ57cm 幅41cm 厚- cm",
+        "address": "東京都北区浮間３丁目６−１７(浮間渡船場)",
+        "inscription": "(正面)水神宮",
+        "coordinates_dd": "35.783072, 139.699485",
+        "Survey_date": "2025年5月15日",
+        "Condition_comment": "笠部左右に欠けあり、表面の文字ほとんど読めず、光を当てて「水神ー」と読める程度、おそなえの酒が。正面の新河岸川に向かって祀られる。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "ukima_river_crossing_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.698853,
+          35.780182
+        ]
+      },
+      "properties": {
+        "name": "小豆沢神社の水神宮(奥の鳥居)",
+        "type": "water",
+        "year": "不明",
+        "size": "高さ86cm 幅49cm 厚32cm",
+        "address": "東京都板橋区小豆沢4丁目16　小豆沢神社境内",
+        "inscription": "(左側面)願主　仲右エ門 (左側面)水神宮　(台座右側面)□□安全　(台座表面左)舩持中 (台座表面右)小豆沢村",
+        "coordinates_dd": "35.780182, 139.698853",
+        "Survey_date": "2025年5月15日",
+        "Condition_comment": "笠部比較的広い剥落。石で積んだ台座の高さは86cm 屋根が剥がれ落ちそうになっている。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "azusawa_shrine_back_sujingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.698862,
+          35.780223
+        ]
+      },
+      "properties": {
+        "name": "小豆沢神社の水神宮(手前)",
+        "type": "water",
+        "year": "1920年",
+        "size": "高さ37cm 幅38cm 厚13cm",
+        "address": "東京都板橋区小豆沢4丁目16　小豆沢神社境内",
+        "inscription": "(表面)大正九年十一月　水神宮　川端□",
+        "coordinates_dd": "35.780223, 139.698862",
+        "Survey_date": "2025年5月15日",
+        "Condition_comment": "表面の文字はすべて篆書体で刻まれている。小型のためもあり状態はよいが右側は剥落か？",
+        "Condition_level": "★★★★★",
+        "photo_filename": "azusawa_shrine_forward_sujingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.60176,
+          35.86102
+        ]
+      },
+      "properties": {
+        "name": "下大久保諏訪社の水神宮碑",
+        "type": "water",
+        "year": "",
+        "size": "高さ205cm 幅80cm 厚20cm",
+        "address": "さいたま市桜区下大久保1029",
+        "inscription": "(裏面)明治三十年一月一日　羽根倉川河岸　講社中",
+        "coordinates_dd": "35.86102, 139.60176",
+        "Survey_date": "2025年5月20日",
+        "Condition_comment": "調査した中では最大の高さ。正面上部は黒ずんでいる。表面にひっかき傷。左に緑色の地衣類。大正九年まで荒川のちかくに祀られていた。祭神は水波能売神（ミズハノメノカミ）。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "shimookubo_suwa_shrine_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.926147,
+          35.952495
+        ]
+      },
+      "properties": {
+        "name": "椚平の水神社",
+        "type": "water",
+        "year": "",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "秩父市大滝",
+        "inscription": "",
+        "coordinates_dd": "35.952495, 138.926147",
+        "Survey_date": "2025年8月22日",
+        "Condition_comment": "飯野頼治「地図で歩く秩父路」 には湧水が多い記述がある",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "otaki_kunugidaira_sujin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.377197,
+          36.127858
+        ]
+      },
+      "properties": {
+        "name": "村岡の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1926年再建",
+        "size": "高さ90cm 幅40cm 厚40cm",
+        "address": "熊谷市村岡",
+        "inscription": "(正面)戸隠山九頭龍大権現　大正十五年十月一日　大字村岡再建　世話人　松葉定吉外6名",
+        "coordinates_dd": "36.127858, 139.377197",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "土手から転がり落として雨乞いの催事に使われていたが全体的に良い状態。明治四十三年八月の大洪水に流失し、大正15年に再建。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "muraoka_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.438118,
+          36.094747
+        ]
+      },
+      "properties": {
+        "name": "荒川パノラマ公園の九頭龍大神碑",
+        "type": "dragon",
+        "year": "1878年",
+        "size": "高さ115cm 幅50cm 厚10cm",
+        "address": "鴻巣市大芦1366荒川パノラマ公園階段下",
+        "inscription": "水下安全　明治十一年",
+        "coordinates_dd": "36.094747, 139.438118",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "正面、両側面に層状になった地衣類付着目立つ。隣に一目連大神も。火・水・風の神様であり、台風、雨乞いの祈念。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "panorama_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.463828,
+          36.063145
+        ]
+      },
+      "properties": {
+        "name": "一ツ木の九頭龍大神碑",
+        "type": "dragon",
+        "year": "1903年",
+        "size": "高さ140cm 幅59cm 厚23cm",
+        "address": "埼玉県比企郡吉見町一ツ木165　氷川神社参道",
+        "inscription": "明治三十六年十月吉日　大字一ツ木中　世話人10名、発起人3名",
+        "coordinates_dd": "36.063145, 139.463828",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "正面、側面、裏面とも地衣類付着。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "hitotsugi_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.474292,
+          36.059275
+        ]
+      },
+      "properties": {
+        "name": "吉見町明秋の九頭龍大神碑",
+        "type": "dragon",
+        "year": "1914年",
+        "size": "高さ120cm 幅85cm 厚14cm",
+        "address": "埼玉県吉見町明秋",
+        "inscription": "大正三年八月十五日其設　埼玉県比企郡吉見村大字明秋　宮崎由三郎ほか9人の名前",
+        "coordinates_dd": "36.059275, 139.474292",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "正面、側面、裏面、刻まれた文字見えづらいほどの地衣類の付着が激しい。台座にオレンジ色の地衣類付着(写真は3月8日)",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "myosyu_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.465305,
+          36.06506
+        ]
+      },
+      "properties": {
+        "name": "荒神社の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1864年",
+        "size": "高さ75cm 幅28cm 厚20cm",
+        "address": "埼玉県比企郡吉見町一ツ木236　荒神社境内",
+        "inscription": "元治元甲子年 四月吉日",
+        "coordinates_dd": "36.06506, 139.465305",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "正面に地衣類付着も刻まれた文字ははっきり見える。笠部分が欠損、倒壊し石碑後方に置かれている。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "kou_shrine_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.499795,
+          36.02772
+        ]
+      },
+      "properties": {
+        "name": "久保田新田の九頭龍大神碑",
+        "type": "dragon",
+        "year": "1895年",
+        "size": "高さ95cm 幅40cm 厚10cm",
+        "address": "埼玉県比企郡吉見町久保田新田",
+        "inscription": "(裏面)明治廿八年九月九日再建　大字須之子　最寄講中　世ハ人　小林豊蔵小林平次郎」",
+        "coordinates_dd": "36.02772, 139.499795",
+        "Survey_date": "2025年3月8日",
+        "Condition_comment": "洪水常襲地帯。大囲堤。表面黒ずんでいるが文字ははっきり。正面亀裂。裏面に黒いカビ？となりの石碑は文政十三年",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "kubota_shinden_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4649,
+          36.080067
+        ]
+      },
+      "properties": {
+        "name": "小谷の九頭龍神社碑",
+        "type": "dragon",
+        "year": "1813年",
+        "size": "高さ63cm 幅25cm 厚16cm",
+        "address": "鴻巣市小谷",
+        "inscription": "(左)文化十□□□□武□□□□",
+        "coordinates_dd": "36.080067, 139.4649",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "正面の文字は比較的鮮明も地衣類付着。裏面上部に白緑の地衣類多く付着。左側面も地衣類で真っ白だが「文化十」は判読可能。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "koya_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.436547,
+          36.107268
+        ]
+      },
+      "properties": {
+        "name": "久下八幡神社の九頭龍大権現",
+        "type": "dragon",
+        "year": "-",
+        "size": "高さ47cm 幅22cm 厚14cm",
+        "address": "熊谷市久下",
+        "inscription": "(左側面)江川村",
+        "coordinates_dd": "36.107268, 139.436547",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "正面の「九頭龍大権現」の文字は判読可能。風化・摩耗激しい。上部に四角い穴があり笠部があったと考えられる。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "kuge_hachimangu_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.469163,
+          36.074395
+        ]
+      },
+      "properties": {
+        "name": "水防倉庫横の九頭龍大神碑",
+        "type": "dragon",
+        "year": "1892年",
+        "size": "高さ120cm 幅88cm 厚16cm",
+        "address": "鴻巣市小谷",
+        "inscription": "明治二十五年十月建立　長島貞蔵　長島且吾　金一円五十銭新宿側",
+        "coordinates_dd": "36.074395, 139.469163",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "荒川北縁水防事務組合水防倉庫大10号棟横。表面カビか？真っ白になっている。右半分に少しの亀裂。裏面世話人等の名前は判読可能。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "flood_control_warehouse_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.40486,
+          36.12308
+        ]
+      },
+      "properties": {
+        "name": "久下の渡しそばの九頭龍神社",
+        "type": "dragon",
+        "year": "1787年",
+        "size": "高さ65cm 幅30cm 厚36cm",
+        "address": "熊谷市久下",
+        "inscription": "天明七年八月吉日　忍領久下邑",
+        "coordinates_dd": "36.12308, 139.40486",
+        "Survey_date": "2025年3月23日",
+        "Condition_comment": "正面「九頭龍」の文字判別可能。笠部分地衣類付着。左側面にも地衣類。側面銘文は判読不可。(銘文内容は「石仏入門 日下部朝一郎 著 国書刊行会 1972」)",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "kuge_river_crossing_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.50381,
+          35.995433
+        ]
+      },
+      "properties": {
+        "name": "阿津満稲荷境内の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1933年",
+        "size": "高さ68cm 幅45cm 厚23cm",
+        "address": "埼玉県比企郡川島町三保谷宿",
+        "inscription": "(裏面)昭和八年八月 勧請 藤間維章",
+        "coordinates_dd": "35.995433, 139.50381",
+        "Survey_date": "2025年3月23日",
+        "Condition_comment": "丸形の自然石。洪水のイメージ強い地区。刻まれた文字も鮮明、状態はよい方か。台座高さ40cm",
+        "Condition_level": "★★★★★",
+        "photo_filename": "otsuma_inari_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.487695,
+          36.005578
+        ]
+      },
+      "properties": {
+        "name": "鳥羽井沼の泉地龍水神女神雄神大神",
+        "type": "dragon",
+        "year": "1970年",
+        "size": "高さ73cm 幅44cm 厚9cm",
+        "address": "埼玉県比企郡川島町鳥羽井新田",
+        "inscription": "(表面)泉地龍水神 女神雄神 大神\n(表面左下)祭主長島廷行\n(裏面)世話人倉浪吉五郎ほか16人の名前　昭和四十年五月廿七日建　鴻巣石しょう伊藤群鴻",
+        "coordinates_dd": "36.005578, 139.487695",
+        "Survey_date": "2025年3月31日",
+        "Condition_comment": "正面全体的に白い地衣類に覆われている？台座高さ18cm 泉地の龍水神、鳥羽井沼は江戸時代に市野川の度重なる洪水でできた沼。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "tobai_pond_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.487693,
+          36.00561
+        ]
+      },
+      "properties": {
+        "name": "鳥羽井沼自然公園の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1806年",
+        "size": "高さ80cm 幅34cm 厚47cm",
+        "address": "埼玉県比企郡川島町鳥羽井新田",
+        "inscription": "(左側面)願主小見野組中　世話戸羽井両村\n(右側面)文化三丙寅年十二月吉日",
+        "coordinates_dd": "36.00561, 139.487693",
+        "Survey_date": "2025年3月31日",
+        "Condition_comment": "多少の欠損があるのみ。享保2年の決壊に長野県戸隠神社から勧請(「川島郷土史」p.186にも詳細あり)。隣には水難よけといわれる一目連大神宮。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "tobai_pond_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.560723,
+          35.879575
+        ]
+      },
+      "properties": {
+        "name": "塚本本通りびん沼川ほとりの九頭龍大神碑",
+        "type": "dragon",
+        "year": "1900年",
+        "size": "高さ77cm 幅54cm 厚20cm",
+        "address": "さいたま市西区塚本町１丁目",
+        "inscription": "(表面横書き左から)山隠戸　(裏面)明治三十三年十月五日",
+        "coordinates_dd": "35.879575, 139.560723",
+        "Survey_date": "2025年4月4日",
+        "Condition_comment": "正面、むしろ地衣類が鮮明な状態。刻まれた文字ははっきり見える。幣束で祀られ、供え物が多い。横田興業となり。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "bin_pond_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.564775,
+          35.871478
+        ]
+      },
+      "properties": {
+        "name": "砂塚橋近くの戸隠山大権現",
+        "type": "dragon",
+        "year": "1869年",
+        "size": "高さ44cm 幅25cm 厚16cm",
+        "address": "富士見市南畑新田",
+        "inscription": "[明治二年四月建立　上南畑村]",
+        "coordinates_dd": "35.871478, 139.564775",
+        "Survey_date": "2025年4月4日",
+        "Condition_comment": "正面は細かい地衣類、右側面に地衣類多数。びん沼川新砂原樋管近く、揚水ポンプのフェンス横。右側面銘文判別不明だが、明治二年建立。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "sunatuka_bridge_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.336892,
+          36.134597
+        ]
+      },
+      "properties": {
+        "name": "押切持田稲荷神社近くの九頭龍権現碑",
+        "type": "dragon",
+        "year": "1839年",
+        "size": "高さ75cm 幅38cm 厚40cm",
+        "address": "熊谷市押切",
+        "inscription": "(右側面)天保十己亥年二月吉日建之 (左側面)判別不可",
+        "coordinates_dd": "36.134597, 139.336892",
+        "Survey_date": "2025年5月4日",
+        "Condition_comment": "笠部剥落、亀裂あり。左側面の文字4行刻まれているが風化して判別不能。墓地にはいっていく通路の一番奥、小高い盛り土の上。村岡の九頭龍大権現よりも上流。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "oshikiri_mochida_inari_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.505965,
+          36.026815
+        ]
+      },
+      "properties": {
+        "name": "高尾橋の白龍大神碑",
+        "type": "dragon",
+        "year": "不明",
+        "size": "高さ83cm 幅32cm 厚32cm",
+        "address": "北本市高尾6丁目",
+        "inscription": "(裏面)東京本郷　高橋久和",
+        "coordinates_dd": "36.026815, 139.505965",
+        "Survey_date": "2025年5月8日",
+        "Condition_comment": "状態はよい。高尾橋水神碑のちかく",
+        "Condition_level": "★★★★★",
+        "photo_filename": "takao_hakuryuokami.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.42488,
+          36.002925
+        ]
+      },
+      "properties": {
+        "name": "長楽早俣橋北の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1866年",
+        "size": "高さ52cm 幅18cm 厚11cm",
+        "address": "埼玉県比企郡川島町長楽",
+        "inscription": "(右)慶應二年八月　 (左)施主 長楽村中",
+        "coordinates_dd": "36.002925, 139.42488",
+        "Survey_date": "2025年8月14日",
+        "Condition_comment": "早俣橋北。風化、摩耗、剥落がは激しく「九」と「大権現」のみ判別可能。右側面にわずかに「慶應」と読める程度。早急な対策必要。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "hayamata_bridge_north_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.42454,
+          35.999968
+        ]
+      },
+      "properties": {
+        "name": "長楽早俣橋南の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "",
+        "size": "高さ50cm 幅18cm 厚11cm",
+        "address": "埼玉県比企郡川島町長楽",
+        "inscription": "",
+        "coordinates_dd": "35.999968, 139.42454",
+        "Survey_date": "2025年8月14日",
+        "Condition_comment": "早俣橋南。劣化度合いは「北」と同様。北の九頭竜大権現とほとんど同寸。全体と表面の形状も似ているのでこの2基は同型で、同時期に祀られたと自然に考えられる。「九」と「現」は判別できる。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "hayamata_bridge_south_kuzuryu_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.376578,
+          36.022856
+        ]
+      },
+      "properties": {
+        "name": "■葛袋の九頭龍大神碑",
+        "type": "dragon",
+        "year": "2020年",
+        "size": "高さ42cm 幅60cm 厚10cm",
+        "address": "東松山市葛袋",
+        "inscription": "(裏面)令和元年東日本台風により平成十一年に修復した御宮が損壊した　川北地区の安寧を願い石碑を建立する　令和二年十月吉日建立　川北地区一同　施工（有）安藤石材工業",
+        "coordinates_dd": "36.022856, 139.376578",
+        "Survey_date": "2026年3月6日",
+        "Condition_comment": "もともとは堤外地に位置し、木製の祠に九頭龍神社という扁額があったが令和東日本台風で損壊（それでも流されなかったと地元住民の言葉）したため現在の位置に移転。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "kuzubukuro_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.395989,
+          36.017353
+        ]
+      },
+      "properties": {
+        "name": "■上押垂おっぽり沼の九頭龍大神碑",
+        "type": "dragon",
+        "year": "1910年",
+        "size": "高さ103cm 幅72cm 厚6cm",
+        "address": "東松山市上押垂２２７−３",
+        "inscription": "（正面）上押垂　下青鳥　九頭龍大神　明治四十三年 七十九翁口武書　九月二十一日 宮下石材店　明治四十三年九月二十一日",
+        "coordinates_dd": "36.017353, 139.395989",
+        "Survey_date": "2026年3月6日",
+        "Condition_comment": "明治43年の大洪水でできたおっぽり沼のふちに所在（九頭龍沼とも）。線香皿、日本酒が供えられていた。裏面中央に亀裂あり。表面の状態は美麗である。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "oppori_numa_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.38946,
+          36.014037
+        ]
+      },
+      "properties": {
+        "name": "悪戸の九頭龍大神",
+        "type": "dragon",
+        "year": "1869年",
+        "size": "高さ87cm 幅53cm 厚8cm",
+        "address": "東松山市西本宿１４７４−１",
+        "inscription": "九頭龍大神　(裏面)悪戸中　明治二己已孟夏",
+        "coordinates_dd": "36.014037, 139.38946",
+        "Survey_date": "2026年3月6日",
+        "Condition_comment": "表面地衣類付着あり。幅方向に亀裂、裏面に剥落跡あり。毎年の水難に悩まされた人々は土手を築いたが、明治43年の大洪水で堤防は決壊する。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "akuto_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.411772,
+          36.007338
+        ]
+      },
+      "properties": {
+        "name": "早俣の九頭龍大神",
+        "type": "dragon",
+        "year": "1818年",
+        "size": "高さ62cm 幅29cm 厚29cm",
+        "address": "東松山市大字早俣地内",
+        "inscription": "□時　文政元戌寅□十一月吉日 武州早又村　世話人　林庄右衛門 千代田□兵衛　松本□七",
+        "coordinates_dd": "36.007338, 139.411772",
+        "Survey_date": "2026年3月15日",
+        "Condition_comment": "覆屋設置も、欠損ひどく、修復済だが中央部に破断跡あり。正面「九頭龍大権現」の文字はかろうじて判読可能。右側の欠損をはじめ様々な箇所に欠損あり。覆屋内は比較的広い。早俣子供広場（旧早俣グランド）に位置する。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "hayamata_children_play_area_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.430713,
+          35.995608
+        ]
+      },
+      "properties": {
+        "name": "■白山神社の九頭龍大権現祠 1",
+        "type": "dragon",
+        "year": "1853年",
+        "size": "高さ54cm 幅22cm 厚14cm",
+        "address": "坂戸市赤尾１６６８",
+        "inscription": "（右側面）嘉永六年□丑六月吉日 （正面）九頭龍大権現 （左側面）赤尾村中",
+        "coordinates_dd": "35.995608, 139.430713",
+        "Survey_date": "2026年3月15日",
+        "Condition_comment": "正面「□頭龍大権現」の文字判読可能も風化が見られる。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "hakusan_shrine_kuzuryudragon1.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.430705,
+          35.995597
+        ]
+      },
+      "properties": {
+        "name": "■白山神社の一目連神社祠",
+        "type": "water",
+        "year": "1853年",
+        "size": "高さ54cm 幅22cm 厚14cm",
+        "address": "坂戸市赤尾１６６８",
+        "inscription": "（右）嘉永六年丑年六月吉日建之　（正面）一目連神社　（左）赤尾村新田組",
+        "coordinates_dd": "35.995597, 139.430705",
+        "Survey_date": "2026年3月15日",
+        "Condition_comment": "「白山神社の九頭龍大権現祠1」の左横に位置し、同時期建立で同型と見られる。正面の文字は鮮明。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "hakusan_shrine_itimokuren.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.430837,
+          35.995573
+        ]
+      },
+      "properties": {
+        "name": "■白山神社の九頭龍大権現祠 2",
+        "type": "dragon",
+        "year": "1853年",
+        "size": "高さ60cm 幅24cm 厚14cm",
+        "address": "坂戸市赤尾１６６８",
+        "inscription": "嘉永六年□丑年四月吉日建之　赤尾村中",
+        "coordinates_dd": "35.995573, 139.430837",
+        "Survey_date": "2026年3月15日",
+        "Condition_comment": "向かって左から「白山社本殿」「八坂神社」「愛宕神社社」と建てられたうち、愛宕神社右横に位置する。「埼玉の神社」によると九頭龍講祭典は毎年7月21日。「坂戸市史 民俗史料編 2 (石造遺物)」pp.290写真は「権」と「四」の文字からこの「白山神社の九頭龍大権現祠2」と思われる。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "hakusan_shrine_kuzuryudragon2.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.486682,
+          35.954857
+        ]
+      },
+      "properties": {
+        "name": "府川の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1820年",
+        "size": "高さ70cm 幅31cm 厚20cm",
+        "address": "埼玉県川越市府川 釘無橋たもと",
+        "inscription": "（右側面）文政三庚辰年十二月　（正面）九頭龍大権現　（左側面）府川村中　願主 小沢万右衛門　世話人に4人の名前",
+        "coordinates_dd": "35.954857, 139.486682",
+        "Survey_date": "2026年3月20日",
+        "Condition_comment": "向かって右に欠損あり。正面に刻まれた文字と、左側面の「府川村中」は鮮明だが、右側面の文字は「文政三」以外は欠損のため判別できない。正面に地衣類少し付着。昆虫類の巣等が付着。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "irumagawa_hukawa_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.465215,
+          35.964558
+        ]
+      },
+      "properties": {
+        "name": "「伊草の渡し」水防倉庫裏の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1912年",
+        "size": "高さ108cm 幅96cm 厚19cm",
+        "address": "埼玉県比企郡川島町下伊草",
+        "inscription": "明治四十三年八月十日破堤　明治四十五年四月吉日建立」　発起人(桺川久平ほか５名の銘あり）",
+        "coordinates_dd": "35.964558, 139.465215",
+        "Survey_date": "2026年3月20日",
+        "Condition_comment": "写真裏の白い建物が水防倉庫。樹木と4本の注連竹に囲まれ、スイセンも植えられている。正面地衣類付着多く、特に左側面は著しい。裏面にも地衣類付着著しく、左剥がれあり。発起人については「柳正博_九頭龍神と二〇一九年の台風十九号について」を参照した。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "igusa_watasi_flood_storage_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.469703,
+          35.961597
+        ]
+      },
+      "properties": {
+        "name": "「伊草の渡し」近傍の九頭龍大権現碑",
+        "type": "dragon",
+        "year": "1912年",
+        "size": "高さ120cm 幅38cm 厚21cm",
+        "address": "埼玉県比企郡川島町下伊草",
+        "inscription": "明治四十三年八月十日破堤　明治四十五年四月吉日建立」　発起人(新井留作ほか５名の銘あり",
+        "coordinates_dd": "35.961597, 139.469703",
+        "Survey_date": "2026年3月20日",
+        "Condition_comment": "4本の注連竹に囲われ、正面の文字は鮮明。右上に地衣類の付着あり。明治43年8月5日、6日は豪雨連日、8日には荒川、入間川、越辺川、市野川が氾濫し、この時上伊草、下伊草、角泉地内堤 1 か所決潰。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "igusa_watasi_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.418714,
+          35.989703
+        ]
+      },
+      "properties": {
+        "name": "■島田天神社の九頭龍社",
+        "type": "dragon",
+        "year": "1908年合祀",
+        "size": "",
+        "address": "埼玉県坂戸市島田722",
+        "inscription": "",
+        "coordinates_dd": "35.989703, 139.418714",
+        "Survey_date": "2026年3月15日",
+        "Condition_comment": "当社の創祀は永禄年中。明治四一年に町西の九頭竜社を合祀。",
+        "Condition_level": "",
+        "photo_filename": "simada_tenjin_shrine.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.407127,
+          35.984992
+        ]
+      },
+      "properties": {
+        "name": "■島田の九頭龍神社碑",
+        "type": "dragon",
+        "year": "1911年",
+        "size": "高さ59cm 幅48cm 厚9cm",
+        "address": "埼玉県坂戸市島田",
+        "inscription": "（正面）九頭龍神社　（裏面）明治四十四年八月字島田　　（台座文字）昭和四拾九年七月吉日 台座奉納 中島登志雄ほか3名の名前",
+        "coordinates_dd": "35.984992, 139.407127",
+        "Survey_date": "2026年3月27日",
+        "Condition_comment": "台座高さ88cm。正面裏面ともに地衣類付着著しいが正面の文字は充分判別可能。裏面文字は強いライトをあててやっと判読出来た。台座文字は、ライトを当てると一部判読可能。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "simada_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.392153,
+          35.979153
+        ]
+      },
+      "properties": {
+        "name": "上吉田の九頭龍神社祠",
+        "type": "dragon",
+        "year": "1879年",
+        "size": "高さ73cm 幅43cm 厚33cm",
+        "address": "埼玉県坂戸市上吉田",
+        "inscription": "（右側面）「明治十二年卯五月　創建　当所　馬橋鶴次郎」（正面）九頭龍神社　（左側面）「社祠　松本正治」",
+        "coordinates_dd": "35.979153, 139.392153",
+        "Survey_date": "2026年3月27日",
+        "Condition_comment": "覆屋あり。正面文字は判別は可能だが鮮明ではない。笠部において垂直な割れあり、金属製のかすがいで止められている。下部に欠損あり、その破片が台座に散らばっている。日本酒が供えられている。意義側面「明治十二年卯五月」は視認できたが、左側面は判別不可。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "kamiyosida_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.367737,
+          35.95387
+        ]
+      },
+      "properties": {
+        "name": "北大塚の九頭龍神社碑",
+        "type": "dragon",
+        "year": "1876年",
+        "size": "高さ45cm 幅21cm 厚13cm",
+        "address": "埼玉県坂戸市北大塚",
+        "inscription": "（右側面）明治九年夏六月　（正面）九頭龍神社　（左側面）入間郡大塚村",
+        "coordinates_dd": "35.95387, 139.367737",
+        "Survey_date": "2026年3月27日",
+        "Condition_comment": "本坪鈴まで付いた覆屋あり。ところどころに欠損が確認でき、右側面の地衣類付着も。日本酒が供えられていた。堤内地に位置するがここに至るまでの階段等はなく「堤防斜面通行禁止」の看板がある。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "north_otuka_kuzuryudragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.40938,
+          35.988397
+        ]
+      },
+      "properties": {
+        "name": "■島田の水神宮碑",
+        "type": "water",
+        "year": "1858年",
+        "size": "高さ72cm 幅29cm 厚27cm",
+        "address": "埼玉県坂戸市島田",
+        "inscription": "（右側面）安政五戌午年春大吉祥日 （正面）水神宮　（左側面文字はなし）",
+        "coordinates_dd": "35.988397, 139.40938",
+        "Survey_date": "2026年3月27日",
+        "Condition_comment": "左右側面地衣類付着著しい。随所に小さい欠損も見られるが正面の文字は迫力がある。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "simada_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.41532,
+          36.101178
+        ]
+      },
+      "properties": {
+        "name": "火防稲荷近くの辨財天女碑",
+        "type": "benten",
+        "year": "-",
+        "size": "高さ45cm 幅20cm 厚15cm",
+        "address": "埼玉県熊谷市津田　火防稲荷ちかく",
+        "inscription": "(左)井川藤之孫半七",
+        "coordinates_dd": "36.101178, 139.41532",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "経緯年劣化による黒ずみ、正面、左側面に地衣類の付着",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "kabo_inari_shrine_benzaitennyo(front).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.415283,
+          36.101242
+        ]
+      },
+      "properties": {
+        "name": "火防稲荷近くの弁才天碑",
+        "type": "benten",
+        "year": "1989年",
+        "size": "高さ80cm 幅30cm 厚30cm",
+        "address": "埼玉県熊谷市津田　火防稲荷ちかく",
+        "inscription": "(表面)平成元年四月吉日\n施主斉藤繁豊\n(台座)辨財天",
+        "coordinates_dd": "36.101242, 139.415283",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "平成元年建立、状態美麗。しかしドロバチ類の巣が弁財天左右肩にある。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "kabo_inari_shrine_benzaiten(center).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.461287,
+          36.058925
+        ]
+      },
+      "properties": {
+        "name": "淵がまちの巳日供養塔",
+        "type": "benten",
+        "year": "1739年",
+        "size": "高さ100cm 幅25cm 厚 - cm",
+        "address": "埼玉県比企郡吉見町地頭方",
+        "inscription": "(表面)巳日待供養　元文四年巳未天三月吉日",
+        "coordinates_dd": "36.058925, 139.461287",
+        "Survey_date": "2025年3月2日",
+        "Condition_comment": "社のなかに祀られ薄い膜のような地衣類に全面覆われている。浮彫の部には破損等確認できない。吉見町史下巻には、牛の供養のため建立されたというよりは巳日待供養塔である、との記述あり。7/28祭礼",
+        "Condition_level": "★★★★★",
+        "photo_filename": "fuchigamachi_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.399527,
+          36.111983
+        ]
+      },
+      "properties": {
+        "name": "常永寺の弁才天祠",
+        "type": "benten",
+        "year": "-",
+        "size": "高さ85cm 幅40cm 厚45cm",
+        "address": "熊谷市小泉１７ 常永寺境内",
+        "inscription": "□□大里郡小泉村　願主17人の名前",
+        "coordinates_dd": "36.111983, 139.399527",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "池に中島がありそこに祀られている。笠部分「弁才天」と判読できるが、正面のも時は風化。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "jyoei_temple_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.417798,
+          36.12161
+        ]
+      },
+      "properties": {
+        "name": "久下神社裏の辨財天碑",
+        "type": "benten",
+        "year": "1818年",
+        "size": "高さ87cm 幅58cm 厚52cm",
+        "address": "埼玉県熊谷市久下８２９",
+        "inscription": "(右側面)文政元寅年八月吉□",
+        "coordinates_dd": "36.12161, 139.417798",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "正面「辨財天」、世話人の名前も判読可能。久下神社の裏、久下小学校横　他に九頭龍大神碑があるはずだが確認できなかった",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "kuge_shrine_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.472798,
+          36.045368
+        ]
+      },
+      "properties": {
+        "name": "丸貫の大辯財天女碑",
+        "type": "benten",
+        "year": "1774年",
+        "size": "高さ96cm 幅55cm 厚14cm",
+        "address": "埼玉県比企郡吉見町丸貫",
+        "inscription": "(裏面)安永三年甲午十二月",
+        "coordinates_dd": "36.045368, 139.472798",
+        "Survey_date": "2025年3月23日",
+        "Condition_comment": "台座高さ20cm 現在のハザードマップでは高リスク箇所にある。正面左下に向かって深い亀裂。点々とした地衣類左上部、「弁」の文字に白の、また台座に地衣類、黄色のものも見られる。左側面の白い地衣類広く分布。右に5基、馬頭觀音3体など。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "marunuki_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.552702,
+          35.887167
+        ]
+      },
+      "properties": {
+        "name": "飯田新田八幡神社の弁財天碑",
+        "type": "benten",
+        "year": "1713年",
+        "size": "高さ65cm 幅40cm 厚35cm",
+        "address": "さいたま市西区飯田新田367",
+        "inscription": "(表面)正徳三年癸巳天　奉造立辯財天　尊像請願成就攸(仮？) 拯(→手偏に烝という漢字？)月吉辰",
+        "coordinates_dd": "35.887167, 139.552702",
+        "Survey_date": "2025年3月31日",
+        "Condition_comment": "笠部に亀裂、修復の跡。正面の文字はかなり鮮明に読める。「拯月吉辰」　吉辰は吉日と同意　　ちかくに齋藤治水翁彰功碑がある。\n八幡神社はびん沼川の左岸縁、びん沼川は昭和初期、かなりの蛇行があった。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "iida_shinden_hachiman_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.145975,
+          36.130597
+        ]
+      },
+      "properties": {
+        "name": "矢那瀬の市杵島姫尊碑",
+        "type": "benten",
+        "year": "1874年",
+        "size": "高さ126cm 幅56cm 厚8cm",
+        "address": "埼玉県秩父郡長瀞町大字矢那瀬",
+        "inscription": "(表面)矢那瀬川面 市杵嶌姫命　明治七年二月吉日",
+        "coordinates_dd": "36.130597, 139.145975",
+        "Survey_date": "2025年4月27日",
+        "Condition_comment": "大量の地衣類にて真っ白。台座高さ80cm 矢那瀬の水神祠につづく道の入り口左に位置。右隣は如意輪観音碑。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "yanase_sekison_ichikishimahime.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.135845,
+          36.133698
+        ]
+      },
+      "properties": {
+        "name": "矢那瀬石碑群の市杵島姫命碑",
+        "type": "benten",
+        "year": "不明",
+        "size": "高さ122cm 幅56cm 厚4.5cm",
+        "address": "埼玉県秩父郡長瀞町大字矢那瀬",
+        "inscription": "(表面)遠世地区　市杵島姫命　講中　(裏面)明治十二年四月吉日",
+        "coordinates_dd": "36.133698, 139.135845",
+        "Survey_date": "2025年4月27日",
+        "Condition_comment": "細かい地衣類付着。矢那瀬の石碑群のうちの1基。薄い碑のため、前方に倒れそう。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "yanase_grouped_monument_ichikishimahime.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.135755,
+          36.133712
+        ]
+      },
+      "properties": {
+        "name": "矢那瀬石碑群の辯才天供養塔",
+        "type": "benten",
+        "year": "1746年",
+        "size": "高さ141cm 幅50cm 厚7cm",
+        "address": "埼玉県秩父郡長瀞町大字矢那瀬",
+        "inscription": "(表面)延享三歳矢那瀬村　辯才天供養塔　丙寅六月吉日講中二十一人",
+        "coordinates_dd": "36.133712, 139.135755",
+        "Survey_date": "2025年4月27日",
+        "Condition_comment": "緑色の細かい地衣類、下部にも。種子 सु(ソ) が刻まれている。延享三。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "yanase_grouped_monument_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.32309,
+          36.132693
+        ]
+      },
+      "properties": {
+        "name": "押切の波乗弁才天",
+        "type": "benten",
+        "year": "1727年",
+        "size": "高さ95cm 幅39cm 厚21cm",
+        "address": "熊谷市押切",
+        "inscription": "(正面右)享保十二丁未二月吉日(正面左)武刕(このあと欠字)押切村",
+        "coordinates_dd": "36.132693, 139.32309",
+        "Survey_date": "2025年5月4日",
+        "Condition_comment": "正面右側地衣類付着、正面左側剥落のため欠字。熊谷デジタルミュージアムの写真の方が地衣類付着がひどい。その後クリーニングされたか現在はみられない。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "naminori_benten_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.318383,
+          36.131122
+        ]
+      },
+      "properties": {
+        "name": "上新田の弁才天",
+        "type": "benten",
+        "year": "-",
+        "size": "高さ72cm 幅25cm 厚18cm",
+        "address": "熊谷市上新田",
+        "inscription": "(左側面)大里郡上新田　(右側面)判別不能",
+        "coordinates_dd": "36.131122, 139.318383",
+        "Survey_date": "2025年5月4日",
+        "Condition_comment": "剥落、左部に欠損あり。右側面に地衣類付着し銘文判別不能。上新田の石仏石塔群のなかの1基。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "kamishinden_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.345352,
+          36.12431
+        ]
+      },
+      "properties": {
+        "name": "成沢赤城神社の弁財天碑",
+        "type": "benten",
+        "year": "1745年",
+        "size": "高さ95cm 幅40cm 厚26cm",
+        "address": "熊谷市成沢346-2",
+        "inscription": "(左側面)武刕大里郡上吉見□　(右側面)延享二□二月吉日",
+        "coordinates_dd": "36.12431, 139.345352",
+        "Survey_date": "2025年5月4日",
+        "Condition_comment": "8本の腕(八臂弁財天)。厚く地衣類付着。笠部欠損。東部や両手の白い色は地衣類か？状態はよくない。台座には苔と黄色の地衣類。他に8体以上の石碑が並ぶ。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "narusawa_akagi_shrine_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.503045,
+          36.049275
+        ]
+      },
+      "properties": {
+        "name": "滝馬室氷川神社参道横の弁財天碑",
+        "type": "benten",
+        "year": "不明",
+        "size": "高さ30cm 幅17cm 厚13cm",
+        "address": "鴻巣市滝馬室1151",
+        "inscription": "銘なし",
+        "coordinates_dd": "36.049275, 139.503045",
+        "Survey_date": "2025年5月8日",
+        "Condition_comment": "正面文字「才天」箇所に緑の地衣類。部滝馬室氷川神社には神池(弁財池)がありそのほとりに祀られている。表面上部に蛇の線画あり。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "takimamuro_hikawa_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.507822,
+          36.037538
+        ]
+      },
+      "properties": {
+        "name": "妙楽寺の弁財菩薩祠",
+        "type": "benten",
+        "year": "1920年",
+        "size": "高さ - cm 幅 - cm 厚 - cm",
+        "address": "鴻巣市原馬室2965-2",
+        "inscription": "大正九年",
+        "coordinates_dd": "36.037538, 139.507822",
+        "Survey_date": "2025年5月8日",
+        "Condition_comment": "祠が祠の中に入れられている。外側の祠は笠部剥落激しいが中は判別できなかった。妙楽寺入り口左に3基祀られているうち、一番右。中央に1678年建立の庚申塔",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "myoraku_temple_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.512358,
+          36.02302
+        ]
+      },
+      "properties": {
+        "name": "北本市高尾8-119厳島社の弁天社",
+        "type": "benten",
+        "year": "-",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "埼玉県北本市高尾7丁目29",
+        "inscription": "",
+        "coordinates_dd": "36.02302, 139.512358",
+        "Survey_date": "2025年5月20日",
+        "Condition_comment": "弁天池は湧水。しめ縄が龍の形になっている。龍がこの池の杉（龍燈杉）より昇天したとの伝説がある。",
+        "Condition_level": "",
+        "photo_filename": "kitamototakaohikawa_shrine_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.717361,
+          35.776325
+        ]
+      },
+      "properties": {
+        "name": "弁天講の亀ヶ池弁財天",
+        "type": "benten",
+        "year": "",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "",
+        "inscription": "",
+        "coordinates_dd": "35.776325, 139.717361",
+        "Survey_date": "2025年8月9日",
+        "Condition_comment": "弁天講がある。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "kamegaike_pond_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69731,
+          35.769435
+        ]
+      },
+      "properties": {
+        "name": "長徳寺の辯才天",
+        "type": "benten",
+        "year": "1805年",
+        "size": "高さ74cm 幅cm 厚cm",
+        "address": "板橋区大原町４０−７",
+        "inscription": "奉納　辨才天 (右側面)文化二乙丑歳三月吉日當村 長徳寺住大道代　願主鈴木勝□　(左)世話人4人の氏名",
+        "coordinates_dd": "35.769435, 139.69731",
+        "Survey_date": "2025年8月12日",
+        "Condition_comment": "笠部に地衣類。全体的に黒ずんでいるが浮彫は状態がよい。銘文は「石仏 改定版 (文化財シリーズ ; 第79集) (いたばしの石造文化財 ; その4)」より。状態良い。台座と屋根に地衣類。笠付角柱に、像容は陽刻されている。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "chotokuji_temple_benten.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.75661368,
+          35.77393388
+        ]
+      },
+      "properties": {
+        "name": "堀之内氷川神社境内の水神宮祠",
+        "type": "water",
+        "year": "1835年",
+        "size": "高さ65cm 幅48cm 厚44cm",
+        "address": "東京都足立区堀之内１丁目７−４ 氷川神社境内",
+        "inscription": "（正面）水神宮　（右側面）天保六年未年七月吉日再建",
+        "coordinates_dd": "35.77393388, 139.75661368",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "全体的に欠損が見られ、特に傘部の剥落が著しい。正面の文字はわずかに判読可能。左隣庚申塔とともに覆屋設置。",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "adati_horiunouti_suijin_2.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77778546,
+          35.76162034
+        ]
+      },
+      "properties": {
+        "name": "扇御嶽神社の水神宮碑",
+        "type": "water",
+        "year": "1965年",
+        "size": "高さ81cm 幅43cm 厚17cm",
+        "address": "東京都足立区扇１丁目２８",
+        "inscription": "（正面）水神宮　水天宮　（裏面）昭和四十年",
+        "coordinates_dd": "35.76162034,139.77778546",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "鉄筋コンクリート造りの倉庫屋上に建てられた、1639年創建と伝えられる扇御嶽神社。屋上にあがると覆屋内に寛政五年建立庚申塔と共に水神宮碑が鎮座。美麗、状態はよい。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "adati_ougimitake_shrine_suijin_1.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.75847959,
+          35.76197968
+        ]
+      },
+      "properties": {
+        "name": "宮城氷川神社境内の水神宮祠1",
+        "type": "water",
+        "year": "2005年再建",
+        "size": "高さ75cm 幅38cm 厚50cm",
+        "address": "東京都足立区宮城１丁目３８−６宮城氷川神社境内",
+        "inscription": "（正面）水神宮　（裏面）大正十二年六月建立　平成十七年三月再建",
+        "coordinates_dd": "35.76197968,139.75847959",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "台座高さ69cm。多少黒ずんでいる箇所があるが美麗。宮城氷川神社はかつて荒川の河川敷に鎮座し、放水路工事のために現在の場所へ遷移。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "adati_miyagihikawa_suijin1.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.75853206,
+          35.76199446
+        ]
+      },
+      "properties": {
+        "name": "宮城氷川神社境内の水神宮祠2",
+        "type": "water",
+        "year": "1923年",
+        "size": "高さ90cm 幅74cm 厚33cm",
+        "address": "東京都足立区宮城１丁目３８−６宮城氷川神社境内",
+        "inscription": "（正面）水神宮　（裏面）大正十二年六月□□",
+        "coordinates_dd": "35.76199446,139.75853206",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "正面文字は比較的判別可能。笠部に欠損、黄色い地衣類付着。側面に銘文なし。同地に置かれた扁額にはわずかに「水神」と読める。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "adati_miyagihikawa_suijin2.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76480591,
+          35.75066469
+        ]
+      },
+      "properties": {
+        "name": "尾久八幡神社境内の厳島神社",
+        "type": "benten",
+        "year": "1923年",
+        "size": "高さ180cm 幅90cm 厚90cm",
+        "address": "東京都荒川区西尾久３丁目７−３尾久八幡神社境内",
+        "inscription": "（正面扁額部）厳島神社　（裏面）大正十二年三月　石工半澤新之助刻　（側面文字なし）",
+        "coordinates_dd": "35.75066469,139.76480591",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "となりに空堀となった弁天池。黒いすすのようなものが全体に見られるも覆屋内で状態はよい。右側面に松。近傍の小台橋付近には「尾久の渡し」。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "adati_oguhatiman_itukusima.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7571655,
+          35.75439353
+        ]
+      },
+      "properties": {
+        "name": "船方神社境内の水神宮1",
+        "type": "water",
+        "year": "1980年",
+        "size": "高さ160cm 幅63cm 厚48cm",
+        "address": "東京都北区堀船４丁目１３−２８船方神社",
+        "inscription": "（正面）水神宮　（右側面）昭和五十五年六月吉日改築　（左側面）奉納船方神社氏子会",
+        "coordinates_dd": "35.75439353,139.75716550",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "台座高さ112cm。覆屋はないが大変美麗。境内他の碑には水神宮由緒もあり、元和年間（1615-1624）に船方村人により奉斎（神仏や御神札を慎んでおまつりすること）されたと思われる、との銘あり。大正中期までは水神祭にて子どもたちによる初泳ぎが奉納されたが第二次大戦の空襲で焦土と化し、また再興へ。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "funakata_shrine_suijin1.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.75718289,
+          35.75435064
+        ]
+      },
+      "properties": {
+        "name": "船方神社境内の水神宮2",
+        "type": "water",
+        "year": "不明",
+        "size": "高さ104cm 幅40cm 厚28cm",
+        "address": "東京都北区堀船４丁目１３−２８船方神社",
+        "inscription": "（正面）水神宮　（裏面)(確認できない位置にある)",
+        "coordinates_dd": "35.75435064,139.75718289",
+        "Survey_date": "2026年4月7日",
+        "Condition_comment": "台座高さ35cm。裏面確認できずも正面の文字は鮮明。緑の地衣類付着で\"苔むした\"という表現が適切な状況、古びた情緒が感じられる。すぐ裏手には隅田川堤防が位置している。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "funakata_shrine_suijin2.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.85633,
+          35.673112
+        ]
+      },
+      "properties": {
+        "name": "北葛西の十八軒水神宮",
+        "type": "water",
+        "year": "不明",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "東京都江戸川区北葛西２丁目１２−２４",
+        "inscription": "当地区は古来農漁業を営む住民が多く、水神宮に対する信仰が篤く、当初十八軒川河口に水神宮を奉持していたところ、都市計画等により仮移転の余儀なきに至っておりました折、地元田中猛男氏の御厚意により昭和五十三年四月五日、この地宇喜田町四百六十九番地六号に三十四平方米の敷地を御寄贈賜り祠堂の建立ができました...（境内石碑より）",
+        "coordinates_dd": "35.673112, 139.85633",
+        "Survey_date": "2026年4月26日",
+        "Condition_comment": "木造の水神社。境内に記念の碑が配置されている。目立った損傷は見られない。中川まで400m。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "kitakasai_jyuuhatiken_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.859387,
+          35.680205
+        ]
+      },
+      "properties": {
+        "name": "北葛西の七軒町水神宮",
+        "type": "water",
+        "year": "不明",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "東京都江戸川区北葛西１丁目２０−１",
+        "inscription": "",
+        "coordinates_dd": "35.680205, 139.859387",
+        "Survey_date": "2026年4月26日",
+        "Condition_comment": "木造の水神社。新川と宇喜田川に挟まれた場所に鎮座している。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "kitasakai_sitikentyo_suijingu.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.85200637,
+          35.66589452
+        ]
+      },
+      "properties": {
+        "name": "小島八幡神社境内の水神社",
+        "type": "water",
+        "year": "不明",
+        "size": "",
+        "address": "東京都江戸川区西葛西２丁目１－１６",
+        "inscription": "",
+        "coordinates_dd": "35.66589452, 139.85200637",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "風化が激しく、正面に刻まれているはずの文字も判別不可能。どちらが水神祠か判明していない。",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "kojima_hatiman_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87451842,
+          35.65825431
+        ]
+      },
+      "properties": {
+        "name": "葛西八雲神社（水神社）",
+        "type": "water",
+        "year": "1688年",
+        "size": "",
+        "address": "東京都江戸川区東葛西8丁目5-12",
+        "inscription": "",
+        "coordinates_dd": "35.65825431, 139.87451842",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "水神社自体に劣化は視認できない。",
+        "Condition_level": "",
+        "photo_filename": "kasai_yakumo_shrine.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87908062,
+          35.6688303
+        ]
+      },
+      "properties": {
+        "name": "桑川神社境内の竜神社",
+        "type": "dragon",
+        "year": "不明",
+        "size": "",
+        "address": "東京都江戸川区東葛西１丁目２３−１９",
+        "inscription": "",
+        "coordinates_dd": "35.6688303, 13987908062",
+        "Survey_date": "2026年5月5日",
+        "Condition_comment": "竜神社に特筆すべき保存状態の劣化はない。\n",
+        "Condition_level": "",
+        "photo_filename": "kuwakawa_shrine_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.88474759,
+          35.67433325
+        ]
+      },
+      "properties": {
+        "name": "下今井稲荷神社境内の水神社",
+        "type": "water",
+        "year": "1889年再建（1796年建立）",
+        "size": "",
+        "address": "東京都江戸川区江戸川５丁目２８−２",
+        "inscription": "",
+        "coordinates_dd": "35.67433325, 13988474759",
+        "Survey_date": "2026年5月5日",
+        "Condition_comment": "社に特筆すべき劣化は見当たらない。",
+        "Condition_level": "",
+        "photo_filename": "simoimai_inari_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.88514678,
+          35.67696982
+        ]
+      },
+      "properties": {
+        "name": "下今井熊野神社境内の水神社",
+        "type": "water",
+        "year": "",
+        "size": "",
+        "address": "東京都江戸川区江戸川5-7-6",
+        "inscription": "",
+        "coordinates_dd": "35.67696982, 13988514678",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "特筆すべき劣化は確認できない",
+        "Condition_level": "",
+        "photo_filename": "simoimai_kumano_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87178478,
+          35.68545114
+        ]
+      },
+      "properties": {
+        "name": "船堀三嶋神社境内の水神宮",
+        "type": "water",
+        "year": "1967年",
+        "size": "高さ90cm  幅49cm  厚62cm（台座高さ含まず）",
+        "address": "東京都江戸川区松江6-10-3",
+        "inscription": "銘文なし",
+        "coordinates_dd": "35.68545114, 13987178478",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "笠部に黒ずみがある以外良好。花崗岩系統の石材が使われている。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "funabori_misima_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87658076,
+          35.6877757
+        ]
+      },
+      "properties": {
+        "name": "河岸の水神宮",
+        "type": "water",
+        "year": "",
+        "size": "高さ105cm 幅51cm 厚51cm",
+        "address": "東京都江戸川区一之江6丁目17-27",
+        "inscription": "正面銘文なし　台座に氏子中",
+        "coordinates_dd": "35.6877757, 13987658076",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "覆屋内に位置し、小さい欠損はあるが状態良好",
+        "Condition_level": "★★★★★",
+        "photo_filename": "kasi_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87646264,
+          35.6908077
+        ]
+      },
+      "properties": {
+        "name": "志茂の水神宮（右小祠）",
+        "type": "water",
+        "year": "1997年",
+        "size": "高さ120cm 幅66cm 厚80cm（台座96cm）",
+        "address": "東京都江戸川区松江7丁目29-16 一之江境川親水公園",
+        "inscription": "（裏面）平成九年六月大場弥治郎建之",
+        "coordinates_dd": "35.6908018, 13987642903",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "覆屋はないが、向かって右の小祠は状態がよく、裏面に平成九年の銘がある。笠部に黒ずみ（地衣類？）が確認できる。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "simo_suijin(right).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87644991,
+          35.69077473
+        ]
+      },
+      "properties": {
+        "name": "志茂の水神宮（左小祠）",
+        "type": "water",
+        "year": "",
+        "size": "高さ95cm 幅57cm 厚58cm（台座高さ49cm）",
+        "address": "東京都江戸川区松江7丁目29-16 一之江境川親水公園",
+        "inscription": "（左側面）下之庭　願主□□□<br>（右側面）「明」以外判読不可",
+        "coordinates_dd": "35.6908018, 13987642903",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "2基の「志茂の水神宮」における、向かって左に位置する水神祠は、状態が大変悪い。全体的に剥落が著しく、これ以上剥落が進まないよう金属製のバンドでしめられている。\n右側面に「明」の文字が判読できる。\n\n明がつく年号も限られているため、「抹香亭となりの一之江水神宮」と同様、天明年間に建立されたのではと推測されるが定かではない。<br>\n江戸川区史第3巻[^1]によると、<span style=\"color:red;\">天明の洪水は江戸川区における洪水のうちで、これまでにない最大のものであったと想像される</span>、という記述がある。",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "simo_suijin(left).jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.88147218,
+          35.6970489
+        ]
+      },
+      "properties": {
+        "name": "抹香亭となりの一之江水神宮",
+        "type": "water",
+        "year": "1788年",
+        "size": "高さ140cm  幅50cm  厚50cm（台座高さ含まず）",
+        "address": "東京都江戸川区一之江5丁目13番14号",
+        "inscription": "（台座左側面）天明八□戊申年六月吉日",
+        "coordinates_dd": "35.6970489, 13988147218",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "覆屋はない。欠損も認められ、うっすらと地衣類付着がみられるも総じて状態はよい。鳥居については、\"笠木（かさぎ）\"、\"貫（ぬき）\"とも地衣類付着が激しく、\"柱\"にも付着が認められる。\n台座左側面に「天明八□戌申年六月吉日」の銘あり。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "makkotei_itinoe_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86220185,
+          35.69941031
+        ]
+      },
+      "properties": {
+        "name": "小野原稲荷神社境内の水神社",
+        "type": "water",
+        "year": "",
+        "size": "",
+        "address": "東京都江戸川区西小松川町29",
+        "inscription": "",
+        "coordinates_dd": "35.6993888, 13986228337",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "小野原稲荷神社境内の水神社には2基の小祠が祀られているが、どちらも銘はなく詳細は不明。向かって右の小祠にはわずかに「矢沢」という文字が判読できる。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "onohara_inari_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86228613,
+          35.69938221
+        ]
+      },
+      "properties": {
+        "name": "小野原稲荷神社境内の水神宮",
+        "type": "water",
+        "year": "",
+        "size": "",
+        "address": "東京都江戸川区西小松川町29",
+        "inscription": "",
+        "coordinates_dd": "35.6993888, 13986228337",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "小野原稲荷神社境内の水神宮には2基の小祠が祀られているが、どちらも銘はなく詳細は不明。向かって右の小祠にはわずかに「矢沢」という文字が判読できる。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "onohara_inari_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86436539,
+          35.70484453
+        ]
+      },
+      "properties": {
+        "name": "五分一の水神さま（右小祠）",
+        "type": "water",
+        "year": "1912年",
+        "size": "高さ103cm 幅52cm 厚47cm（台座高さ20cm ）",
+        "address": "東京都江戸川区松島1丁目10",
+        "inscription": "扉に「水」「神」（右側面）贈　森澤壽助　（台座右側面）世話人7人の氏名　大正八年六月吉日",
+        "coordinates_dd": "35.70484453, 13986436539",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "台座に地衣類付着、笠部剥落あり。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "gobuiti_suijin（right）.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.864375649,
+          35.704869682
+        ]
+      },
+      "properties": {
+        "name": "五分一の水神さま（左小祠）",
+        "type": "water",
+        "year": "1744年",
+        "size": "高さ80cm 幅38cm 厚41cm（台座20cm）",
+        "address": "東京都江戸川区松島1丁目10",
+        "inscription": "（右側面）延享元年甲子六月十五日　（左側面）長谷川□",
+        "coordinates_dd": "35.704869682, 139864375649",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "2基とも、右側面はクリーニングが施されたかのようになっており、銘文が読みやすくなっている。\n扉破損と、笠部に地衣類付着がみられる。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "gobuiti_suijin（left）.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86699307,
+          35.71122419
+        ]
+      },
+      "properties": {
+        "name": "新小岩香取神社境内の水神社（道ヶ島の水神）",
+        "type": "water",
+        "year": "1960年",
+        "size": "",
+        "address": "東京都江戸川区中央4丁目5-23",
+        "inscription": "（正面）水神社 （裏面）昭和三十五年八月吉日",
+        "coordinates_dd": "35.71122419, 139.86699307",
+        "Survey_date": "2026年5月6日",
+        "Condition_comment": "覆屋はなく、上記写真ではわかりづらいが玉垣が大変狭く、その関係で寸法計測が困難である。裏面に「昭和三十五年八月吉日」との銘がある。祭神はミズハメノミコト。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "sinkoiwa_katori_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.81308486,
+          35.73278856
+        ]
+      },
+      "properties": {
+        "name": "隅田川神社　水神宮碑",
+        "type": "water",
+        "year": "1819年",
+        "size": "高さ118cm 幅45cm 厚14cm",
+        "address": "東京都墨田区堤通2丁目17-1",
+        "inscription": "（正面）水神宮　建久年間座跡　隅田邨総鎮守　是より二町余　　山東庵京山建並書 窪世祥鐫　（裏面）文政二年春三月",
+        "coordinates_dd": "35.73278856, 139.81308486",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "今回の調査したのは水神宮と刻まれた「水神道標碑」である。水神社としての隅田川神社調査は次回とする。\n水神道標碑については、地衣類が付着しているものの、正面に刻まれた文字は鮮明。裏面には比較的大きな剥落が見られる。2020年5月頃のブログによる写真と比較すると、剥落の進行が見られる。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "sumidagawa_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.83160049,
+          35.70105379
+        ]
+      },
+      "properties": {
+        "name": "亀戸水神社",
+        "type": "water",
+        "year": "1762年(水神社内に再建された石祠の銘)",
+        "size": "",
+        "address": "東京都江東区亀戸4丁目11-19",
+        "inscription": "正面碑文なし　（右）寶暦十二壬午歳六月<br>（左）願主 黒住氏",
+        "coordinates_dd": "35.70105379, 139.83160049",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "水神社内石祠について直接調査はできないが、水神社の劣化は確認できない",
+        "Condition_level": "",
+        "photo_filename": "kameido_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.29173807,
+          36.13255679
+        ]
+      },
+      "properties": {
+        "name": "本田の水神宮碑",
+        "type": "water",
+        "year": "1864年",
+        "size": "高さ73cm 幅 - cm 厚 - cm ",
+        "address": "埼玉県深谷市本田",
+        "inscription": "（正面）水神宮　（正面右添え字）文久四年　（正面左添え字）判読困難",
+        "coordinates_dd": "36.13255679,139.29173807",
+        "Survey_date": "2026年5月24日",
+        "Condition_comment": "本来は坂下の渡しへの路傍に建つ。本田中央集会所と吉野川の中間地点。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "honda_suijin.jpg"
+      }
+    }
+  ]
+}

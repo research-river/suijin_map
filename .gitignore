@@ -1,0 +1,6 @@
+# 国土地理院DEMデータ等の大容量生成物（容量が大きいためバージョン管理対象外）
+dem_pipeline/
+
+__pycache__/
+*.pyc
+.DS_Store

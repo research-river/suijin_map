@@ -1,0 +1,327 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.90938,
+          35.94158
+        ]
+      },
+      "properties": {
+        "name": "二瀬ダム",
+        "type": "other",
+        "year": "1961年完成",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "",
+        "inscription": "",
+        "coordinates_dd": "35°56'29.67\"N 138°54'33.76\"E",
+        "Survey_date": "2024年4月10日",
+        "Condition_comment": "堤高95m　2019年台風19号の時には総貯水量2690万m3に対して過去最大の1735万m3の水量を貯留。昭和36年完成",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "Futase_dam.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.43047,
+          36.11122
+        ]
+      },
+      "properties": {
+        "name": "決潰の跡碑",
+        "type": "other",
+        "year": "1958年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "熊谷市久下",
+        "inscription": "(詳細はリンク先_未設定！)",
+        "coordinates_dd": "36°6'40.404\"N  139°25'49.68\"E",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "正面は本飛渡内が裏面は地衣類付着により碑文判読できない部分多数。碑文はhttps://www.ktr.mlit.go.jp/ktr_content/content/000684986.pdf",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "arakawa_river_burst.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.40467,
+          36.12312
+        ]
+      },
+      "properties": {
+        "name": "久下の渡し冠水橋跡碑",
+        "type": "other",
+        "year": "2003年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "熊谷市久下",
+        "inscription": "現在の久下橋は平成15年6月15日に開通",
+        "coordinates_dd": "36°7'23.22\"N  139°24'16.8\"E",
+        "Survey_date": "2025年3月23日",
+        "Condition_comment": "おもいやりの碑とも言う。旧久下橋(冠水橋)の記念碑。昭和30年までは橋がなく、久下の渡しがあった。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "kuge_river_crossing_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.54424,
+          35.89075
+        ]
+      },
+      "properties": {
+        "name": "川越市の久下戸氷川神社寛保洪水位標",
+        "type": "other",
+        "year": "",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "川越市久下戸2785",
+        "inscription": "",
+        "coordinates_dd": "35°53'26.694\"N  139°32'39.276\"E",
+        "Survey_date": "2025年3月31日",
+        "Condition_comment": "久下戸村名主奥貫五平次(号・友山)「翁大水記」にて久下戸氷川社石灯籠を典拠に水位を記録した箇所あり。寛保の洪水記録灯籠が境内にある。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "kawagoe_kanpo_flood_water_level_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.61277,
+          35.83616
+        ]
+      },
+      "properties": {
+        "name": "田島ヶ原サクラソウ自生地",
+        "type": "other",
+        "year": "",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "さいたま市桜区田島3542",
+        "inscription": "大正九年、国の天然記念物として指定",
+        "coordinates_dd": "35°50'10.158\"N  139°36'45.984\"E",
+        "Survey_date": "2025年4月4日",
+        "Condition_comment": "田島ケ原サクラソウ自生地は、サクラソウ自生地として唯一の国指定特別天然記念物。洪水時は貯水池の一部となる。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "tajimagahara_Primrose.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.12162,
+          36.13218
+        ]
+      },
+      "properties": {
+        "name": "寛保洪水位磨崖標",
+        "type": "other",
+        "year": "1742年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "埼玉県秩父郡長瀞町野上下郷",
+        "inscription": "「水」「寛保2年8月1日刻大川水迄上，四方田弥兵衛，滝上市右衛」と刻まれているはずだが…",
+        "coordinates_dd": "36°7'55.836\"N  139°7'17.844\"E",
+        "Survey_date": "2025年4月12日",
+        "Condition_comment": "大量の地衣類、苔。刻まれた「水」という文字は年々風化の度合いが増している。早急の対策必要。",
+        "Condition_level": "★☆☆☆☆",
+        "photo_filename": "nagatoro_kanpo_flood_water_level_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.34268,
+          36.14536
+        ]
+      },
+      "properties": {
+        "name": "大麻生陸閘",
+        "type": "other",
+        "year": "1954年",
+        "size": "高さ260cm 幅400cm 厚290cm",
+        "address": "熊谷市大麻生",
+        "inscription": "-",
+        "coordinates_dd": "36°8'43.308\"N 139°20'33.642\"E",
+        "Survey_date": "2025年5月4日",
+        "Condition_comment": "大麻生陸閘は、現在荒川に唯一残っている陸閘。洪水時に洪水から住宅側を守るため、角落としと呼ばれる角材を積み上げて、堤防とする。",
+        "Condition_level": "",
+        "photo_filename": "oaso_land_gate.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.55847,
+          35.88703
+        ]
+      },
+      "properties": {
+        "name": "齋藤治水翁彰功碑",
+        "type": "other",
+        "year": "1951年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "さいたま市西区飯田新田",
+        "inscription": "",
+        "coordinates_dd": "35° 53' 13.308\"N  139° 33' 30.498\"E",
+        "Survey_date": "2025年5月20日",
+        "Condition_comment": "蛇行していた荒川はよく氾濫したが、それを直線化する工事に斉藤祐美が尽力し、彼は治水翁といわれた。現在のびん沼川がかつての蛇行していた荒川。旧治水橋は解体されたが当時のトラスの一部がここに保存されている。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "saito_jisuio_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.50232,
+          36.05141
+        ]
+      },
+      "properties": {
+        "name": "勘兵衛稲荷神社の湧水",
+        "type": "other",
+        "year": "-",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "鴻巣市滝馬室1131-21 堪兵衛稲荷神社",
+        "inscription": "",
+        "coordinates_dd": "36°3'5.088\"N  139°30'8.334\"E",
+        "Survey_date": "2025年5月20日",
+        "Condition_comment": "水量は滝馬室の氷川神社神池と同等。",
+        "Condition_level": "",
+        "photo_filename": "kanbee_inari_spring water.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.52378,
+          35.98154
+        ]
+      },
+      "properties": {
+        "name": "泉福寺山門、雨乞いの龍",
+        "type": "other",
+        "year": "1662年",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "桶川市川田谷2012",
+        "inscription": "[寛文2年山門再建]",
+        "coordinates_dd": "35°58'53.532\"N  139°31'25.59\"E",
+        "Survey_date": "2025年5月20日",
+        "Condition_comment": "泉福寺開山829年も度重なる戦火で焼失。宝暦二年山門、鐘楼を除きほとんど完成。山門の龍は針金で縛られている。",
+        "Condition_level": "★★★★★",
+        "photo_filename": "senpuku_temple_rain_making_dragon.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73216,
+          35.78328
+        ]
+      },
+      "properties": {
+        "name": "志茂熊野神社の水神祭",
+        "type": "other",
+        "year": "",
+        "size": "高さcm 幅cm 厚cm",
+        "address": "",
+        "inscription": "",
+        "coordinates_dd": "35° 46' 59.82\"N  139° 43' 55.782\"E",
+        "Survey_date": "2025年6月25日",
+        "Condition_comment": "水神祭のようす",
+        "Condition_level": "",
+        "photo_filename": "shimokumano_shrine_suijin_fes.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.39977,
+          36.11191
+        ]
+      },
+      "properties": {
+        "name": "常永寺の水難者供養塔",
+        "type": "other",
+        "year": "1939年",
+        "size": "高さ159cm 幅48cm 厚21cm",
+        "address": "熊谷市小泉１７ 常永寺境内",
+        "inscription": "昭和14年九月一日建立　水難者37名の氏名",
+        "coordinates_dd": "36°6'42.888\"N  139°23'59.178\"E",
+        "Survey_date": "2025年3月14日",
+        "Condition_comment": "表面は中程度の地衣類付着。大里村の石佛p.108　昭和十三年九月一日荒川堤防市田地先決壊水難犠牲者三十七精霊法並俗名",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "jyoei_temple_suinankuyou.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.42696,
+          36.00383
+        ]
+      },
+      "properties": {
+        "name": "長楽氷川神社境内の修堤記念碑(都幾川)",
+        "type": "other",
+        "year": "1914年",
+        "size": "高さ250cm 幅102cm 厚10cm",
+        "address": "埼玉県比企郡川島町長楽255　長楽氷川神社境内",
+        "inscription": "大正二年八月二十七日洪水氾濫都幾川堤防越水...(略)大正三年建立",
+        "coordinates_dd": "36°0'13.776\"N  139°25'37.056\"E",
+        "Survey_date": "2025年8月14日",
+        "Condition_comment": "黄色と白の地衣類付着。大正2年8月27日午前2時頃、明治43年より高い葛袋堤防を濁流は総越しした。葛袋字川北部落では床上浸水1mに及び、その跡が壁や障子に残っている。この時川島町長楽の土手が4箇所にわたり決壊した(東松山市史編さん調査報告 第17集 )。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "nagaraku_hikawa_shrine_monument.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.50011,
+          36.05496
+        ]
+      },
+      "properties": {
+        "name": "鴻巣市大間の災害復旧記念碑",
+        "type": "other",
+        "year": "",
+        "size": "高さ183cm 幅100cm 厚20cm",
+        "address": "鴻巣市滝馬室",
+        "inscription": "",
+        "coordinates_dd": "36°3'17.862\"N  139°30'0.402\"E",
+        "Survey_date": "2025年5月20日",
+        "Condition_comment": "台座高さ20cm。所々に地衣類がある。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "kounosu_oma_saigai_recovery_memorial_monument.jpg"
+      }
+    }
+  ]
+}

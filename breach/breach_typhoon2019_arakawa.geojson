@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "hagibis_2019_breach_WGS84",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "num": "①", "text": "都幾川左岸 堤防欠損", "type": "堤防欠損", "river": "都幾川", "bank": "左岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.373205, 36.023104 ] } },
+{ "type": "Feature", "properties": { "num": "②", "text": "都幾川左岸 堤防欠損", "type": "堤防欠損", "river": "都幾川", "bank": "左岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.378592, 36.021721 ] } },
+{ "type": "Feature", "properties": { "num": "③", "text": "都幾川右岸 堤防欠損", "type": "堤防欠損", "river": "都幾川", "bank": "右岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.378489, 36.019106 ] } },
+{ "type": "Feature", "properties": { "num": "④", "text": "都幾川右岸 決壊", "type": "決壊", "river": "都幾川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.422118, 35.998241 ] } },
+{ "type": "Feature", "properties": { "num": "⑤", "text": "越辺川左岸 決壊", "type": "決壊", "river": "越辺川", "bank": "左岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.420431, 35.994486 ] } },
+{ "type": "Feature", "properties": { "num": "⑥", "text": "越辺川右岸 決壊", "type": "決壊", "river": "越辺川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.466404, 35.960089 ] } }
+]
+}

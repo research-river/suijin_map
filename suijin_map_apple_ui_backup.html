@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>水神碑 map</title>
+    <meta name="description" content="荒川流域の水神碑マップ">
+    <script src="https://unpkg.com/pmtiles@3.2.1/dist/pmtiles.js"></script>
+    <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+    <link href="style_apple_ui_backup.css" rel="stylesheet">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+
+    <!-- 検索フィールド（左上） -->
+    <div id="search-field">
+        <div id="search-input-row">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="6.5" cy="6.5" r="5" stroke="#6e6e73" stroke-width="1.5"/>
+                <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="#6e6e73" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input type="text" id="search-input" placeholder="石碑名・所在地で検索" autocomplete="off" spellcheck="false">
+            <button id="search-clear" aria-label="クリア" hidden>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <line x1="1" y1="1" x2="11" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <line x1="11" y1="1" x2="1" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <div id="search-results" hidden></div>
+    </div>
+
+    <!-- 設定ボタン（右上） -->
+    <button id="settings-btn" aria-label="マップ設定" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M10 2v1.5M10 16.5V18M2 10h1.5M16.5 10H18M4.1 4.1l1.1 1.1M14.8 14.8l1.1 1.1M4.1 15.9l1.1-1.1M14.8 5.2l1.1-1.1"
+                  stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- 設定カード（右上・初期非表示） -->
+    <div id="settings-card" aria-hidden="true">
+        <div class="settings-header">
+            <span class="settings-title">マップ設定</span>
+            <button id="settings-close" aria-label="閉じる">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <line x1="1" y1="1" x2="11" y2="11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    <line x1="11" y1="1" x2="1" y2="11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- シナリオ -->
+        <div class="card-section">
+            <div class="section-label">シナリオ</div>
+            <div class="scenario-pills">
+                <button class="scenario-pill" data-preset="typhoon2019">台風19号調査</button>
+                <button class="scenario-pill" data-preset="historical">歴史的河道比較</button>
+                <button class="scenario-pill" data-preset="survey">現地調査</button>
+                <button class="scenario-pill" data-preset="reset">リセット</button>
+            </div>
+        </div>
+
+        <!-- ベースマップ -->
+        <div class="card-section">
+            <div class="section-label">ベースマップ</div>
+            <div class="section-sublabel">現代地図</div>
+            <div class="bm-grid">
+                <label class="bm-tile" style="background:linear-gradient(160deg,#f0e8d8,#e2dbc8);">
+                    <input type="radio" name="base-layer" value="vector" checked>
+                    <img src="https://cyberjapandata.gsi.go.jp/xyz/std/11/1816/802.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">標準地図</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#ede8dc,#ddd8cc);">
+                    <input type="radio" name="base-layer" value="pale">
+                    <img src="https://cyberjapandata.gsi.go.jp/xyz/pale/11/1816/802.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">淡色地図</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#c8c0b8,#a8a09a);">
+                    <input type="radio" name="base-layer" value="hillshade">
+                    <img src="https://cyberjapandata.gsi.go.jp/xyz/hillshademap/11/1816/802.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">陰影起伏図</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#1a2a1a,#3a5a2a);">
+                    <input type="radio" name="base-layer" value="aerial">
+                    <img src="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/11/1816/802.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">航空写真</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#b8d4e8,#9ab8d0);">
+                    <input type="radio" name="base-layer" value="hydro">
+                    <!-- pale基図 + lcmfc2オーバーレイ合成サムネイル -->
+                    <img src="https://cyberjapandata.gsi.go.jp/xyz/pale/11/1816/802.png" alt="" onerror="this.style.display='none'">
+                    <img src="https://cyberjapandata.gsi.go.jp/xyz/lcmfc2/11/1816/802.png" alt="" class="bm-overlay-img" onerror="this.style.display='none'">
+                    <span class="bm-label">治水地形図</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#e0d8c8,#ccc0a8);">
+                    <input type="radio" name="base-layer" value="rekichizu">
+                    <!-- ベクタースタイルのためラスタタイル不可 -->
+                    <span class="bm-label">れきちず</span>
+                    <span class="bm-check">✓</span>
+                </label>
+            </div>
+            <div id="hydro-ctrl" class="slider-row">
+                <span class="slider-label">透明度</span>
+                <input type="range" id="hydro-opacity" min="0" max="1" step="0.05" value="0.7">
+                <span id="hydro-opacity-val">70%</span>
+            </div>
+            <div id="jinsoku-ctrl" class="slider-row">
+                <span class="slider-label">透明度</span>
+                <input type="range" id="jinsoku-opacity" min="0" max="1" step="0.05" value="0.7">
+                <span id="jinsoku-opacity-val">70%</span>
+            </div>
+
+            <div class="section-sublabel">古地図</div>
+            <div class="bm-grid">
+                <label class="bm-tile" style="background:linear-gradient(160deg,#e8d8b8,#d0c098);">
+                    <input type="radio" name="base-layer" value="jinsoku">
+                    <img src="https://boiledorange73.sakura.ne.jp/ws/tile/Kanto_Rapid-900913/11/1816/802.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">迅速測図</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#e0cca8,#c8b488);">
+                    <input type="radio" name="base-layer" value="kjm_kanto">
+                    <!-- TMS方式: y = 2^11 - 1 - 802 = 1245 -->
+                    <img src="https://ktgis.net/kjmapw/kjtilemap/kanto/00/11/1816/1245.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">関東（1894〜）</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#d8c898,#c0b080);">
+                    <input type="radio" name="base-layer" value="kjm_tokyo50_2man">
+                    <!-- TMS方式: 千代田区周辺 z=11, x=1819, y(tms)=1241 -->
+                    <img src="https://ktgis.net/kjmapw/kjtilemap/tokyo50/2man/11/1819/1241.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">首都圏（1896〜）</span>
+                    <span class="bm-check">✓</span>
+                </label>
+                <label class="bm-tile" style="background:linear-gradient(160deg,#d0c090,#b8a878);">
+                    <input type="radio" name="base-layer" value="kjm_tokyo50">
+                    <!-- TMS方式: 千代田区周辺 z=11, x=1819, y(tms)=1241 -->
+                    <img src="https://ktgis.net/kjmapw/kjtilemap/tokyo50/00/11/1819/1241.png" alt="" onerror="this.style.display='none'">
+                    <span class="bm-label">首都圏（1917〜）</span>
+                    <span class="bm-check">✓</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 石碑種別 -->
+        <div class="card-section">
+            <div class="section-label">石碑種別</div>
+            <div class="inset-group">
+                <label class="toggle-row">
+                    <span class="row-dot" style="background:#1565c0;"></span>
+                    <span class="row-label">水神碑</span>
+                    <div class="switch"><input type="checkbox" data-type="water" checked><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-dot" style="background:#2e7d32;"></span>
+                    <span class="row-label">九頭龍碑</span>
+                    <div class="switch"><input type="checkbox" data-type="dragon" checked><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-dot" style="background:#c0392b;"></span>
+                    <span class="row-label">弁財天碑</span>
+                    <div class="switch"><input type="checkbox" data-type="benten" checked><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-dot" style="background:#757575;"></span>
+                    <span class="row-label">その他</span>
+                    <div class="switch"><input type="checkbox" data-type="other"><div class="knob"></div></div>
+                </label>
+            </div>
+            <div class="section-sublabel">九頭龍碑バッファ</div>
+            <div class="inset-group">
+                <label class="toggle-row">
+                    <span class="row-label">1000m 圏</span>
+                    <span class="buf-dot" style="background:#e53935;"></span>
+                    <div class="switch"><input type="checkbox" data-buffer="1000"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">2000m 圏</span>
+                    <span class="buf-dot" style="background:#fb8c00;"></span>
+                    <div class="switch"><input type="checkbox" data-buffer="2000"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">3000m 圏</span>
+                    <span class="buf-dot" style="background:#1565c0;"></span>
+                    <div class="switch"><input type="checkbox" data-buffer="3000"><div class="knob"></div></div>
+                </label>
+            </div>
+        </div>
+
+        <!-- 重ね合わせ -->
+        <div class="card-section">
+            <div class="section-label">重ね合わせ</div>
+            <div class="inset-group">
+                <div class="group-label">台風19号（2019年）</div>
+                <label class="toggle-row">
+                    <span class="row-label">浸水域</span>
+                    <div class="switch"><input type="checkbox" data-overlay="typhoon2019"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">破堤箇所</span>
+                    <div class="switch"><input type="checkbox" data-breach="typhoon2019_breach"><div class="knob"></div></div>
+                </label>
+                <div class="group-label">明治43年大洪水</div>
+                <label class="toggle-row">
+                    <span class="row-label">破堤箇所</span>
+                    <div class="switch"><input type="checkbox" data-breach="meiji43_breach"><div class="knob"></div></div>
+                </label>
+                <div class="group-label weather-group-label">
+                    現在の気象 <span id="kikiculo-time">--:-- JST</span>
+                </div>
+                <label class="toggle-row">
+                    <span class="row-label">洪水危険度</span>
+                    <div class="switch"><input type="checkbox" data-overlay="kikiculo_land"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">指定河川洪水</span>
+                    <div class="switch"><input type="checkbox" data-overlay="kikiculo_flood"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">降水ナウキャスト</span>
+                    <div class="switch"><input type="checkbox" id="nowcast-toggle"><div class="knob"></div></div>
+                </label>
+                <div id="kikiculo-legend-ctrl" hidden>
+                    <div id="kikiculo-legend-header">
+                        <span>危険度凡例</span>
+                        <button id="kikiculo-legend-toggle" aria-label="凡例を開閉">▼</button>
+                    </div>
+                    <div id="kikiculo-legend-body">
+                        <div class="dk-bar">
+                            <div class="dk-cell dk-black"><span class="dk-name">黒</span><small>非常に危険</small></div>
+                            <div class="dk-cell dk-red"><span class="dk-name">赤</span><small>危険</small></div>
+                            <div class="dk-cell dk-orange"><span class="dk-name">橙</span><small>警戒</small></div>
+                            <div class="dk-cell dk-yellow"><span class="dk-name">黄</span><small>注意</small></div>
+                            <div class="dk-cell dk-white"><span class="dk-name">白</span><small>注意以下</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-label">地形</div>
+                <label class="toggle-row">
+                    <span class="row-label">色別標高図</span>
+                    <div class="switch"><input type="checkbox" id="elevation-toggle"><div class="knob"></div></div>
+                </label>
+                <div id="elevation-ctrl" class="sub-row">
+                    <button id="elevation-settings-btn">色設定…</button>
+                </div>
+                <label class="toggle-row">
+                    <span class="row-label">高精細陰影起伏図</span>
+                    <div class="switch"><input type="checkbox" id="local-hillshade-toggle"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">3D地形 <span class="dev-badge">開発中</span></span>
+                    <div class="switch"><input type="checkbox" id="terrain3d-toggle"><div class="knob"></div></div>
+                </label>
+                <div id="terrain3d-ctrl" class="slider-row">
+                    <span class="slider-label">誇張</span>
+                    <input type="range" id="terrain-exaggeration" min="0.5" max="5" step="0.1" value="1.5">
+                    <span id="terrain-exag-val">×1.5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 河道 -->
+        <div class="card-section">
+            <div class="section-label">河道</div>
+            <div class="inset-group">
+                <label class="toggle-row">
+                    <span class="row-label">荒川（現在）</span>
+                    <div class="switch"><input type="checkbox" data-river="current"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">支流</span>
+                    <div class="switch"><input type="checkbox" data-river="tributaries"><div class="knob"></div></div>
+                </label>
+                <div class="group-label">旧河道</div>
+                <label class="toggle-row">
+                    <span class="row-label">西遷前</span>
+                    <div class="switch"><input type="checkbox" data-river="pre"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">西遷後</span>
+                    <div class="switch"><input type="checkbox" data-river="post"><div class="knob"></div></div>
+                </label>
+                <div class="group-label">他河川</div>
+                <label class="toggle-row">
+                    <span class="row-label">利根川</span>
+                    <div class="switch"><input type="checkbox" data-river="tonegawa"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">多摩川</span>
+                    <div class="switch"><input type="checkbox" data-river="tamagawa"><div class="knob"></div></div>
+                </label>
+                <label class="toggle-row">
+                    <span class="row-label">相模川</span>
+                    <div class="switch"><input type="checkbox" data-river="sagamigawa"><div class="knob"></div></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- プレイスカード（石碑クリックで表示・初期非表示） -->
+    <div id="place-card" aria-hidden="true">
+        <div id="place-photo-wrap">
+            <img id="place-photo" src="" alt="">
+            <button id="place-card-close" aria-label="閉じる">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <div id="place-content">
+            <div id="place-name"></div>
+            <div id="place-rows"></div>
+        </div>
+    </div>
+
+    <!-- 治水地形図 凡例 -->
+    <div id="zoom-display">Zoom <span id="zoom-value">10.0</span></div>
+
+    <div id="hydro-legend">
+        <div id="hydro-legend-header">
+            <span>治水地形図 凡例</span>
+            <button id="hydro-legend-toggle" aria-label="凡例を開閉">▼</button>
+        </div>
+        <div id="hydro-legend-body">
+            <img src="https://cyberjapandata.gsi.go.jp/legend/lcmfc2_legend.jpg" alt="治水地形分類図 凡例">
+        </div>
+    </div>
+
+    <!-- 色別標高図 設定パネル -->
+    <div id="elevation-popup" aria-hidden="true">
+        <div id="elevation-popup-header">
+            自分で作る色別標高図
+            <button id="elevation-popup-close" aria-label="閉じる">×</button>
+        </div>
+        <div id="elevation-popup-body">
+            <table id="elev-bands-table">
+                <thead>
+                    <tr>
+                        <th colspan="3">標高帯</th>
+                        <th>色</th><th></th><th></th>
+                    </tr>
+                </thead>
+                <tbody id="elev-bands-body"></tbody>
+            </table>
+            <div id="elev-unit-note">（単位: m）</div>
+            <div id="elev-opacity-row">
+                <span>透明度</span>
+                <input type="range" id="elev-opacity" min="0.1" max="1" step="0.05" value="0.85">
+                <span id="elev-opacity-val">85%</span>
+            </div>
+            <div id="elev-opts">
+                <label><input type="checkbox" id="elev-chk-hillshade" checked> 陰影</label>
+            </div>
+            <button id="elev-apply-btn">地図に反映</button>
+        </div>
+    </div>
+
+    <!-- main.jsのDOM参照を安全に保つスタブ -->
+    <div id="sidebar" hidden></div>
+    <div id="flyout" hidden></div>
+
+    <!-- ナウキャスト 再生コントローラ（下部フローティング） -->
+    <div id="nowcast-ctrl" hidden>
+        <div id="nc-header">
+            <span id="nc-time-label">--</span>
+            <span id="nc-badge" class="nc-badge nc-obs">観測</span>
+            <span id="nc-loading" hidden>読込中…</span>
+        </div>
+        <div id="nc-slider-row">
+            <input type="range" id="nc-slider" min="0" max="23" value="0" step="1">
+            <div id="nc-tick-row">
+                <span>−60分</span>
+                <span>現在</span>
+                <span>+60分</span>
+            </div>
+        </div>
+        <div id="nc-btn-row">
+            <button id="nc-btn-first" title="最初へ">⏮</button>
+            <button id="nc-btn-prev" title="前へ">◀</button>
+            <button id="nc-btn-play">▶ 再生</button>
+            <button id="nc-btn-next" title="次へ">▶</button>
+            <button id="nc-btn-last" title="最後へ">⏭</button>
+            <div class="nc-sep"></div>
+            <select id="nc-speed" title="再生速度">
+                <option value="800">遅い</option>
+                <option value="500" selected>標準</option>
+                <option value="300">速い</option>
+                <option value="150">最速</option>
+            </select>
+            <select id="nc-element" title="観測種別">
+                <option value="hrpns">降水</option>
+                <option value="thns">雷</option>
+                <option value="trns">竜巻</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <div id="attribution"></div>
+
+    <script src="main_apple_ui_backup.js"></script>
+    <script>
+        // 設定カード開閉
+        const _settingsBtn  = document.getElementById("settings-btn");
+        const _settingsCard = document.getElementById("settings-card");
+        const _settingsClose = document.getElementById("settings-close");
+
+        function openSettings() {
+            _settingsCard.classList.add("open");
+            _settingsBtn.classList.add("active");
+            _settingsBtn.setAttribute("aria-expanded", "true");
+            _settingsCard.setAttribute("aria-hidden", "false");
+        }
+
+        function closeSettings() {
+            document.activeElement?.blur();
+            _settingsCard.classList.remove("open");
+            _settingsBtn.classList.remove("active");
+            _settingsBtn.setAttribute("aria-expanded", "false");
+            _settingsCard.setAttribute("aria-hidden", "true");
+        }
+
+        _settingsBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            _settingsCard.classList.contains("open") ? closeSettings() : openSettings();
+        });
+
+        _settingsClose.addEventListener("click", closeSettings);
+
+        _settingsCard.addEventListener("click", (e) => e.stopPropagation());
+
+        document.addEventListener("click", (e) => {
+            if (!_settingsCard.contains(e.target) && e.target !== _settingsBtn) {
+                closeSettings();
+            }
+        });
+    </script>
+</body>
+</html>
