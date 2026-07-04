@@ -4,3 +4,15 @@ dem_pipeline/
 __pycache__/
 *.pyc
 .DS_Store
+.venv/
+
+# 公開リポジトリには含めない開発用ファイル
+.claude/
+belief_editor.html
+CLAUDE.md
+csv_to_geojson.py
+nowcast/
+qgis/
+register_monument.py
+route/
+GITHUB_SETUP.html
