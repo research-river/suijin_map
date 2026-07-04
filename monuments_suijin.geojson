@@ -2229,7 +2229,7 @@
         "Survey_date": "2025年5月4日",
         "Condition_comment": "正面右側地衣類付着、正面左側剥落のため欠字。熊谷デジタルミュージアムの写真の方が地衣類付着がひどい。その後クリーニングされたか現在はみられない。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "naminori_benten_monument.jpg"
+        "photo_filename": "naminori_benten.jpg"
       }
     },
     {
@@ -2273,7 +2273,7 @@
         "inscription": "(左側面)武刕大里郡上吉見□　(右側面)延享二□二月吉日",
         "coordinates_dd": "36.12431, 139.345352",
         "Survey_date": "2025年5月4日",
-        "Condition_comment": "8本の腕(八臂弁財天)。厚く地衣類付着。笠部欠損。東部や両手の白い色は地衣類か？状態はよくない。台座には苔と黄色の地衣類。他に8体以上の石碑が並ぶ。",
+        "Condition_comment": "8本の腕(八臂弁財天)。波頭に立っているようにも見えるが足下にも地衣類付着著しい。笠部欠損あり。台座に苔と黄色の地衣類付着。他に8体以上の石碑が並ぶ。",
         "Condition_level": "★★☆☆☆",
         "photo_filename": "narusawa_akagi_shrine_benten.jpg"
       }
@@ -3012,6 +3012,190 @@
         "Condition_comment": "本来は坂下の渡しへの路傍に建つ。本田中央集会所と吉野川の中間地点。",
         "Condition_level": "★☆☆☆☆",
         "photo_filename": "honda_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.82549324,
+          35.70401759
+        ]
+      },
+      "properties": {
+        "name": "亀戸香取神社境内の水神社",
+        "type": "water",
+        "year": "1786年",
+        "size": "",
+        "address": "東京都江東区亀戸3丁目57-22",
+        "inscription": "",
+        "coordinates_dd": "35.70401759, 139.82549324",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "",
+        "Condition_level": "",
+        "photo_filename": "kameido_katori_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86326329,
+          35.69076087
+        ]
+      },
+      "properties": {
+        "name": "東小松川渡し場の水神宮",
+        "type": "water",
+        "year": "",
+        "size": "",
+        "address": "東京都江戸川区東小松川4丁目28-15 江戸川区立東小松川南会館 隣",
+        "inscription": "",
+        "coordinates_dd": "35.69076087, 139.86326329",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "木造の水神祠に劣化は確認できない。",
+        "Condition_level": "",
+        "photo_filename": "higasikomatugawa_watasiba_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86310214,
+          35.69363483
+        ]
+      },
+      "properties": {
+        "name": "東小松川白鬚神社境内の水神宮",
+        "type": "water",
+        "year": "",
+        "size": "高さ94cm  幅49cm  厚45cm",
+        "address": "東京都江戸川区東小松川3丁目7-20",
+        "inscription": "（正面）水神□　（右側面）「月」のみ判読可能　（左側面）「願主」のみ判読可能",
+        "coordinates_dd": "35.69363483, 139.86310214",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "正面に刻まれた文字は水神のみ判読ができたが、左右側面文字はそれぞれ1文字しか判読できず、総じて劣化が激しい。石材は軽石のような火成岩系統と思われた。剥落顕著。",
+        "Condition_level": "☆☆☆☆☆",
+        "photo_filename": "higasikomatugawa_sirahige_shrine_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86358871,
+          35.69501874
+        ]
+      },
+      "properties": {
+        "name": "大江川水神宮",
+        "type": "water",
+        "year": "",
+        "size": "高さ60cm 幅45cm 厚45cm（台座高さ140cm）",
+        "address": "東京都江戸川区東小松川3丁目9-9",
+        "inscription": "（正面）「大江川水神宮」と墨書きされた板がはめ込まれている",
+        "coordinates_dd": "35.69501874, 139.86358871",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "鍵の付いたフェンスに囲まれ、近寄ることができない。\nフェンス越しにも剥落が見え、台座にもそれが確認できた。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "oegawa_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.864837644,
+          35.697534822
+        ]
+      },
+      "properties": {
+        "name": "中の庭水神宮",
+        "type": "water",
+        "year": "1895年",
+        "size": "高さ131cm  幅64cm  厚15cm",
+        "address": "東京都江戸川区東小松川2丁目6-8",
+        "inscription": "(正面)水神宮　(正面左添え字)遊雲書",
+        "coordinates_dd": "35.697534822, 139.864837644",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "黒ずんで、虫が這った跡のような模様になっているが正面の文字は鮮明。\n裏面までは確認できず。",
+        "Condition_level": "★★★★☆",
+        "photo_filename": "nakanoniwa_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86773991,
+          35.70392989
+        ]
+      },
+      "properties": {
+        "name": "上の庭水神宮",
+        "type": "water",
+        "year": "1882年",
+        "size": "高さ80cm  幅50cm  厚50cm（台座高さ96cm）",
+        "address": "東京都江戸川区松島１丁目",
+        "inscription": "（正面）水□□",
+        "coordinates_dd": "35.70392989, 139.86773991",
+        "Survey_date": "2026年4月11日",
+        "Condition_comment": "笠部左上に亀裂、修復跡、緑色の地衣類付着あり。\n各所に小さい欠損、剥落がある。\n幣束に隠れていたが「水」という文字は判読可能。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "kaminoniwa_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86553229,
+          35.69435874
+        ]
+      },
+      "properties": {
+        "name": "入の庭水神宮",
+        "type": "water",
+        "year": "",
+        "size": "",
+        "address": "東京都江戸川区東小松川3丁目22",
+        "inscription": "（正面は扉のみ）",
+        "coordinates_dd": "35.69435874, 139.86553229",
+        "Survey_date": "2026年4月26日",
+        "Condition_comment": "台座・笠部に欠損・剥落がある。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "irinoniwa_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.85882326,
+          35.68609782
+        ]
+      },
+      "properties": {
+        "name": "船堀稲荷神社境内の水神社",
+        "type": "water",
+        "year": "",
+        "size": "",
+        "address": "東京都江戸川区船堀1丁目1-5",
+        "inscription": "",
+        "coordinates_dd": "35.68609782, 139.85882326",
+        "Survey_date": "2026年4月26日",
+        "Condition_comment": "社に劣化は確認できない。",
+        "Condition_level": "",
+        "photo_filename": "funabori_inari_shrine_suijin.jpg"
       }
     }
   ]

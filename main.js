@@ -580,6 +580,7 @@ function updateKikikuloTimeDisplay(validtime) {
   );
   const jst = new Date(utc.getTime() + 9 * 3600 * 1000);
   el.textContent = `${String(jst.getUTCHours()).padStart(2,"0")}:${String(jst.getUTCMinutes()).padStart(2,"0")} JST`;
+  updateHazardSummary();
 }
 
 async function fetchKikikuloTimestamp() {
@@ -609,6 +610,12 @@ const RASTER_OVERLAYS = {
   },
   get kikiculo_flood() {
     return { tiles: [kikikuloTileUrl("designated_river")], tileSize: 256, minzoom: 4, maxzoom: 10 };
+  },
+  // 六角川など国(国土交通省地方整備局)管理の指定河川は designated_river ではなく
+  // designated_river_nation 側にのみ描画される。UI上は「指定河川洪水」1トグルに
+  // 統合するため、kikiculo_flood と常にペアでON/OFFする内部用オーバーレイとして保持する
+  get kikiculo_flood_nation() {
+    return { tiles: [kikikuloTileUrl("designated_river_nation")], tileSize: 256, minzoom: 4, maxzoom: 10 };
   },
 };
 let monumentsData = [];
@@ -726,7 +733,7 @@ async function refreshKikikuloLayers() {
   const prevValidtime = kikikuloValidtime;
   await fetchKikikuloTimestamp();
   if (kikikuloBasetime === prevBasetime && kikikuloValidtime === prevValidtime) return;
-  ["kikiculo_land", "kikiculo_flood"].forEach((id) => {
+  ["kikiculo_land", "kikiculo_flood", "kikiculo_flood_nation"].forEach((id) => {
     if (activeOverlays.has(id)) {
       removeRasterOverlay(id);
       addRasterOverlay(id);
@@ -868,6 +875,7 @@ async function ncEnable() {
     ncShowFrame(ncCurrent);
   }
   updateAttribution();
+  updateHazardSummary();
   if (!ncRefreshTimer) {
     ncRefreshTimer = setInterval(async () => {
       if (!ncActive) return;
@@ -899,6 +907,7 @@ function ncDisable() {
   });
   document.getElementById("nowcast-ctrl").hidden = true;
   updateAttribution();
+  updateHazardSummary();
 }
 
 function addBreachLayer(id) {
@@ -941,8 +950,163 @@ document.getElementById("kikiculo-legend-header").addEventListener("click", () =
 });
 
 function updateKikikuloLegendVisibility() {
-  const kikiActive = ["kikiculo_land", "kikiculo_flood"].some((id) => activeOverlays.has(id));
+  const kikiActive = ["kikiculo_land", "kikiculo_flood", "kikiculo_flood_nation"]
+    .some((id) => activeOverlays.has(id));
   kikiLegendCtrl.hidden = !kikiActive;
+  // キキクル有効化時に凡例を自動展開
+  if (kikiActive && !kikiLegendBody.classList.contains("open")) {
+    kikiLegendBody.classList.add("open");
+    kikiLegendToggle.textContent = "▲";
+  }
+  updateHazardSummary();
+}
+
+// ハザード情報アコーディオンのサマリを動的更新（タイムスタンプ常時可視化）
+function updateHazardSummary() {
+  const row = document.querySelector('.acc-row[data-key="hazard"]');
+  if (!row) return;
+  const summaryEl = row.querySelector(".acc-summary");
+  if (!summaryEl) return;
+
+  const parts = [];
+  if (activeOverlays.has("kikiculo_land"))  parts.push("土砂危険度");
+  if (activeOverlays.has("kikiculo_flood")) parts.push("河川洪水");
+  if (ncActive)                             parts.push("ナウキャスト");
+  if (activeOverlays.has("typhoon2019"))    parts.push("台風19号");
+  if (activeBreach.has("typhoon2019_breach")) parts.push("破堤(R1)");
+  if (activeBreach.has("meiji43_breach"))   parts.push("破堤(M43)");
+  if (floodLabelsEnabled) {
+    const n = lastFloodWarnings.size;
+    parts.push(n > 0 ? `洪水予報(${n}河川)` : "洪水予報表示中");
+  }
+
+  if (parts.length === 0) { summaryEl.textContent = "非表示"; return; }
+
+  const timeEl = document.getElementById("kikiculo-time");
+  const hasKiki = activeOverlays.has("kikiculo_land") || activeOverlays.has("kikiculo_flood");
+  const timeStr = hasKiki && timeEl && timeEl.textContent !== "--:-- JST"
+    ? ` | ${timeEl.textContent}` : "";
+  summaryEl.textContent = parts.join(" / ") + timeStr;
+}
+
+// ---- 指定河川洪水予報ラベル ----
+
+const FLOOD_WARNING_API = "https://www.jma.go.jp/bosai/flood/data/r8/flood_xml.json";
+
+// 荒川・利根川・多摩川系の対象河川（各GeoJSONの線分中点から算出）
+const FLOOD_TARGET_RIVERS = [
+  // 荒川本流
+  { name: "荒川",     lon: 138.9977, lat: 35.9615 },
+  // 荒川支流
+  { name: "都幾川",   lon: 139.2511, lat: 36.004  },
+  { name: "入間川",   lon: 139.1847, lat: 35.8791 },
+  { name: "越辺川",   lon: 139.4619, lat: 35.9657 },
+  { name: "高麗川",   lon: 139.2303, lat: 35.9108 },
+  { name: "市野川",   lon: 139.3594, lat: 36.0492 },
+  { name: "新河岸川", lon: 139.5222, lat: 35.8899 },
+  { name: "柳瀬川",   lon: 139.429,  lat: 35.776  },
+  { name: "槻川",     lon: 139.2364, lat: 36.0439 },
+  { name: "小畔川",   lon: 139.3739, lat: 35.9063 },
+  { name: "霞川",     lon: 139.3823, lat: 35.8368 },
+  { name: "九十九川", lon: 139.3814, lat: 35.9996 },
+  { name: "隅田川",   lon: 139.7378, lat: 35.7805 },
+  { name: "芝川",     lon: 139.6514, lat: 35.8965 },
+  { name: "新芝川",   lon: 139.7277, lat: 35.8216 },
+  // 利根川本流・主要支流
+  { name: "利根川",   lon: 139.022,  lat: 36.6486 },
+  { name: "渡良瀬川", lon: 139.6929, lat: 36.1872 },
+  { name: "鬼怒川",   lon: 139.6264, lat: 36.8707 },
+  { name: "江戸川",   lon: 139.8046, lat: 36.0446 },
+  { name: "小貝川",   lon: 140.1156, lat: 35.9247 },
+  { name: "烏川",     lon: 138.789,  lat: 36.4264 },
+  { name: "吾妻川",   lon: 138.5803, lat: 36.5454 },
+  { name: "神流川",   lon: 138.7159, lat: 36.083  },
+  // 多摩川本流・主要支流
+  { name: "多摩川",   lon: 139.4194, lat: 35.6802 },
+  { name: "浅川",     lon: 139.3156, lat: 35.668  },
+  { name: "秋川",     lon: 139.1821, lat: 35.7254 },
+];
+
+let floodWarningMarkers = [];
+let floodLabelsEnabled  = false;
+let lastFloodWarnings   = new Map(); // 河川名 → { level, condition }
+
+// API河川名を正規化（水系プレフィックス・流域サフィックスを除去）
+function normalizeRiverName(raw) {
+  return raw
+    .replace(/[^\s]+水系\s*/g, "")
+    .replace(/(上流部|中流部|下流部|上中流部|中下流部|下中流部)$/, "")
+    .replace(/[・、].*$/, "")
+    .trim();
+}
+
+// 氾濫情報の文字列からレベル番号を返す（解除・無効は0）
+function getFloodLevel(condition) {
+  if (!condition || condition.includes("解除")) return 0;
+  if (condition.includes("レベル５")) return 5;
+  if (condition.includes("レベル４")) return 4;
+  if (condition.includes("レベル３")) return 3;
+  if (condition.includes("レベル２")) return 2;
+  return 0;
+}
+
+function clearFloodLabels() {
+  floodWarningMarkers.forEach((m) => m.remove());
+  floodWarningMarkers = [];
+}
+
+function applyFloodLabels() {
+  clearFloodLabels();
+  if (!floodLabelsEnabled) return;
+
+  for (const river of FLOOD_TARGET_RIVERS) {
+    const warning = lastFloodWarnings.get(river.name);
+    if (!warning) continue;
+
+    const el = document.createElement("div");
+    el.className = `flood-label level-${warning.level}`;
+    el.textContent = `⚠ ${river.name} Lv${warning.level}`;
+    el.title = warning.condition;
+
+    const marker = new maplibregl.Marker({ element: el, anchor: "left" })
+      .setLngLat([river.lon, river.lat])
+      .addTo(map);
+    floodWarningMarkers.push(marker);
+  }
+}
+
+async function fetchFloodWarnings() {
+  try {
+    const items = await fetch(FLOOD_WARNING_API).then((r) => r.json());
+
+    // APIの生データからレベル別に最大値でマッピング（正規化名 → warning）
+    const apiWarnings = new Map();
+    for (const item of items) {
+      const level = getFloodLevel(item.item?.condition || "");
+      if (level === 0) continue;
+      const normalized = normalizeRiverName(item.riverName || "");
+      if (!apiWarnings.has(normalized) || apiWarnings.get(normalized).level < level) {
+        apiWarnings.set(normalized, { level, condition: item.item?.condition || "" });
+      }
+    }
+
+    // ターゲット河川リストとAPI結果を部分文字列マッチングで対応付け
+    lastFloodWarnings = new Map();
+    for (const river of FLOOD_TARGET_RIVERS) {
+      let best = null;
+      for (const [apiName, info] of apiWarnings) {
+        if (apiName === river.name || apiName.startsWith(river.name) || river.name.startsWith(apiName)) {
+          if (!best || info.level > best.level) best = info;
+        }
+      }
+      if (best) lastFloodWarnings.set(river.name, best);
+    }
+
+    applyFloodLabels();
+    updateHazardSummary();
+  } catch (e) {
+    console.warn("洪水予報取得エラー:", e);
+  }
 }
 
 const map = new maplibregl.Map({
@@ -1028,6 +1192,7 @@ document.querySelectorAll('input[name="base-layer"]').forEach((radio) => {
       if (localHillshadeActive) { addLocalDemHillshadeSource(); addLocalHillshadeLayer(); }
       if (terrain3dActive) { addLocalDemTerrainSource(); enableTerrain3d(); }
       if (ncActive && ncFrames.length > 0) ncRestoreLayers();
+      applyFloodLabels();
     });
     updateAttribution();
   });
@@ -1088,6 +1253,7 @@ document.querySelectorAll("input[data-breach]").forEach((cb) => {
       removeBreachLayer(id);
     }
     updateAttribution();
+    updateHazardSummary();
   });
 });
 
@@ -1121,7 +1287,7 @@ function updateAttribution() {
   if (elevationActive) {
     parts.push("色別標高図 ©国土地理院（DEMタイル）");
   }
-  if (["kikiculo_land", "kikiculo_flood"].some((id) => activeOverlays.has(id))) {
+  if (["kikiculo_land", "kikiculo_flood", "kikiculo_flood_nation"].some((id) => activeOverlays.has(id))) {
     parts.push("©気象庁 危険度分布");
   }
   if (ncActive) {
@@ -1136,13 +1302,18 @@ updateAttribution();
 document.querySelectorAll("input[data-overlay]").forEach((cb) => {
   cb.addEventListener("change", () => {
     const id = cb.dataset.overlay;
-    if (cb.checked) {
-      activeOverlays.add(id);
-      addRasterOverlay(id);
-    } else {
-      activeOverlays.delete(id);
-      removeRasterOverlay(id);
-    }
+    // kikiculo_flood (指定河川洪水) は都道府県管理・国管理の2タイルを束ねて
+    // 1トグルとして見せるため、対の kikiculo_flood_nation も同時に切り替える
+    const ids = id === "kikiculo_flood" ? [id, "kikiculo_flood_nation"] : [id];
+    ids.forEach((overlayId) => {
+      if (cb.checked) {
+        activeOverlays.add(overlayId);
+        addRasterOverlay(overlayId);
+      } else {
+        activeOverlays.delete(overlayId);
+        removeRasterOverlay(overlayId);
+      }
+    });
     updateAttribution();
     updateKikikuloLegendVisibility();
   });
@@ -1518,6 +1689,21 @@ document.addEventListener("click", () => { searchResults.hidden = true; });
 // キキクル タイムスタンプ初期取得 + 10分ごと自動更新
 fetchKikikuloTimestamp();
 setInterval(refreshKikikuloLayers, 600_000);
+
+// 指定河川洪水予報ラベル トグル
+document.getElementById("flood-label-toggle").addEventListener("change", (e) => {
+  floodLabelsEnabled = e.target.checked;
+  if (floodLabelsEnabled) {
+    fetchFloodWarnings();
+  } else {
+    clearFloodLabels();
+    lastFloodWarnings = new Map();
+    updateHazardSummary();
+  }
+});
+
+// 10分ごとに洪水予報を自動更新（ラベル有効時のみAPI呼出し）
+setInterval(() => { if (floodLabelsEnabled) fetchFloodWarnings(); }, 600_000);
 
 // --- ナウキャスト コントローラ イベント ---
 document.getElementById("nowcast-toggle").addEventListener("change", (e) => {

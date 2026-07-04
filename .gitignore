@@ -1,4 +1,4 @@
-# 国土地理院DEMデータ等の大容量生成物（容量が大きいためバージョン管理対象外）
+﻿# 国土地理院DEMデータ等の大容量生成物（容量が大きいためバージョン管理対象外）
 dem_pipeline/
 
 __pycache__/
@@ -16,3 +16,8 @@ qgis/
 register_monument.py
 route/
 GITHUB_SETUP.html
+main_apple_ui_backup.js
+monuments_suijin_backup.csv
+style_apple_ui_backup.css
+suijin_map_apple_ui_backup.html
+validate_belief_columns.py

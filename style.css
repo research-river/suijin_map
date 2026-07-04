@@ -440,6 +440,15 @@ body.place-card-active #map {
   letter-spacing: 0;
 }
 
+/* opt-row の補足テキスト（指定河川洪水の国管理説明など） */
+.opt-note {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin: -2px 0 6px 28px;
+  padding: 0;
+  line-height: 1.5;
+}
+
 /* ===== キキクル 凡例（ハザード情報アコーディオン内） ===== */
 #kikiculo-legend-ctrl {
   border-top: 0.5px solid var(--border-tertiary);
@@ -1511,3 +1520,24 @@ body.place-card-active #map {
   border-left: 3px solid #3083d7;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+/* ===== 洪水予報ラベル ===== */
+.flood-label {
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  border: none;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  margin-left: 2px;
+  color: #ffffff;
+}
+/* 洪水警報の公式色（キキクル凡例準拠: 黄→橙→赤→紫） */
+.flood-label.level-2 { background: #d97706; }
+.flood-label.level-3 { background: #ea580c; }
+.flood-label.level-4 { background: #dc2626; }
+.flood-label.level-5 { background: #7c3aed; }

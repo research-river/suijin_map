@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水神碑map</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+      'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(155deg, #000510 0%, #001840 45%, #003580 72%, #007AFF 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 90%, rgba(0,122,255,0.28) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 15% 15%, rgba(10,100,200,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 9vw, 100px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    color: #fff;
+    line-height: 1.02;
+    position: relative;
+  }
+
+  .hero-subtitle {
+    display: block;
+    font-size: clamp(20px, 3vw, 36px);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.65);
+    margin-top: 10px;
+  }
+
+  .hero-tagline {
+    margin-top: 36px;
+    font-size: 19px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    line-height: 1.55;
+    position: relative;
+  }
+
+  .hero-meta {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+    position: relative;
+  }
+
+  .hero-cta {
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .hero-cta a {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #003580;
+    background: #ffffff;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-eyebrow">荒川流域 石碑調査プロジェクト</div>
+  <h1 class="hero-title">
+    水神碑map
+    <span class="hero-subtitle">Suijin Monument Map</span>
+  </h1>
+  <p class="hero-tagline">
+    荒川流域に残る水神碑・九頭龍碑を、<br>
+    地図上で記録・可視化する研究用WebGIS。
+  </p>
+  <div class="hero-cta">
+    <a href="suijin_map.html">水神碑map を見てみる</a>
+  </div>
+</header>
+</body>
+</html>
