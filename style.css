@@ -1031,8 +1031,9 @@ body.place-card-active #map {
 
 #place-photo-wrap {
   position: relative;
-  height: 160px;
-  background: #e8e0d8;
+  height: 180px;
+  padding: 12px 12px 0;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
@@ -1041,6 +1042,8 @@ body.place-card-active #map {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
+  background: #e8e0d8;
 }
 
 #place-photo.is-portrait {
