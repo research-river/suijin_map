@@ -556,6 +556,14 @@ let ncPlaying      = false;
 let ncElement      = "hrpns";
 let ncActive       = false;
 let ncRefreshTimer = null;
+// 世代番号: 更新時に新旧レイヤーを共存させ、新世代の読込完了後に旧世代を外すために使う。
+// ncGeneration は採番カウンタ、ncDisplayGen は現在表示中の世代
+let ncGeneration   = 0;
+let ncDisplayGen   = 0;
+// 静止表示中にタイル取得を許すフレーム範囲(現在±2枚)。
+// 全24フレームを常時取得するとズームのたびにリクエストが殺到し、
+// 表示中フレームのタイル到着が遅れて雨雲が途切れて見える
+const NC_PREFETCH_WINDOW = 2;
 
 // フライアウト内 elevation-ctrl の参照
 const elevCtrl = document.getElementById("elevation-ctrl");
@@ -567,8 +575,32 @@ let kikikuloValidtime = "";
 let kikikuloMember    = "immed0";
 
 function kikikuloTileUrl(element) {
-  return `${KIKICULO_BASE_URL}/${kikikuloBasetime}/${kikikuloMember}/${kikikuloValidtime}/surf/${element}/{z}/{x}/{y}.png`;
+  return `jmaeven://${KIKICULO_BASE_URL.replace("https://", "")}/${kikikuloBasetime}/${kikikuloMember}/${kikikuloValidtime}/surf/${element}/{z}/{x}/{y}.png`;
 }
+
+// 気象庁タイル(ナウキャスト・キキクル)は偶数ズーム(4,6,8,10)のみ実データを配信し、
+// 奇数ズーム(5,7,9)には全国共通の空PNG(334bytes)を200で返す。そのまま読むと
+// 奇数タイルズームに当たるズーム帯で雨雲が消えるため、奇数ズームの要求は
+// 偶数の親タイルの該当四半分を2倍拡大して合成する
+maplibregl.addProtocol("jmaeven", async (params, abortController) => {
+  const url = params.url.replace("jmaeven://", "https://");
+  const [, z, x, y] = url.match(/\/(\d+)\/(\d+)\/(\d+)\.png$/).map(Number);
+  const opts = { signal: abortController.signal };
+  if (z % 2 === 0) {
+    const res = await fetch(url, opts);
+    if (!res.ok) throw new Error(`tile ${res.status}`);
+    return { data: await res.arrayBuffer() };
+  }
+  const parentUrl = url.replace(/\/\d+\/\d+\/\d+\.png$/, `/${z - 1}/${x >> 1}/${y >> 1}.png`);
+  const res = await fetch(parentUrl, opts);
+  if (!res.ok) throw new Error(`tile ${res.status}`);
+  const bmp = await createImageBitmap(await res.blob());
+  const canvas = new OffscreenCanvas(256, 256);
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(bmp, (x % 2) * 128, (y % 2) * 128, 128, 128, 0, 0, 256, 256);
+  const blob = await canvas.convertToBlob({ type: "image/png" });
+  return { data: await blob.arrayBuffer() };
+});
 
 function updateKikikuloTimeDisplay(validtime) {
   const el = document.getElementById("kikiculo-time");
@@ -604,18 +636,19 @@ const RASTER_OVERLAYS = {
   },
   // minzoom/maxzoomは降水ナウキャストと同じ気象庁配信仕様(z4-10)に合わせる。
   // 未指定だとMapLibreがz10超でも実タイルを取得しに行ってしまい、
-  // z10タイルの拡大表示(オーバーズーム)にならず層が消えて見える
+  // z10タイルの拡大表示(オーバーズーム)にならず層が消えて見える。
+  // fadeDuration: 0 はナウキャストと同じくズーム境界のクロスフェード点滅対策
   get kikiculo_land() {
-    return { tiles: [kikikuloTileUrl("land")], tileSize: 256, minzoom: 4, maxzoom: 10 };
+    return { tiles: [kikikuloTileUrl("land")], tileSize: 256, minzoom: 4, maxzoom: 10, fadeDuration: 0 };
   },
   get kikiculo_flood() {
-    return { tiles: [kikikuloTileUrl("designated_river")], tileSize: 256, minzoom: 4, maxzoom: 10 };
+    return { tiles: [kikikuloTileUrl("designated_river")], tileSize: 256, minzoom: 4, maxzoom: 10, fadeDuration: 0 };
   },
   // 六角川など国(国土交通省地方整備局)管理の指定河川は designated_river ではなく
   // designated_river_nation 側にのみ描画される。UI上は「指定河川洪水」1トグルに
   // 統合するため、kikiculo_flood と常にペアでON/OFFする内部用オーバーレイとして保持する
   get kikiculo_flood_nation() {
-    return { tiles: [kikikuloTileUrl("designated_river_nation")], tileSize: 256, minzoom: 4, maxzoom: 10 };
+    return { tiles: [kikikuloTileUrl("designated_river_nation")], tileSize: 256, minzoom: 4, maxzoom: 10, fadeDuration: 0 };
   },
 };
 let monumentsData = [];
@@ -716,7 +749,9 @@ function addRasterOverlay(id) {
     minzoom: cfg.minzoom,
     maxzoom: cfg.maxzoom,
   });
-  map.addLayer({ id: `overlay-${id}`, type: "raster", source: `overlay-${id}` });
+  const paint = {};
+  if (cfg.fadeDuration !== undefined) paint["raster-fade-duration"] = cfg.fadeDuration;
+  map.addLayer({ id: `overlay-${id}`, type: "raster", source: `overlay-${id}`, paint });
 }
 
 function removeRasterOverlay(id) {
@@ -744,7 +779,7 @@ async function refreshKikikuloLayers() {
 // ---- 降水ナウキャスト ----
 
 function ncTileUrl(f, elem) {
-  return `${NOWCAST_BASE_URL}/${f.basetime}/none/${f.validtime}/surf/${elem}/{z}/{x}/{y}.png`;
+  return `jmaeven://${NOWCAST_BASE_URL.replace("https://", "")}/${f.basetime}/none/${f.validtime}/surf/${elem}/{z}/{x}/{y}.png`;
 }
 
 function ncToJST(ts) {
@@ -777,16 +812,21 @@ async function ncFetchFrames(elem) {
   return { obs, fcst };
 }
 
-function ncClearLayers() {
-  ncFrames.forEach((_, i) => {
-    if (map.getLayer(`nc-layer-${i}`)) map.removeLayer(`nc-layer-${i}`);
-    if (map.getSource(`nc-src-${i}`))  map.removeSource(`nc-src-${i}`);
-  });
+function ncSrcId(gen, i)   { return `nc-src-g${gen}-${i}`; }
+function ncLayerId(gen, i) { return `nc-layer-g${gen}-${i}`; }
+
+function ncClearLayers(gen) {
+  (map.getStyle().layers ?? [])
+    .filter((l) => l.id.startsWith(`nc-layer-g${gen}-`))
+    .forEach((l) => map.removeLayer(l.id));
+  Object.keys(map.getStyle().sources ?? {})
+    .filter((id) => id.startsWith(`nc-src-g${gen}-`))
+    .forEach((id) => map.removeSource(id));
 }
 
-function ncAddLayers(frames, elem) {
+function ncAddLayers(frames, elem, gen) {
   frames.forEach((f, i) => {
-    map.addSource(`nc-src-${i}`, {
+    map.addSource(ncSrcId(gen, i), {
       type: "raster",
       tiles: [ncTileUrl(f, elem)],
       tileSize: 256,
@@ -794,12 +834,27 @@ function ncAddLayers(frames, elem) {
       maxzoom: 10,
     });
     map.addLayer({
-      id: `nc-layer-${i}`,
+      id: ncLayerId(gen, i),
       type: "raster",
-      source: `nc-src-${i}`,
-      paint: { "raster-opacity": 0 },
+      source: ncSrcId(gen, i),
+      paint: {
+        "raster-opacity": 0,
+        // 既定の約300msクロスフェードがズーム境界で点滅の谷間を作るため無効化
+        "raster-fade-duration": 0,
+      },
     });
   });
+}
+
+// visibility: none はタイル取得ごと止まる(opacity: 0 は取得が走る)点を利用し、
+// 再生中は全フレーム、静止中は現在±NC_PREFETCH_WINDOW 枚だけ取得を許す
+function ncUpdateVisibility(gen = ncDisplayGen, center = ncCurrent, count = ncFrames.length) {
+  for (let i = 0; i < count; i++) {
+    const id = ncLayerId(gen, i);
+    if (!map.getLayer(id)) continue;
+    const visible = ncPlaying || Math.abs(i - center) <= NC_PREFETCH_WINDOW;
+    map.setLayoutProperty(id, "visibility", visible ? "visible" : "none");
+  }
 }
 
 function ncShowFrame(index) {
@@ -807,13 +862,13 @@ function ncShowFrame(index) {
   const prev = ncCurrent;
   ncCurrent = Math.max(0, Math.min(index, ncFrames.length - 1));
 
-  if (map.getLayer(`nc-layer-${prev}`))
-    map.setPaintProperty(`nc-layer-${prev}`, "raster-opacity", 0);
+  if (map.getLayer(ncLayerId(ncDisplayGen, prev)))
+    map.setPaintProperty(ncLayerId(ncDisplayGen, prev), "raster-opacity", 0);
 
   const f = ncFrames[ncCurrent];
   const opacity = f.type === "fcst" ? 0.55 : 0.78;
-  if (map.getLayer(`nc-layer-${ncCurrent}`))
-    map.setPaintProperty(`nc-layer-${ncCurrent}`, "raster-opacity", opacity);
+  if (map.getLayer(ncLayerId(ncDisplayGen, ncCurrent)))
+    map.setPaintProperty(ncLayerId(ncDisplayGen, ncCurrent), "raster-opacity", opacity);
 
   const labelEl  = document.getElementById("nc-time-label");
   const badgeEl  = document.getElementById("nc-badge");
@@ -824,10 +879,13 @@ function ncShowFrame(index) {
     badgeEl.className   = f.type === "fcst" ? "nc-badge nc-fcst" : "nc-badge nc-obs";
   }
   if (sliderEl) { sliderEl.max = ncFrames.length - 1; sliderEl.value = ncCurrent; }
+  ncUpdateVisibility();
 }
 
 function ncPlay() {
   ncPlaying = true;
+  // 再生中は全フレームのタイル取得を許可(先読み)して切替を滑らかにする
+  ncUpdateVisibility();
   const btn = document.getElementById("nc-btn-play");
   if (btn) btn.textContent = "⏸ 停止";
   const ms = parseInt(document.getElementById("nc-speed")?.value ?? "500");
@@ -838,22 +896,61 @@ function ncStop() {
   ncPlaying = false;
   clearInterval(ncTimer);
   ncTimer = null;
+  ncUpdateVisibility();
   const btn = document.getElementById("nc-btn-play");
   if (btn) btn.textContent = "▶ 再生";
+}
+
+function ncWaitSourceLoaded(srcId) {
+  return new Promise((resolve) => {
+    if (map.getSource(srcId) && map.isSourceLoaded(srcId)) return resolve();
+    const finish = () => {
+      map.off("sourcedata", onData);
+      clearTimeout(timer);
+      resolve();
+    };
+    const onData = (e) => {
+      if (e.sourceId === srcId && map.isSourceLoaded(srcId)) finish();
+    };
+    map.on("sourcedata", onData);
+    // タイル欠落などで完了イベントが来ない場合の保険
+    const timer = setTimeout(finish, 8000);
+  });
+}
+
+// 新世代のレイヤーを裏で読み込み、完了後に表示を切替えてから旧世代を外す。
+// 全削除→再構築だとタイル再取得完了までレーダーが消えるため、この順序が肝
+async function ncRefreshFrames({ resetToLatestObs = false } = {}) {
+  const { obs, fcst } = await ncFetchFrames(ncElement);
+  const newFrames = [...obs, ...fcst];
+  ncGeneration += 1;
+  const gen = ncGeneration;
+  ncAddLayers(newFrames, ncElement, gen);
+
+  const nextCurrent = resetToLatestObs
+    ? obs.length - 1
+    : Math.min(ncCurrent, newFrames.length - 1);
+  ncUpdateVisibility(gen, nextCurrent, newFrames.length);
+  await ncWaitSourceLoaded(ncSrcId(gen, nextCurrent));
+
+  // 読込待ちの間にベースマップが切替わるとレイヤーごと消えているので入れ直す
+  if (!map.getLayer(ncLayerId(gen, nextCurrent))) ncAddLayers(newFrames, ncElement, gen);
+
+  const oldGen = ncDisplayGen;
+  ncDisplayGen = gen;
+  ncFrames   = newFrames;
+  ncObsCount = obs.length;
+  ncCurrent  = nextCurrent;
+  // 読込待ちの間にOFFへ切替えられた場合は透明のまま保持する(次回ONで表示)
+  if (ncActive) ncShowFrame(ncCurrent);
+  if (oldGen !== gen) ncClearLayers(oldGen);
 }
 
 async function ncInitialize() {
   const loadingEl = document.getElementById("nc-loading");
   if (loadingEl) loadingEl.hidden = false;
   try {
-    const { obs, fcst } = await ncFetchFrames(ncElement);
-    const newFrames = [...obs, ...fcst];
-    ncClearLayers();
-    ncAddLayers(newFrames, ncElement);
-    ncFrames   = newFrames;
-    ncObsCount = obs.length;
-    ncCurrent  = ncObsCount - 1;
-    ncShowFrame(ncCurrent);
+    await ncRefreshFrames({ resetToLatestObs: true });
   } catch (e) {
     console.warn("ナウキャスト初期化失敗", e);
   }
@@ -862,7 +959,7 @@ async function ncInitialize() {
 
 function ncRestoreLayers() {
   // ベースマップ変更後: 古いレイヤは既に消えているので直接追加
-  ncAddLayers(ncFrames, ncElement);
+  ncAddLayers(ncFrames, ncElement, ncDisplayGen);
   ncShowFrame(ncCurrent);
 }
 
@@ -882,14 +979,7 @@ async function ncEnable() {
       const wasPlaying = ncPlaying;
       ncStop();
       try {
-        const { obs, fcst } = await ncFetchFrames(ncElement);
-        const newFrames = [...obs, ...fcst];
-        ncClearLayers();
-        ncAddLayers(newFrames, ncElement);
-        ncFrames   = newFrames;
-        ncObsCount = obs.length;
-        ncCurrent  = Math.min(ncCurrent, ncFrames.length - 1);
-        ncShowFrame(ncCurrent);
+        await ncRefreshFrames();
       } catch (e) {
         console.warn("[ncAutoRefresh]", e);
       }
@@ -901,9 +991,12 @@ async function ncEnable() {
 function ncDisable() {
   ncActive = false;
   ncStop();
+  // OFF中はタイル取得も止める(ONに戻すと ncShowFrame 経由で先読み窓が復元される)
   ncFrames.forEach((_, i) => {
-    if (map.getLayer(`nc-layer-${i}`))
-      map.setPaintProperty(`nc-layer-${i}`, "raster-opacity", 0);
+    const id = ncLayerId(ncDisplayGen, i);
+    if (!map.getLayer(id)) return;
+    map.setPaintProperty(id, "raster-opacity", 0);
+    map.setLayoutProperty(id, "visibility", "none");
   });
   document.getElementById("nowcast-ctrl").hidden = true;
   updateAttribution();
@@ -1152,6 +1245,14 @@ document.getElementById("hydro-legend-header").addEventListener("click", () => {
 
 // スケール表示（左下）
 map.addControl(new maplibregl.ScaleControl({ maxWidth: 120, unit: "metric" }), "bottom-left");
+
+// ズームレベル表示（右下・出典表記の上）
+const zoomDisplayEl = document.getElementById("zoom-display");
+function updateZoomDisplay() {
+  zoomDisplayEl.textContent = `z${map.getZoom().toFixed(1)}`;
+}
+map.on("zoom", updateZoomDisplay);
+updateZoomDisplay();
 
 // ズームコントロール（左上）
 document.getElementById("zoom-in-btn").addEventListener("click", () => map.zoomIn());
@@ -1734,7 +1835,6 @@ document.getElementById("nc-element").addEventListener("change", async (e) => {
   const wasPlaying = ncPlaying;
   ncStop();
   ncElement = e.target.value;
-  ncFrames  = [];
   await ncInitialize();
   if (wasPlaying) ncPlay();
 });
