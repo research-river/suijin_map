@@ -180,7 +180,7 @@
         "inscription": "架橋竣成昭和七年五月廿六？日　神宮祭祀　昭和十二年一月十五日　発起人　金子善太郎他19人の名前",
         "coordinates_dd": "36.042628, 139.506388",
         "Survey_date": "2025年3月8日",
-        "Condition_comment": "黄色いさびのような地衣類が覆われているが刻まれる文字ははっきり見えている。荒川方面には原間室橋(沈下橋)。",
+        "Condition_comment": "黄色い地衣類に覆われているが正面に刻まれた文字は鮮明である。道の先には冠水橋（沈下橋）である原馬室橋が位置している。",
         "Condition_level": "★★★★☆",
         "photo_filename": "flooding_bridge_takimamuro_suijingu.jpg"
       }
@@ -1376,7 +1376,7 @@
         "inscription": "(左側面)江川村",
         "coordinates_dd": "36.107268, 139.436547",
         "Survey_date": "2025年3月14日",
-        "Condition_comment": "正面の「九頭龍大権現」の文字は判読可能。風化・摩耗激しい。上部に四角い穴があり笠部があったと考えられる。",
+        "Condition_comment": "正面「九頭龍大権現」の文字は判読可能。風化・摩耗激しい。上部に四角い穴があり笠部があったと考えられる。",
         "Condition_level": "★☆☆☆☆",
         "photo_filename": "kuge_hachimangu_kuzuryu_dragon.jpg"
       }
@@ -2066,7 +2066,7 @@
         "inscription": "□□大里郡小泉村　願主17人の名前",
         "coordinates_dd": "36.111983, 139.399527",
         "Survey_date": "2025年3月14日",
-        "Condition_comment": "池に中島がありそこに祀られている。笠部分「弁才天」と判読できるが、正面のも時は風化。",
+        "Condition_comment": "池の中島に祀られている。笠部分「弁才天」と判読できるが、正面文字は風化し判読できない。",
         "Condition_level": "★★☆☆☆",
         "photo_filename": "jyoei_temple_benten.jpg"
       }
@@ -2089,7 +2089,7 @@
         "inscription": "(右側面)文政元寅年八月吉□",
         "coordinates_dd": "36.12161, 139.417798",
         "Survey_date": "2025年3月14日",
-        "Condition_comment": "正面「辨財天」、世話人の名前も判読可能。久下神社の裏、久下小学校横　他に九頭龍大神碑があるはずだが確認できなかった",
+        "Condition_comment": "正面「辨財天」、世話人の名前も判読可能。久下神社の裏、久下小学校横　他に九頭龍大神碑があるはずだが未確認",
         "Condition_level": "★★☆☆☆",
         "photo_filename": "kuge_shrine_benten.jpg"
       }
@@ -3111,7 +3111,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.864837644,
+          139864837644.0,
           35.697534822
         ]
       },
@@ -3121,10 +3121,10 @@
         "year": "1895年",
         "size": "高さ131cm  幅64cm  厚15cm",
         "address": "東京都江戸川区東小松川2丁目6-8",
-        "inscription": "(正面)水神宮　(正面左添え字)遊雲書",
-        "coordinates_dd": "35.697534822, 139.864837644",
+        "inscription": "(正面)水神宮　(左添え字)遊雲書",
+        "coordinates_dd": "35.697534822, 139864837644",
         "Survey_date": "2026年4月11日",
-        "Condition_comment": "黒ずんで、虫が這った跡のような模様になっているが正面の文字は鮮明。\n裏面までは確認できず。",
+        "Condition_comment": "表面黒ずんで、虫が這った跡のような模様になっているが正面の文字は鮮明。\n裏面までは確認できず。",
         "Condition_level": "★★★★☆",
         "photo_filename": "nakanoniwa_suijin.jpg"
       }
