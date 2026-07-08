@@ -544,7 +544,7 @@ const activeTypes = new Set(["water", "dragon", "benten"]);
 const activeRivers = new Set();
 const activeOverlays = new Set();
 const activeBreach = new Set();
-let currentBaseLayer = "vector";
+let currentBaseLayer = "pale";
 
 // --- ナウキャスト状態 ---
 const NOWCAST_BASE_URL = "https://www.jma.go.jp/bosai/jmatile/data/nowc";
@@ -1204,7 +1204,9 @@ async function fetchFloodWarnings() {
 
 const map = new maplibregl.Map({
   container: "map",
-  style: BASE_LAYERS.vector,
+  // 標準地図(vector)は774レイヤーのGSIスタイルで初回描画が重いため、
+  // 初期表示は軽量なラスタの淡色地図にする（標準地図は選択肢として残す）
+  style: BASE_LAYERS.pale,
   center: [139.423323, 35.998809],
   zoom: 10,
   // 気象庁ナウキャスト/キキクルのタイル提供範囲(z4-10)を下回ると
@@ -1214,17 +1216,21 @@ const map = new maplibregl.Map({
   attributionControl: false,
 });
 
+// 石碑マーカーはDOM要素なのでスタイル読み込み(map "load")を待たずに描画できる。
+// ベースマップ（GSIベクトルタイル等）のネットワーク取得が遅い環境でも
+// マーカー表示だけは先に済ませ、体感速度を改善する
+const monumentsDataReady = Promise.all([
+  fetch("monuments_suijin.geojson").then((r) => r.json()),
+  fetch("monuments_water_related.geojson").then((r) => r.json()),
+]).then(([suijin, other]) => {
+  monumentsData = [...suijin.features, ...other.features];
+  addMarkers();
+  updateMonumentStats();
+});
+
 map.on("load", () => {
-  Promise.all([
-    fetch("monuments_suijin.geojson").then((r) => r.json()),
-    fetch("monuments_water_related.geojson").then((r) => r.json()),
-  ]).then(([suijin, other]) => {
-    monumentsData = [...suijin.features, ...other.features];
-    addMarkers();
-    // データロード後に有効なバッファを追加（チェックが先行した場合の対応）
-    addActiveBuffers();
-    updateMonumentStats();
-  });
+  // 円バッファはmap.addSource/addLayerを使うためスタイル読み込み完了が必須
+  monumentsDataReady.then(() => addActiveBuffers());
 });
 
 // --- UI DOM参照 ---
