@@ -903,8 +903,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.507823,
-          36.037538
+          139.50781838,
+          36.03753201
         ]
       },
       "properties": {
@@ -914,7 +914,7 @@
         "size": "高さ70cm 幅33cm 厚8cm",
         "address": "鴻巣市原馬室2965-2",
         "inscription": "銘なし[昭和六年？]",
-        "coordinates_dd": "36.037538, 139.507823",
+        "coordinates_dd": "36.03753201,139.50781838",
         "Survey_date": "2025年5月8日",
         "Condition_comment": "正面地衣類付着少ない。妙楽寺入り口左に3基祀られているうち、一番左。",
         "Condition_level": "★★★★☆",
@@ -2306,8 +2306,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.507822,
-          36.037538
+          139.50781962,
+          36.03754142
         ]
       },
       "properties": {
@@ -2317,9 +2317,9 @@
         "size": "高さ - cm 幅 - cm 厚 - cm",
         "address": "鴻巣市原馬室2965-2",
         "inscription": "大正九年",
-        "coordinates_dd": "36.037538, 139.507822",
+        "coordinates_dd": "36.03754142,139.50781962",
         "Survey_date": "2025年5月8日",
-        "Condition_comment": "祠が祠の中に入れられている。外側の祠は笠部剥落激しいが中は判別できなかった。妙楽寺入り口左に3基祀られているうち、一番右。中央に1678年建立の庚申塔",
+        "Condition_comment": "覆屋のように外側と内側に祠がある構造になっている。外側の祠は笠部剥落激しい。妙楽寺入り口左に3基祀られているうち、一番右。中央に1678年建立の庚申塔が位置する。",
         "Condition_level": "★★★★☆",
         "photo_filename": "myoraku_temple_benten.jpg"
       }
