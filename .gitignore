@@ -21,3 +21,6 @@ monuments_suijin_backup.csv
 style_apple_ui_backup.css
 suijin_map_apple_ui_backup.html
 validate_belief_columns.py
+
+# 過去降水プレイバック用の作業ディレクトリ(生成物のframes.json・PNGは公開対象)
+rainfall_archive/.work/

@@ -565,6 +565,23 @@ let ncDisplayGen   = 0;
 // 表示中フレームのタイル到着が遅れて雨雲が途切れて見える
 const NC_PREFETCH_WINDOW = 2;
 
+// --- 過去イベント降水再生状態(事前生成PNGフレームを再生する。ライブナウキャストとは別レイヤ) ---
+const PAST_EVENTS = {
+  typhoon19_2019: {
+    label: "令和元年東日本台風",
+    metaUrl: "rainfall_archive/events/typhoon19_2019/frames.json",
+    baseDir: "rainfall_archive/events/typhoon19_2019/frames/",
+  },
+};
+let peActive  = false;
+let peEventId = null;
+let peFrames  = [];
+let peCurrent = 0;
+let peTimer   = null;
+let pePlaying = false;
+let peBbox    = null;
+let peMeta    = null;
+
 // フライアウト内 elevation-ctrl の参照
 const elevCtrl = document.getElementById("elevation-ctrl");
 
@@ -1003,6 +1020,163 @@ function ncDisable() {
   updateHazardSummary();
 }
 
+// ---- 過去イベント降水再生 ----
+// ライブナウキャストの多フレーム・ラスタタイル方式と異なり、
+// 事前生成した1枚のPNG(荒川流域bbox切り出し)を image ソースとして
+// フレームごとに差し替える。タイル取得が発生しないため軽量
+
+function peToJST(utcTs) {
+  // frames.json の time_utc は "YYYYMMDDTHHMMSSZ" 形式
+  const dt = new Date(
+    `${utcTs.slice(0, 4)}-${utcTs.slice(4, 6)}-${utcTs.slice(6, 8)}T${utcTs.slice(9, 11)}:${utcTs.slice(11, 13)}:00Z`
+  );
+  return dt.toLocaleString("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    month: "numeric", day: "numeric",
+    hour: "2-digit", minute: "2-digit",
+    hour12: false,
+  }) + " JST";
+}
+
+async function peFetchFrames(eventId) {
+  const cfg = PAST_EVENTS[eventId];
+  return fetch(cfg.metaUrl).then((r) => r.json());
+}
+
+function peImageCoords(bbox) {
+  // MapLibre image source の座標順: 左上→右上→右下→左下([lng, lat])
+  return [
+    [bbox.west, bbox.north],
+    [bbox.east, bbox.north],
+    [bbox.east, bbox.south],
+    [bbox.west, bbox.south],
+  ];
+}
+
+function peAddLayer() {
+  const cfg = PAST_EVENTS[peEventId];
+  const url = cfg.baseDir + peFrames[peCurrent].file;
+  if (map.getSource("pe-img-src")) {
+    map.getSource("pe-img-src").updateImage({ url });
+    return;
+  }
+  map.addSource("pe-img-src", {
+    type: "image",
+    url,
+    coordinates: peImageCoords(peBbox),
+  });
+  map.addLayer({
+    id: "pe-img-layer",
+    type: "raster",
+    source: "pe-img-src",
+    paint: { "raster-opacity": 0.75, "raster-fade-duration": 0 },
+  });
+}
+
+function peShowFrame(index) {
+  if (!peFrames.length) return;
+  peCurrent = Math.max(0, Math.min(index, peFrames.length - 1));
+  peAddLayer();
+
+  const f = peFrames[peCurrent];
+  const labelEl  = document.getElementById("nc-time-label");
+  const badgeEl  = document.getElementById("nc-badge");
+  const sliderEl = document.getElementById("nc-slider");
+  if (labelEl) labelEl.textContent = peToJST(f.time_utc);
+  if (badgeEl) {
+    badgeEl.textContent = "過去";
+    badgeEl.className   = "nc-badge nc-past";
+  }
+  if (sliderEl) { sliderEl.max = peFrames.length - 1; sliderEl.value = peCurrent; }
+}
+
+function pePlay() {
+  pePlaying = true;
+  const btn = document.getElementById("nc-btn-play");
+  if (btn) btn.textContent = "⏸ 停止";
+  const ms = parseInt(document.getElementById("nc-speed")?.value ?? "500");
+  peTimer = setInterval(() => peShowFrame((peCurrent + 1) % peFrames.length), ms);
+}
+
+function peStop() {
+  pePlaying = false;
+  clearInterval(peTimer);
+  peTimer = null;
+  const btn = document.getElementById("nc-btn-play");
+  if (btn) btn.textContent = "▶ 再生";
+}
+
+function peRemoveLayer() {
+  if (map.getLayer("pe-img-layer")) map.removeLayer("pe-img-layer");
+  if (map.getSource("pe-img-src")) map.removeSource("pe-img-src");
+}
+
+function peRestoreLayer() {
+  // ベースマップ変更後: 古いレイヤは既に消えているので直接追加
+  peAddLayer();
+}
+
+function peUpdateTickLabels() {
+  const startEl = document.getElementById("nc-tick-start");
+  const midEl   = document.getElementById("nc-tick-mid");
+  const endEl   = document.getElementById("nc-tick-end");
+  if (peActive && peFrames.length) {
+    if (startEl) startEl.textContent = peToJST(peFrames[0].time_utc);
+    if (midEl)   midEl.textContent   = PAST_EVENTS[peEventId].label;
+    if (endEl)   endEl.textContent   = peToJST(peFrames[peFrames.length - 1].time_utc);
+  } else {
+    if (startEl) startEl.textContent = "−60分";
+    if (midEl)   midEl.textContent   = "現在";
+    if (endEl)   endEl.textContent   = "+60分";
+  }
+}
+
+async function peEnable(eventId) {
+  // ライブナウキャストは停止するが、フレームは保持して復帰に備える(タイル再取得を避ける)
+  if (ncActive) {
+    ncStop();
+    ncFrames.forEach((_, i) => {
+      const id = ncLayerId(ncDisplayGen, i);
+      if (map.getLayer(id)) map.setPaintProperty(id, "raster-opacity", 0);
+    });
+  }
+
+  peActive  = true;
+  peEventId = eventId;
+  document.getElementById("nowcast-toggle").checked = true;
+  document.getElementById("nowcast-ctrl").hidden = false;
+  const elementSelect = document.getElementById("nc-element");
+  if (elementSelect) elementSelect.hidden = true;
+
+  const loadingEl = document.getElementById("nc-loading");
+  if (loadingEl) loadingEl.hidden = false;
+  try {
+    peMeta    = await peFetchFrames(eventId);
+    peBbox    = peMeta.bbox;
+    peFrames  = peMeta.frames;
+    peCurrent = 0;
+    peShowFrame(0);
+    peUpdateTickLabels();
+  } catch (e) {
+    console.warn("過去イベント読込失敗", e);
+  }
+  if (loadingEl) loadingEl.hidden = true;
+  updateAttribution();
+}
+
+function peDisable() {
+  peActive = false;
+  peStop();
+  peRemoveLayer();
+  const elementSelect = document.getElementById("nc-element");
+  if (elementSelect) elementSelect.hidden = false;
+  peUpdateTickLabels();
+  updateAttribution();
+
+  // ライブナウキャストへ復帰(既存フレームがあれば再取得せず即表示)
+  if (ncActive && ncFrames.length > 0) ncShowFrame(ncCurrent);
+}
+
 function addBreachLayer(id) {
   const cfg = BREACH_LAYERS[id];
   map.addSource(`breach-${id}`, { type: "geojson", data: cfg.src });
@@ -1299,6 +1473,7 @@ document.querySelectorAll('input[name="base-layer"]').forEach((radio) => {
       if (localHillshadeActive) { addLocalDemHillshadeSource(); addLocalHillshadeLayer(); }
       if (terrain3dActive) { addLocalDemTerrainSource(); enableTerrain3d(); }
       if (ncActive && ncFrames.length > 0) ncRestoreLayers();
+      if (peActive && peFrames.length > 0) peRestoreLayer();
       applyFloodLabels();
     });
     updateAttribution();
@@ -1399,6 +1574,9 @@ function updateAttribution() {
   }
   if (ncActive) {
     parts.push("©気象庁 降水ナウキャスト");
+  }
+  if (peActive && peMeta) {
+    parts.push(peMeta.attribution);
   }
   parts.push("©MapLibre GL JS");
   document.getElementById("attribution").textContent = parts.join(" | ");
@@ -1670,6 +1848,13 @@ function applyPreset(presetId) {
   // プリセット適用中はトグルのchangeイベントで「カスタム」化させない
   window.__applyingPreset = true;
 
+  // シナリオはライブ降水のON/OFFのみを扱うため、過去イベント再生中なら先に閉じる
+  if (peActive) {
+    peDisable();
+    const srcSelect = document.getElementById("nc-source");
+    if (srcSelect) srcSelect.value = "live";
+  }
+
   // Sets一括更新
   activeTypes.clear();    p.types.forEach((v) => activeTypes.add(v));
   activeOverlays.clear(); p.overlays.forEach((v) => activeOverlays.add(v));
@@ -1813,29 +1998,52 @@ document.getElementById("flood-label-toggle").addEventListener("change", (e) => 
 setInterval(() => { if (floodLabelsEnabled) fetchFloodWarnings(); }, 600_000);
 
 // --- ナウキャスト コントローラ イベント ---
+// #nowcast-ctrl のスライダー・再生ボタン群はライブ(nc*)と過去イベント(pe*)で共用する。
+// peActive の真偽で分岐し、どちらの再生エンジンを操作するか切り替える
 document.getElementById("nowcast-toggle").addEventListener("change", (e) => {
-  e.target.checked ? ncEnable() : ncDisable();
+  if (e.target.checked) {
+    const src = document.getElementById("nc-source")?.value ?? "live";
+    src === "live" ? ncEnable() : peEnable(src);
+  } else {
+    peActive ? peDisable() : ncDisable();
+  }
+});
+document.getElementById("nc-source").addEventListener("change", (e) => {
+  const val = e.target.value;
+  if (val === "live") {
+    if (peActive) peDisable();
+    ncActive ? ncShowFrame(ncCurrent) : ncEnable();
+  } else {
+    peEnable(val);
+  }
 });
 document.getElementById("nc-btn-play").addEventListener("click", () => {
-  ncPlaying ? ncStop() : ncPlay();
+  if (peActive) { pePlaying ? peStop() : pePlay(); }
+  else { ncPlaying ? ncStop() : ncPlay(); }
 });
 document.getElementById("nc-btn-prev").addEventListener("click", () => {
-  ncStop(); ncShowFrame(ncCurrent - 1);
+  if (peActive) { peStop(); peShowFrame(peCurrent - 1); }
+  else { ncStop(); ncShowFrame(ncCurrent - 1); }
 });
 document.getElementById("nc-btn-next").addEventListener("click", () => {
-  ncStop(); ncShowFrame(ncCurrent + 1);
+  if (peActive) { peStop(); peShowFrame(peCurrent + 1); }
+  else { ncStop(); ncShowFrame(ncCurrent + 1); }
 });
 document.getElementById("nc-btn-first").addEventListener("click", () => {
-  ncStop(); ncShowFrame(0);
+  if (peActive) { peStop(); peShowFrame(0); }
+  else { ncStop(); ncShowFrame(0); }
 });
 document.getElementById("nc-btn-last").addEventListener("click", () => {
-  ncStop(); ncShowFrame(ncFrames.length - 1);
+  if (peActive) { peStop(); peShowFrame(peFrames.length - 1); }
+  else { ncStop(); ncShowFrame(ncFrames.length - 1); }
 });
 document.getElementById("nc-slider").addEventListener("input", (e) => {
-  ncStop(); ncShowFrame(parseInt(e.target.value));
+  if (peActive) { peStop(); peShowFrame(parseInt(e.target.value)); }
+  else { ncStop(); ncShowFrame(parseInt(e.target.value)); }
 });
 document.getElementById("nc-speed").addEventListener("change", () => {
-  if (ncPlaying) { ncStop(); ncPlay(); }
+  if (peActive) { if (pePlaying) { peStop(); pePlay(); } }
+  else { if (ncPlaying) { ncStop(); ncPlay(); } }
 });
 document.getElementById("nc-element").addEventListener("change", async (e) => {
   const wasPlaying = ncPlaying;

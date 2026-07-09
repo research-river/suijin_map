@@ -159,6 +159,12 @@
 
         <!-- ナウキャスト 再生コントローラ（下部フローティング） -->
         <div id="nowcast-ctrl" hidden>
+            <div id="nc-source-row">
+                <select id="nc-source" title="表示するデータ">
+                    <option value="live">ライブ（現在のナウキャスト）</option>
+                    <option value="typhoon19_2019">令和元年東日本台風 (2019/10/12-13)</option>
+                </select>
+            </div>
             <div id="nc-header">
                 <span id="nc-time-label">--</span>
                 <span id="nc-badge" class="nc-badge nc-obs">観測</span>
@@ -174,9 +180,9 @@
                     step="1"
                 />
                 <div id="nc-tick-row">
-                    <span>−60分</span>
-                    <span>現在</span>
-                    <span>+60分</span>
+                    <span id="nc-tick-start">−60分</span>
+                    <span id="nc-tick-mid">現在</span>
+                    <span id="nc-tick-end">+60分</span>
                 </div>
             </div>
             <div id="nc-btn-row">

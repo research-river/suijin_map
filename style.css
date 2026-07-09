@@ -578,6 +578,23 @@ body.place-card-active #map {
 
 .nc-obs  { background: #1f6feb; color: #fff; }
 .nc-fcst { background: #9e6a03; color: #fff; }
+.nc-past { background: #6b3fa0; color: #fff; }
+
+#nc-source-row {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#nc-source {
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--font);
+}
 
 #nc-loading {
   font-size: 11px;
