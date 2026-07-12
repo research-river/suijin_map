@@ -1,13 +1,16 @@
 {
 "type": "FeatureCollection",
-"name": "hagibis_2019_breach_WGS84",
+"name": "typhoon2019_breach_WGS84",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "num": "①", "text": "都幾川左岸 堤防欠損", "type": "堤防欠損", "river": "都幾川", "bank": "左岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.373205, 36.023104 ] } },
-{ "type": "Feature", "properties": { "num": "②", "text": "都幾川左岸 堤防欠損", "type": "堤防欠損", "river": "都幾川", "bank": "左岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.378592, 36.021721 ] } },
-{ "type": "Feature", "properties": { "num": "③", "text": "都幾川右岸 堤防欠損", "type": "堤防欠損", "river": "都幾川", "bank": "右岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.378489, 36.019106 ] } },
-{ "type": "Feature", "properties": { "num": "④", "text": "都幾川右岸 決壊", "type": "決壊", "river": "都幾川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.422118, 35.998241 ] } },
-{ "type": "Feature", "properties": { "num": "⑤", "text": "越辺川左岸 決壊", "type": "決壊", "river": "越辺川", "bank": "左岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.42057, 35.99515 ] } },
-{ "type": "Feature", "properties": { "num": "⑥", "text": "越辺川右岸 決壊", "type": "決壊", "river": "越辺川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）" }, "geometry": { "type": "Point", "coordinates": [ 139.46808, 35.95911 ] } }
+{"type": "Feature", "properties": {"num": "①", "text": "都幾川右岸 堤防決壊", "type": "堤防決壊", "river": "都幾川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "神戸〜葛袋、神戸大橋北西、L=28.4"}, "geometry": {"type": "Point", "coordinates": [139.357663, 36.02424]}},
+{"type": "Feature", "properties": {"num": "②", "text": "都幾川右岸 堤防破損", "type": "堤防破損", "river": "都幾川", "bank": "右岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "神戸大橋南1"}, "geometry": {"type": "Point", "coordinates": [139.359983, 36.020779]}},
+{"type": "Feature", "properties": {"num": "③", "text": "都幾川右岸 堤防破損", "type": "堤防破損", "river": "都幾川", "bank": "右岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "神戸大橋南2"}, "geometry": {"type": "Point", "coordinates": [139.361282, 36.017948]}},
+{"type": "Feature", "properties": {"num": "④", "text": "都幾川右岸 霞堤欠損", "type": "霞堤欠損", "river": "都幾川", "bank": "右岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": ""}, "geometry": {"type": "Point", "coordinates": [139.363779, 36.016499]}},
+{"type": "Feature", "properties": {"num": "⑤", "text": "都幾川左岸 堤防破損", "type": "堤防破損", "river": "都幾川", "bank": "左岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "下唐子地区"}, "geometry": {"type": "Point", "coordinates": [139.36343, 36.020778]}},
+{"type": "Feature", "properties": {"num": "⑥", "text": "都幾川右岸 霞堤決壊（欠損）", "type": "霞堤決壊（欠損）", "river": "都幾川", "bank": "右岸", "color": "#FFA500", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": ""}, "geometry": {"type": "Point", "coordinates": [139.376295, 36.019777]}},
+{"type": "Feature", "properties": {"num": "⑦", "text": "都幾川右岸 堤防決壊", "type": "堤防決壊", "river": "都幾川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "L=100 早俣地先"}, "geometry": {"type": "Point", "coordinates": [139.422502, 35.998455]}},
+{"type": "Feature", "properties": {"num": "⑧", "text": "越辺川左岸 堤防決壊", "type": "堤防決壊", "river": "越辺川", "bank": "左岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "（九十九川左岸）"}, "geometry": {"type": "Point", "coordinates": [139.417057, 35.994751]}},
+{"type": "Feature", "properties": {"num": "⑨", "text": "越辺川右岸 堤防決壊", "type": "堤防決壊", "river": "越辺川", "bank": "右岸", "color": "#FF0000", "year": 2019, "event": "令和元年東日本台風（台風19号）", "note": "L=70 川越市平塚新田地先"}, "geometry": {"type": "Point", "coordinates": [139.468179, 35.959117]}}
 ]
 }
