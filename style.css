@@ -673,6 +673,156 @@ body.place-card-active #map {
   flex-shrink: 0;
 }
 
+/* ===== ストーリーカード（左下） ===== */
+#story-card {
+  position: fixed;
+  left: 20px;
+  bottom: 40px;
+  width: 360px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  padding: 14px 16px 12px;
+  z-index: 991;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+#story-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+#story-step-no {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-sub);
+  flex-shrink: 0;
+}
+
+#story-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  flex: 1;
+}
+
+#story-btn-close {
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  font-size: 11px;
+  padding: 3px 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+#story-btn-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+#story-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+#story-text {
+  font-size: 12.5px;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+#story-source {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-sub);
+  max-height: 62px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+#story-source a {
+  color: var(--text-sub);
+  text-decoration: underline;
+}
+
+#story-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#story-nav button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  transition: background 0.15s;
+  font-family: var(--font);
+  flex-shrink: 0;
+}
+
+#story-nav button:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+#story-nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+#story-btn-next {
+  background: var(--accent) !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+#story-btn-next:hover:not(:disabled) {
+  background: #0066cc !important;
+}
+
+#story-btn-next:disabled {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: var(--text) !important;
+}
+
+#story-progress {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#story-progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.story-marker {
+  font-size: 30px;
+  line-height: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+}
+
+.story-marker-typhoon {
+  font-size: 34px;
+}
+
 /* ===== ベースマップ ミニタブ ===== */
 .bm-tab-bar {
   display: flex;

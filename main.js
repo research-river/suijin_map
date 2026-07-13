@@ -1514,6 +1514,7 @@ function registerBreachPopups() {
               <tr><td>河川</td><td>${p.river}</td></tr>
               <tr><td>岸</td><td>${p.bank}</td></tr>
               <tr><td>発生</td><td>${p.event}</td></tr>
+              ${p.note ? `<tr><td>備考</td><td>${p.note}</td></tr>` : ""}
             </table>
           `)
           .addTo(map);
@@ -1839,6 +1840,17 @@ const PRESETS = {
     buffers:  new Set(),
     nowcast:  true,
   },
+  // ストーリー開始時の初期状態。浸水域・破堤は時系列と矛盾しないよう
+  // オフから始め、破堤はステップ定義(layers.breach)側で点灯させる
+  story_typhoon19_base: {
+    basemap:  "pale",
+    types:    new Set(["water"]),
+    overlays: new Set(),
+    breach:   new Set(),
+    rivers:   new Set(),
+    buffers:  new Set(),
+    nowcast:  false,
+  },
 };
 
 function applyPreset(presetId) {
@@ -2060,4 +2072,197 @@ document.addEventListener("keydown", (e) => {
     searchInput.focus();
     searchInput.select();
   }
+});
+
+// ---- ストーリーモード（方式A: 本体統合ステップ送り式） ----
+// ストーリー定義JSONの steps を「次へ/前へ」で辿り、
+// 降水フレーム同期(peShowFrame)・破堤レイヤ点灯・flyTo・カード表示を行う
+
+const STORIES = {
+  typhoon19: {
+    url: "story/story_typhoon19.json",
+    eventId: "typhoon19_2019",
+    basePreset: "story_typhoon19_base",
+    data: null,
+  },
+};
+
+let storyActive = false;
+let storyId     = null;
+let storyStep   = 0;
+
+function storySteps() {
+  return STORIES[storyId]?.data?.steps ?? [];
+}
+
+function peFrameMs(utcTs) {
+  return Date.parse(
+    `${utcTs.slice(0, 4)}-${utcTs.slice(4, 6)}-${utcTs.slice(6, 8)}T${utcTs.slice(9, 11)}:${utcTs.slice(11, 13)}:00Z`
+  );
+}
+
+function storyNearestFrame(timeUtc) {
+  // ステップ時刻は10分刻みのフレームに乗らないことがある(21:17全閉など)ため最近傍を選ぶ
+  const target = peFrameMs(timeUtc);
+  let best = 0;
+  let bestDiff = Infinity;
+  peFrames.forEach((f, i) => {
+    const d = Math.abs(peFrameMs(f.time_utc) - target);
+    if (d < bestDiff) { bestDiff = d; best = i; }
+  });
+  return best;
+}
+
+function storySetRainVisible(on) {
+  if (!map.getLayer("pe-img-layer")) return;
+  map.setLayoutProperty("pe-img-layer", "visibility", on ? "visible" : "none");
+}
+
+let storyMarker = null;
+
+function storyUpdateMarker(s) {
+  if (storyMarker) { storyMarker.remove(); storyMarker = null; }
+  // marker: "typhoon"=台風位置 / 省略=注目地点ピン / false=非表示(決壊は✕と重複するため)
+  const kind = s.marker === undefined ? "point" : s.marker;
+  if (kind === false) return;
+  const el = document.createElement("div");
+  el.className = `story-marker story-marker-${kind}`;
+  el.textContent = kind === "typhoon" ? "🌀" : "📍";
+  storyMarker = new maplibregl.Marker({
+    element: el,
+    // 📍は針先が地点を指すよう bottom 基準、🌀は中心基準
+    anchor: kind === "typhoon" ? "center" : "bottom",
+  })
+    .setLngLat(s.camera.center)
+    .addTo(map);
+}
+
+function storySetBreach(on) {
+  const cb = document.querySelector('input[data-breach="typhoon2019_breach"]');
+  if (!cb || cb.checked === on) return;
+  // チェックボックス経由で切替え、activeBreach・サマリ・出典表示を通常操作と同経路で同期させる
+  window.__applyingPreset = true;
+  cb.checked = on;
+  cb.dispatchEvent(new Event("change", { bubbles: true }));
+  window.__applyingPreset = false;
+}
+
+function storyLinkify(text) {
+  return text.replace(
+    /https?:\/\/[^\s]+/g,
+    (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`
+  );
+}
+
+function storyRenderCard() {
+  const steps = storySteps();
+  const s = steps[storyStep];
+  document.getElementById("story-step-no").textContent = `STEP ${storyStep + 1} / ${steps.length}`;
+  document.getElementById("story-time").textContent    = s.time_label ?? "";
+  document.getElementById("story-title").textContent   = s.title;
+  document.getElementById("story-text").textContent    = s.text;
+  document.getElementById("story-source").innerHTML    = "出典: " + storyLinkify(s.source ?? "");
+  document.getElementById("story-btn-prev").disabled = storyStep === 0;
+  document.getElementById("story-btn-next").disabled = storyStep === steps.length - 1;
+  const fill = document.getElementById("story-progress-fill");
+  if (fill) fill.style.width = `${((storyStep + 1) / steps.length) * 100}%`;
+}
+
+function storyGoto(index) {
+  if (!storyActive) return;
+  const steps = storySteps();
+  if (!steps.length) return;
+  storyStep = Math.max(0, Math.min(index, steps.length - 1));
+  const s = steps[storyStep];
+
+  if (s.time_utc && peFrames.length) {
+    storySetRainVisible(true);
+    peStop();
+    peShowFrame(storyNearestFrame(s.time_utc));
+  } else {
+    // 台風発生期など降水フレーム範囲外のステップは降水レイヤなしで語る
+    peStop();
+    storySetRainVisible(false);
+  }
+
+  storySetBreach(!!(s.layers && s.layers.breach));
+  storyUpdateMarker(s);
+  map.flyTo({ ...s.camera, bearing: 0, duration: 2400, essential: true });
+  storyRenderCard();
+}
+
+function storyMarkCard() {
+  document.querySelectorAll(".scenario-card").forEach((c) => c.classList.remove("active"));
+  document.getElementById("story-scenario-card")?.classList.add("active");
+}
+
+async function storyStart(id) {
+  const cfg = STORIES[id];
+  if (!cfg) return;
+  if (!cfg.data) {
+    try {
+      cfg.data = await fetch(cfg.url).then((r) => r.json());
+    } catch (e) {
+      console.warn("ストーリー定義の読込失敗", e);
+      return;
+    }
+  }
+  storyId = id;
+
+  applyPreset(cfg.basePreset);
+  // applyPreset のベースマップ切替(setStyle)後、addSource可能になってから降水レイヤを載せる
+  // (idle待ちはタイル取得完了まで返らず開始が固まるため styledata を使う)
+  await new Promise((res) => {
+    if (map.isStyleLoaded()) return res();
+    map.once("styledata", res);
+  });
+  await peEnable(cfg.eventId);
+  const srcSelect = document.getElementById("nc-source");
+  if (srcSelect) srcSelect.value = cfg.eventId;
+
+  storyActive = true;
+  document.getElementById("story-card").hidden = false;
+  storyMarkCard();
+  storyGoto(0);
+}
+
+function storyEnd(markCustom = true) {
+  if (!storyActive) return;
+  storyActive = false;
+  document.getElementById("story-card").hidden = true;
+  if (storyMarker) { storyMarker.remove(); storyMarker = null; }
+  // 離脱後は降水を通常表示に戻し、レイヤ状態はそのまま自由操作へ引き継ぐ
+  storySetRainVisible(true);
+  if (markCustom) {
+    document.querySelectorAll(".scenario-card").forEach((c) => c.classList.remove("active"));
+    document.getElementById("custom-scenario-card")?.classList.add("active");
+  }
+}
+
+document.getElementById("story-scenario-card")?.addEventListener("click", () => {
+  if (!storyActive) storyStart("typhoon19");
+});
+document.getElementById("story-btn-prev").addEventListener("click", () => storyGoto(storyStep - 1));
+document.getElementById("story-btn-next").addEventListener("click", () => storyGoto(storyStep + 1));
+document.getElementById("story-btn-close").addEventListener("click", () => storyEnd());
+
+// ストーリー中の手動レイヤ操作は「カスタム」化と同じ思想でストーリー終了として扱う
+document.getElementById("main-panel").addEventListener("change", () => {
+  if (storyActive && !window.__applyingPreset) storyEnd();
+});
+// 降水ソースをライブ等へ手動で切替えた場合も終了(スライダー操作・再生は許容)
+document.getElementById("nc-source").addEventListener("change", () => {
+  if (storyActive) storyEnd();
+});
+// 別プリセットの適用でも終了(アクティブカードは preset-applied 側が更新する)
+document.addEventListener("preset-applied", (e) => {
+  if (e.detail !== STORIES[storyId ?? ""]?.basePreset) storyEnd(false);
+});
+
+// ←/→キーでステップ送り
+document.addEventListener("keydown", (e) => {
+  if (!storyActive) return;
+  if (e.target.matches("input, select, textarea")) return;
+  if (e.key === "ArrowRight") { e.preventDefault(); storyGoto(storyStep + 1); }
+  if (e.key === "ArrowLeft")  { e.preventDefault(); storyGoto(storyStep - 1); }
 });

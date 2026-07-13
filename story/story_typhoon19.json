@@ -2,7 +2,7 @@
   "story": "typhoon19_2019",
   "title": "令和元年東日本台風と荒川流域",
   "event_id": "typhoon19_2019",
-  "note": "time_utc は降水フレーム同期用（フレーム範囲 20191011T180000Z〜20191013T030000Z の外は null）。time_label はカード表示用のJST時刻。camera はドラフト値で、Phase 1 実装時に地図を動かしながら調整する。",
+  "note": "time_utc は降水フレーム同期用（フレーム範囲 20191011T180000Z〜20191013T030000Z の外は null）。time_label はカード表示用のJST時刻。camera はドラフト値で、Phase 1 実装時に地図を動かしながら調整する。 marker: 'typhoon'=台風位置(🌀)/省略=注目地点ピン(📍)/false=非表示(決壊ステップは✕マーカーと重複するため)。",
   "steps": [
     {
       "time_utc": null,
@@ -10,8 +10,18 @@
       "title": "熱帯低気圧発生",
       "text": "中心気圧1008hPaの熱帯低気圧が発生。",
       "source": "気象庁 2019年台風第19号 HAGIBIS (1919) 位置表 https://www.data.jma.go.jp/typhoon/data/T1919.pdf",
-      "camera": { "center": [164.4, 15.7], "zoom": 3, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          164.4,
+          15.7
+        ],
+        "zoom": 3,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -19,8 +29,18 @@
       "title": "台風19号発生",
       "text": "台風第19号が、南鳥島の南海上で発生。",
       "source": "気象庁「令和元年台風第19号とそれに伴う大雨などの特徴・要因について（速報）」令和元年10月24日 https://www.jma.go.jp/jma/press/1910/24a/20191024_mechanism.pdf",
-      "camera": { "center": [157.4, 15.1], "zoom": 3, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          157.4,
+          15.1
+        ],
+        "zoom": 3,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -28,8 +48,18 @@
       "title": "19号の中心気圧992hPa",
       "text": "最大風速23m/s。",
       "source": "気象庁 2019年台風第19号 HAGIBIS (1919) 位置表 https://www.data.jma.go.jp/typhoon/data/T1919.pdf",
-      "camera": { "center": [155.6, 14.4], "zoom": 3, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          155.6,
+          14.4
+        ],
+        "zoom": 3,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -37,8 +67,17 @@
       "title": "二瀬ダム、水位低下開始",
       "text": "二瀬ダムは、かなり早い段階から予備放流を行う。",
       "source": "水源地ネット「ダム管理所長に聞く」第2回《二瀬ダム》 https://www.dam-net.jp/dam_content/topix/02_topix_list/2002/t200202.html",
-      "camera": { "center": [138.90917, 35.94194], "zoom": 12, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          138.90917,
+          35.94194
+        ],
+        "zoom": 12,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -46,8 +85,18 @@
       "title": "915hPa、強い台風へ",
       "text": "中心気圧は24時間で77hPa低下した。このレベルの急発達は、1983年10号以来36年ぶり。",
       "source": "国立情報学研究所 デジタル台風：2019年台風19号 https://agora.ex.nii.ac.jp/digital-typhoon/news/2019/TC1919/",
-      "camera": { "center": [146.6, 16.1], "zoom": 4, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          146.6,
+          16.1
+        ],
+        "zoom": 4,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -55,8 +104,17 @@
       "title": "気象庁記者会見",
       "text": "早期警戒を呼びかける第1報。",
       "source": "気象庁報道発表 https://www.jma.go.jp/jma/press/1910/09a/20191009_1400.pdf",
-      "camera": { "center": [139.745871, 35.665832], "zoom": 9, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.745871,
+          35.665832
+        ],
+        "zoom": 9,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -64,8 +122,18 @@
       "title": "19号は、この時間まで915hPaを維持",
       "text": "最大風速55m/s、大型で猛烈な台風。",
       "source": "気象庁 2019年台風第19号 HAGIBIS (1919) 位置表 https://www.data.jma.go.jp/typhoon/data/T1919.pdf",
-      "camera": { "center": [139.5, 24.4], "zoom": 4, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.5,
+          24.4
+        ],
+        "zoom": 4,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": null,
@@ -73,8 +141,17 @@
       "title": "気象庁記者会見",
       "text": "大雨特別警報を発表する可能性があると発表。",
       "source": "気象庁報道発表 https://www.jma.go.jp/jma/press/1910/11b/20191011_1100.pdf",
-      "camera": { "center": [139.745871, 35.665832], "zoom": 9, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.745871,
+          35.665832
+        ],
+        "zoom": 9,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T014000Z",
@@ -82,8 +159,17 @@
       "title": "綾瀬排水機場運転開始",
       "text": "綾瀬水門は荒川の洪水が綾瀬川に逆流するのを防ぐために建設された水門。綾瀬水門を閉鎖し、排水機場のポンプで荒川へ980.4万m³の排水を実施。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf ／ AYASEGAWA ACCESS MAP https://www.ktr.mlit.go.jp/ktr_content/content/000034171.pdf",
-      "camera": { "center": [139.82083, 35.765], "zoom": 13, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.82083,
+          35.765
+        ],
+        "zoom": 13,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T063000Z",
@@ -91,8 +177,17 @@
       "title": "大雨特別警報発表",
       "text": "7都県（静岡県、神奈川県、東京都、埼玉県、群馬県、山梨県、長野県）に発表。19時50分に茨城県、栃木県、新潟県、福島県、宮城県、13日0時40分に岩手県にも発表。",
       "source": "気象庁報道発表「７都県に大雨特別警報発表」 https://www.jma.go.jp/jma/press/1910/12a/201910121630.html ／「５県に大雨特別警報発表」 https://www.jma.go.jp/jma/press/1910/12b/201910122050.html ／「岩手県に大雨特別警報発表」 https://www.jma.go.jp/jma/press/1910/13a/201910130140.html",
-      "camera": { "center": [139.745871, 35.665832], "zoom": 7, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.745871,
+          35.665832
+        ],
+        "zoom": 7,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T090000Z",
@@ -100,8 +195,17 @@
       "title": "荒川・熊谷で最高水位",
       "text": "熊谷観測所で、観測史上最高水位6.25mを観測（氾濫危険水位5.50m）。",
       "source": "国土交通省関東地方整備局荒川上流河川事務所「令和元年１０月１１日からの台風第１９号による出水状況等について」 https://www.ktr.mlit.go.jp/ktr_content/content/000773562.pdf",
-      "camera": { "center": [139.3783333, 36.1380556], "zoom": 12, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.3783333,
+          36.1380556
+        ],
+        "zoom": 12,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T095000Z",
@@ -109,8 +213,18 @@
       "title": "19号上陸",
       "text": "本州の南海上で北北東に進路を変えた第19号の中心は、12日19時前に伊豆半島に上陸した。中心気圧955hPa。",
       "source": "気象庁「令和元年台風第19号とそれに伴う大雨などの特徴・要因について（速報）」令和元年10月24日 https://www.jma.go.jp/jma/press/1910/24a/20191024_mechanism.pdf ／ 2019年台風第19号 HAGIBIS (1919) 位置表 https://www.data.jma.go.jp/typhoon/data/T1919.pdf",
-      "camera": { "center": [138.7, 34.6], "zoom": 7, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          138.7,
+          34.6
+        ],
+        "zoom": 7,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T104000Z",
@@ -118,8 +232,17 @@
       "title": "野本における水位の異変",
       "text": "野本水位観測所での水位は、19時40分にピークに達し、その後低下、そのあと再上昇した。このパターンは堤防決壊に伴う水位の低下・回復と解釈できる。",
       "source": "五十嵐善哉・田中規夫: 都幾川上流及び都幾川・越辺川合流部の堤防決壊時刻が堤内地氾濫量に与えた影響, 土木学会論文集B1（水工学）Vol.76, No.1, pp.284-294, 2020",
-      "camera": { "center": [139.42083, 36.00806], "zoom": 13, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.42083,
+          36.00806
+        ],
+        "zoom": 13,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T120000Z",
@@ -127,8 +250,17 @@
       "title": "二瀬ダム、異常洪水時防災操作（自然放流）開始1時間前",
       "text": "このとき、二瀬ダム建設以来、既往最大の流入量1032m³/sを記録。",
       "source": "水源地ネット「ダム管理所長に聞く」第2回《二瀬ダム》 https://www.dam-net.jp/dam_content/topix/02_topix_list/2002/t200202.html",
-      "camera": { "center": [138.90917, 35.94194], "zoom": 12, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          138.90917,
+          35.94194
+        ],
+        "zoom": 12,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T121700Z",
@@ -136,8 +268,17 @@
       "title": "岩淵水門全閉",
       "text": "岩淵水門は、洪水時には閉鎖し、荒川の洪水が隅田川へ流入することを防ぎ、隅田川の洪水氾濫を防止。岩淵水門（上）水位観測所の水位がA.P.+4.00mに達したため、12年ぶりに岩淵水門（下）を閉鎖。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.73583, 35.78417], "zoom": 14, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.73583,
+          35.78417
+        ],
+        "zoom": 14,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T144000Z",
@@ -145,8 +286,17 @@
       "title": "二瀬ダム、異常洪水時防災操作回避",
       "text": "異常洪水時防災操作の回避。",
       "source": "水源地ネット「ダム管理所長に聞く」第2回《二瀬ダム》 https://www.dam-net.jp/dam_content/topix/02_topix_list/2002/t200202.html",
-      "camera": { "center": [138.90917, 35.94194], "zoom": 12, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          138.90917,
+          35.94194
+        ],
+        "zoom": 12,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T150000Z",
@@ -154,8 +304,17 @@
       "title": "都幾川・野本で最高水位／荒川上流で大雨",
       "text": "野本観測所で観測史上最高水位6.34mを観測（氾濫危険水位は4.10m）。また、13日0時までの解析雨量は秩父市付近で約700ミリに達し、記録的な大雨となった。",
       "source": "国土交通省関東地方整備局荒川上流河川事務所「令和元年１０月１１日からの台風第１９号による出水状況等について」 https://www.ktr.mlit.go.jp/ktr_content/content/000773562.pdf ／「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.42083, 36.00806], "zoom": 11, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.42083,
+          36.00806
+        ],
+        "zoom": 11,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T155400Z",
@@ -163,8 +322,17 @@
       "title": "新芝川排水機場 運転開始",
       "text": "累計排水量735万m³。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.746727, 35.78546], "zoom": 14, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.746727,
+          35.78546
+        ],
+        "zoom": 14,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T160000Z",
@@ -172,8 +340,17 @@
       "title": "入間川・菅間で最高水位",
       "text": "菅間観測所で観測史上最高水位12.60mを観測（氾濫危険水位は12.00m）。",
       "source": "国土交通省関東地方整備局荒川上流河川事務所「令和元年１０月１１日からの台風第１９号による出水状況等について」 https://www.ktr.mlit.go.jp/ktr_content/content/000773562.pdf",
-      "camera": { "center": [139.5111111, 35.9527778], "zoom": 13, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.5111111,
+          35.9527778
+        ],
+        "zoom": 13,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T200000Z",
@@ -181,8 +358,17 @@
       "title": "荒川・治水橋で最高水位",
       "text": "治水橋観測所で観測史上最高水位13.08mを観測（氾濫危険水位12.60m）。",
       "source": "国土交通省関東地方整備局荒川上流河川事務所「令和元年１０月１１日からの台風第１９号による出水状況等について」 https://www.ktr.mlit.go.jp/ktr_content/content/000773562.pdf",
-      "camera": { "center": [139.5597222, 35.8908333], "zoom": 13, "pitch": 0 },
-      "layers": { "breach": false }
+      "camera": {
+        "center": [
+          139.5597222,
+          35.8908333
+        ],
+        "zoom": 13,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": false
+      }
     },
     {
       "time_utc": "20191012T202500Z",
@@ -190,8 +376,18 @@
       "title": "堤防決壊（越辺川）",
       "text": "越辺川右岸0.0k付近の堤防が約70m決壊したことを確認。埼玉県川越市平塚新田地先。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.468179, 35.959117], "zoom": 14, "pitch": 45 },
-      "layers": { "breach": true }
+      "camera": {
+        "center": [
+          139.468179,
+          35.959117
+        ],
+        "zoom": 14,
+        "pitch": 45
+      },
+      "marker": false,
+      "layers": {
+        "breach": true
+      }
     },
     {
       "time_utc": "20191012T210000Z",
@@ -199,8 +395,18 @@
       "title": "堤防決壊（越辺川）",
       "text": "越辺川左岸7.6k付近（九十九川左岸0.0k付近）の堤防が約20m決壊したことを確認。埼玉県東松山市正代地先。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.417057, 35.994751], "zoom": 14, "pitch": 45 },
-      "layers": { "breach": true }
+      "camera": {
+        "center": [
+          139.417057,
+          35.994751
+        ],
+        "zoom": 14,
+        "pitch": 45
+      },
+      "marker": false,
+      "layers": {
+        "breach": true
+      }
     },
     {
       "time_utc": "20191012T221500Z",
@@ -208,8 +414,18 @@
       "title": "堤防決壊（都幾川）",
       "text": "都幾川右岸0.4kの堤防が約100m決壊したことを確認。埼玉県東松山市早俣地先。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.422502, 35.99845], "zoom": 14, "pitch": 45 },
-      "layers": { "breach": true }
+      "camera": {
+        "center": [
+          139.422502,
+          35.99845
+        ],
+        "zoom": 14,
+        "pitch": 45
+      },
+      "marker": false,
+      "layers": {
+        "breach": true
+      }
     },
     {
       "time_utc": "20191013T005000Z",
@@ -217,8 +433,17 @@
       "title": "岩淵水門（上）で最高水位",
       "text": "A.P.+7.17m（氾濫危険水位A.P.+7.70m）。主要洪水（戦後）観測史上水位3位。この水位は隅田川堤防を27cm超過していた。",
       "source": "国土交通省関東地方整備局荒川下流河川事務所「台風第19号による荒川の出水状況」令和元年12月19日 https://www.ktr.mlit.go.jp/ktr_content/content/000805533.pdf",
-      "camera": { "center": [139.72722, 35.7875], "zoom": 14, "pitch": 0 },
-      "layers": { "breach": true }
+      "camera": {
+        "center": [
+          139.72722,
+          35.7875
+        ],
+        "zoom": 14,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": true
+      }
     },
     {
       "time_utc": "20191013T030000Z",
@@ -226,8 +451,18 @@
       "title": "19号、温帯低気圧へ",
       "text": "中心気圧980hPa。",
       "source": "気象庁 2019年台風第19号 HAGIBIS (1919) 位置表 https://www.data.jma.go.jp/typhoon/data/T1919.pdf",
-      "camera": { "center": [147.0, 41.0], "zoom": 4, "pitch": 0 },
-      "layers": { "breach": true }
+      "camera": {
+        "center": [
+          147.0,
+          41.0
+        ],
+        "zoom": 4,
+        "pitch": 0
+      },
+      "marker": "typhoon",
+      "layers": {
+        "breach": true
+      }
     },
     {
       "time_utc": null,
@@ -235,8 +470,17 @@
       "title": "岩淵水門全開",
       "text": "荒川の水位が低下したため、岩淵水門を全開へ。",
       "source": "国土交通省 荒川下流河川事務所 @mlit_arakawa_ka https://x.com/mlit_arakawa_ka/status/1183871100322635776",
-      "camera": { "center": [139.73583, 35.78417], "zoom": 14, "pitch": 0 },
-      "layers": { "breach": true }
+      "camera": {
+        "center": [
+          139.73583,
+          35.78417
+        ],
+        "zoom": 14,
+        "pitch": 0
+      },
+      "layers": {
+        "breach": true
+      }
     }
   ]
 }
