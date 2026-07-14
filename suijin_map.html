@@ -206,6 +206,25 @@
             </div>
         </div>
 
+        <!-- ストーリーカード（左下フローティング・ストーリーモード中のみ表示） -->
+        <div id="story-card" hidden>
+            <div id="story-card-head">
+                <span id="story-step-no">STEP 1 / 1</span>
+                <span id="story-time"></span>
+                <button id="story-btn-close" title="ストーリーを終了">✕</button>
+            </div>
+            <div id="story-title"></div>
+            <div id="story-text"></div>
+            <div id="story-source"></div>
+            <div id="story-nav">
+                <button id="story-btn-prev">← 前へ</button>
+                <button id="story-btn-next">次へ →</button>
+                <div id="story-progress">
+                    <div id="story-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- ===================== メインパネル（右上） ===================== -->
         <div class="panel-container" id="main-panel">
             <div class="panel-header">
@@ -1140,6 +1159,29 @@
                                 <div class="scenario-title">台風19号調査</div>
                                 <div class="scenario-sub">
                                     浸水想定区域 + 破堤箇所(R1) + 水神碑
+                                </div>
+                            </div>
+                            <i
+                                class="ti ti-check scenario-check"
+                                aria-hidden="true"
+                            ></i>
+                        </div>
+
+                        <div
+                            class="scenario-card"
+                            id="story-scenario-card"
+                            data-story="typhoon19"
+                        >
+                            <i
+                                class="ti ti-player-play scenario-icon"
+                                aria-hidden="true"
+                            ></i>
+                            <div class="scenario-body">
+                                <div class="scenario-title">
+                                    台風19号ストーリー
+                                </div>
+                                <div class="scenario-sub">
+                                    発生から岩淵水門全開まで、時系列で再生
                                 </div>
                             </div>
                             <i
