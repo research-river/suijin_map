@@ -3197,6 +3197,52 @@
         "Condition_level": "",
         "photo_filename": "funabori_inari_shrine_suijin.jpg"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.331212473,
+          36.034035583
+        ]
+      },
+      "properties": {
+        "name": "蛇坂の水神塔",
+        "type": "water",
+        "year": "1808年",
+        "size": "高さ110cm 幅70cm 厚6cm",
+        "address": "埼玉県比企郡嵐山町菅谷",
+        "inscription": "(正面)　水神塔",
+        "coordinates_dd": "36.034035583, 139.331212473",
+        "Survey_date": "2026年7月15日",
+        "Condition_comment": "地衣類付着が顕著で正面の文字については篆書体で刻まれ、判読は可能。草木が生い茂り、裏面を確認することはできなかった。",
+        "Condition_level": "★★☆☆☆",
+        "photo_filename": "hebisaka_suijin.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.33664832,
+          36.03056598
+        ]
+      },
+      "properties": {
+        "name": "上唐子月田橋近傍の水神塔",
+        "type": "water",
+        "year": "不明も、古老によると文政年間 1818-1830年",
+        "size": "高さ80cm  幅29cm  厚30cm",
+        "address": "埼玉県東松山市下唐子1675-5",
+        "inscription": "(正面)　水神塔",
+        "coordinates_dd": "36.03056598, 139.33664832",
+        "Survey_date": "2026年7月15日",
+        "Condition_comment": "正面に地衣類付着。側面に亀裂、剥落あり。",
+        "Condition_level": "★★★☆☆",
+        "photo_filename": "kamigarako_tukita_bridge_suijin.jpg"
+      }
     }
   ]
 }
