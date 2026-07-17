@@ -2126,6 +2126,52 @@ function storySetRainVisible(on) {
 }
 
 let storyMarker = null;
+let storyPulseMarker = null;
+let storyFxSeq = 0;
+
+function storyClearPulse() {
+  if (storyPulseMarker) { storyPulseMarker.remove(); storyPulseMarker = null; }
+}
+
+function storyShowPulse(lngLat) {
+  storyClearPulse();
+  const el = document.createElement("div");
+  el.className = "story-pulse";
+  el.innerHTML = "<span></span><span></span>";
+  storyPulseMarker = new maplibregl.Marker({ element: el, anchor: "center" })
+    .setLngLat(lngLat)
+    .addTo(map);
+  setTimeout(storyClearPulse, 3000);
+}
+
+function storyFlashBreach() {
+  const layerId = "breach-typhoon2019_breach";
+  if (!map.getLayer(layerId)) return;
+  const base = 38;
+  const peak = 68;
+  const dur = 900;
+  const t0 = performance.now();
+  const frame = (now) => {
+    if (!map.getLayer(layerId)) return;
+    const t = Math.min((now - t0) / dur, 1);
+    // サインカーブ1山で拡大→収縮し、終了時にちょうど基準サイズへ戻る
+    map.setLayoutProperty(layerId, "text-size", base + (peak - base) * Math.sin(Math.PI * t));
+    if (t < 1) requestAnimationFrame(frame);
+  };
+  requestAnimationFrame(frame);
+}
+
+function storyScheduleFx(s) {
+  const token = ++storyFxSeq;
+  // flyTo完了(moveend)後に一拍おいてから注目喚起の演出を出す
+  map.once("moveend", () => {
+    setTimeout(() => {
+      if (!storyActive || token !== storyFxSeq) return;
+      if (s.marker === false) storyFlashBreach();
+      else storyShowPulse(s.camera.center);
+    }, 300);
+  });
+}
 
 function storyUpdateMarker(s) {
   if (storyMarker) { storyMarker.remove(); storyMarker = null; }
@@ -2271,7 +2317,9 @@ function storyGoto(index) {
   storySetBreach(!!(s.layers && s.layers.breach));
   storyUpdateTrack(s);
   storyUpdateMarker(s);
+  storyClearPulse();
   map.flyTo({ ...s.camera, bearing: 0, duration: 2400, essential: true });
+  storyScheduleFx(s);
   storyRenderCard();
 }
 
@@ -2323,6 +2371,8 @@ function storyEnd(markCustom = true) {
   storyActive = false;
   document.getElementById("story-card").hidden = true;
   if (storyMarker) { storyMarker.remove(); storyMarker = null; }
+  storyFxSeq++;
+  storyClearPulse();
   storyRemoveTrackLayers();
   // 離脱後は降水を通常表示に戻し、レイヤ状態はそのまま自由操作へ引き継ぐ
   storySetRainVisible(true);
