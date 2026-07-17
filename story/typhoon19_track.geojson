@@ -1,0 +1,727 @@
+{
+ "type": "FeatureCollection",
+ "name": "typhoon19_2019_track",
+ "note": "気象庁「2019年台風第19号 HAGIBIS (1919) 位置表」(https://www.data.jma.go.jp/typhoon/data/T1919.pdf) より作成。最終点(10/15 03時)は西経178.0度を経度連続化のため182.0として記録。",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     164.4,
+     15.7
+    ]
+   },
+   "properties": {
+    "time_jst": "10月5日03時",
+    "time_utc": "2019-10-04T18:00:00Z",
+    "pressure_hPa": 1008
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     162.7,
+     15.0
+    ]
+   },
+   "properties": {
+    "time_jst": "10月5日09時",
+    "time_utc": "2019-10-05T00:00:00Z",
+    "pressure_hPa": 1006
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     161.1,
+     15.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月5日15時",
+    "time_utc": "2019-10-05T06:00:00Z",
+    "pressure_hPa": 1004
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     159.4,
+     15.2
+    ]
+   },
+   "properties": {
+    "time_jst": "10月5日21時",
+    "time_utc": "2019-10-05T12:00:00Z",
+    "pressure_hPa": 1004
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     157.4,
+     15.1
+    ]
+   },
+   "properties": {
+    "time_jst": "10月6日03時",
+    "time_utc": "2019-10-05T18:00:00Z",
+    "pressure_hPa": 1000
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     155.6,
+     14.4
+    ]
+   },
+   "properties": {
+    "time_jst": "10月6日09時",
+    "time_utc": "2019-10-06T00:00:00Z",
+    "pressure_hPa": 992
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     154.1,
+     14.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月6日15時",
+    "time_utc": "2019-10-06T06:00:00Z",
+    "pressure_hPa": 985
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     153.0,
+     14.6
+    ]
+   },
+   "properties": {
+    "time_jst": "10月6日21時",
+    "time_utc": "2019-10-06T12:00:00Z",
+    "pressure_hPa": 970
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     151.2,
+     14.9
+    ]
+   },
+   "properties": {
+    "time_jst": "10月7日03時",
+    "time_utc": "2019-10-06T18:00:00Z",
+    "pressure_hPa": 955
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     149.6,
+     15.1
+    ]
+   },
+   "properties": {
+    "time_jst": "10月7日09時",
+    "time_utc": "2019-10-07T00:00:00Z",
+    "pressure_hPa": 940
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     148.2,
+     15.5
+    ]
+   },
+   "properties": {
+    "time_jst": "10月7日15時",
+    "time_utc": "2019-10-07T06:00:00Z",
+    "pressure_hPa": 925
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     146.6,
+     16.1
+    ]
+   },
+   "properties": {
+    "time_jst": "10月7日21時",
+    "time_utc": "2019-10-07T12:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     144.9,
+     16.5
+    ]
+   },
+   "properties": {
+    "time_jst": "10月8日03時",
+    "time_utc": "2019-10-07T18:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     143.8,
+     16.9
+    ]
+   },
+   "properties": {
+    "time_jst": "10月8日09時",
+    "time_utc": "2019-10-08T00:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     142.7,
+     17.7
+    ]
+   },
+   "properties": {
+    "time_jst": "10月8日15時",
+    "time_utc": "2019-10-08T06:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     141.8,
+     18.4
+    ]
+   },
+   "properties": {
+    "time_jst": "10月8日21時",
+    "time_utc": "2019-10-08T12:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     140.9,
+     19.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月9日03時",
+    "time_utc": "2019-10-08T18:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     140.4,
+     19.8
+    ]
+   },
+   "properties": {
+    "time_jst": "10月9日09時",
+    "time_utc": "2019-10-09T00:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     140.0,
+     20.6
+    ]
+   },
+   "properties": {
+    "time_jst": "10月9日15時",
+    "time_utc": "2019-10-09T06:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.6,
+     21.2
+    ]
+   },
+   "properties": {
+    "time_jst": "10月9日21時",
+    "time_utc": "2019-10-09T12:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.7,
+     22.0
+    ]
+   },
+   "properties": {
+    "time_jst": "10月10日03時",
+    "time_utc": "2019-10-09T18:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.9,
+     23.2
+    ]
+   },
+   "properties": {
+    "time_jst": "10月10日09時",
+    "time_utc": "2019-10-10T00:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.5,
+     24.4
+    ]
+   },
+   "properties": {
+    "time_jst": "10月10日15時",
+    "time_utc": "2019-10-10T06:00:00Z",
+    "pressure_hPa": 915
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.0,
+     25.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月10日21時",
+    "time_utc": "2019-10-10T12:00:00Z",
+    "pressure_hPa": 920
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     138.6,
+     26.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月11日03時",
+    "time_utc": "2019-10-10T18:00:00Z",
+    "pressure_hPa": 925
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     138.1,
+     27.5
+    ]
+   },
+   "properties": {
+    "time_jst": "10月11日09時",
+    "time_utc": "2019-10-11T00:00:00Z",
+    "pressure_hPa": 935
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.5,
+     28.8
+    ]
+   },
+   "properties": {
+    "time_jst": "10月11日15時",
+    "time_utc": "2019-10-11T06:00:00Z",
+    "pressure_hPa": 935
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.1,
+     29.9
+    ]
+   },
+   "properties": {
+    "time_jst": "10月11日21時",
+    "time_utc": "2019-10-11T12:00:00Z",
+    "pressure_hPa": 945
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.0,
+     30.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日00時",
+    "time_utc": "2019-10-11T15:00:00Z",
+    "pressure_hPa": 945
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.1,
+     30.8
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日03時",
+    "time_utc": "2019-10-11T18:00:00Z",
+    "pressure_hPa": 945
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.1,
+     31.4
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日06時",
+    "time_utc": "2019-10-11T21:00:00Z",
+    "pressure_hPa": 945
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.4,
+     32.0
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日09時",
+    "time_utc": "2019-10-12T00:00:00Z",
+    "pressure_hPa": 950
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     137.6,
+     32.8
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日12時",
+    "time_utc": "2019-10-12T03:00:00Z",
+    "pressure_hPa": 950
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     138.2,
+     33.7
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日15時",
+    "time_utc": "2019-10-12T06:00:00Z",
+    "pressure_hPa": 950
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     138.7,
+     34.6
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日18時",
+    "time_utc": "2019-10-12T09:00:00Z",
+    "pressure_hPa": 955
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.6,
+     35.6
+    ]
+   },
+   "properties": {
+    "time_jst": "10月12日21時",
+    "time_utc": "2019-10-12T12:00:00Z",
+    "pressure_hPa": 965
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     140.6,
+     36.9
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日00時",
+    "time_utc": "2019-10-12T15:00:00Z",
+    "pressure_hPa": 970
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     141.8,
+     38.2
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日03時",
+    "time_utc": "2019-10-12T18:00:00Z",
+    "pressure_hPa": 975
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     143.5,
+     39.5
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日06時",
+    "time_utc": "2019-10-12T21:00:00Z",
+    "pressure_hPa": 975
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.1,
+     40.1
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日09時",
+    "time_utc": "2019-10-13T00:00:00Z",
+    "pressure_hPa": 975
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     147.0,
+     41.0
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日12時",
+    "time_utc": "2019-10-13T03:00:00Z",
+    "pressure_hPa": 980
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     149.8,
+     41.9
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日15時",
+    "time_utc": "2019-10-13T06:00:00Z",
+    "pressure_hPa": 984
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     155.9,
+     44.0
+    ]
+   },
+   "properties": {
+    "time_jst": "10月13日21時",
+    "time_utc": "2019-10-13T12:00:00Z",
+    "pressure_hPa": 988
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     163.3,
+     47.0
+    ]
+   },
+   "properties": {
+    "time_jst": "10月14日03時",
+    "time_utc": "2019-10-13T18:00:00Z",
+    "pressure_hPa": 984
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     170.6,
+     51.6
+    ]
+   },
+   "properties": {
+    "time_jst": "10月14日09時",
+    "time_utc": "2019-10-14T00:00:00Z",
+    "pressure_hPa": 980
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     175.9,
+     54.3
+    ]
+   },
+   "properties": {
+    "time_jst": "10月14日15時",
+    "time_utc": "2019-10-14T06:00:00Z",
+    "pressure_hPa": 970
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     179.7,
+     56.4
+    ]
+   },
+   "properties": {
+    "time_jst": "10月14日21時",
+    "time_utc": "2019-10-14T12:00:00Z",
+    "pressure_hPa": 956
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     182.0,
+     57.4
+    ]
+   },
+   "properties": {
+    "time_jst": "10月15日03時",
+    "time_utc": "2019-10-14T18:00:00Z",
+    "pressure_hPa": 954
+   }
+  }
+ ]
+}

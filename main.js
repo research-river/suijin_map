@@ -1579,6 +1579,10 @@ function updateAttribution() {
   if (peActive && peMeta) {
     parts.push(peMeta.attribution);
   }
+  // ストーリー変数はこの関数より後で宣言されるため、TDZを避けてフラグ経由で参照する
+  if (window.__storyTrackOn) {
+    parts.push("台風経路: 気象庁「2019年台風第19号 位置表」");
+  }
   parts.push("©MapLibre GL JS");
   document.getElementById("attribution").textContent = parts.join(" | ");
 }
@@ -2083,7 +2087,10 @@ const STORIES = {
     url: "story/story_typhoon19.json",
     eventId: "typhoon19_2019",
     basePreset: "story_typhoon19_base",
+    trackUrl: "story/typhoon19_track.geojson",
+    year: 2019,
     data: null,
+    track: null,
   },
 };
 
@@ -2137,6 +2144,82 @@ function storyUpdateMarker(s) {
     .addTo(map);
 }
 
+function storyStepMs(s) {
+  if (s.time_utc) return peFrameMs(s.time_utc);
+  // time_utc がないステップ(降水フレーム範囲外)はJSTの時刻ラベルから求める。頃・前は正時扱い
+  const m = (s.time_label ?? "").match(/(\d+)月(\d+)日(\d+)時(?:(\d+)分)?/);
+  if (!m) return null;
+  return Date.UTC(STORIES[storyId].year, +m[1] - 1, +m[2], +m[3] - 9, +(m[4] ?? 0));
+}
+
+function storyAddTrackLayers() {
+  const track = STORIES[storyId]?.track;
+  if (!track || map.getSource("story-track")) return;
+  const coords = track.features.map((f) => f.geometry.coordinates);
+  map.addSource("story-track", {
+    type: "geojson",
+    data: { type: "Feature", geometry: { type: "LineString", coordinates: coords } },
+  });
+  map.addSource("story-track-past", {
+    type: "geojson",
+    data: { type: "Feature", geometry: { type: "LineString", coordinates: [] } },
+  });
+  map.addLayer({
+    id: "story-track-line",
+    type: "line",
+    source: "story-track",
+    paint: { "line-color": "#9aa4ad", "line-width": 1.5, "line-dasharray": [2, 2] },
+  });
+  map.addLayer({
+    id: "story-track-past-line",
+    type: "line",
+    source: "story-track-past",
+    paint: { "line-color": "#185fa5", "line-width": 2.5 },
+  });
+  window.__storyTrackOn = true;
+  updateAttribution();
+}
+
+function storyRemoveTrackLayers() {
+  ["story-track-past-line", "story-track-line"].forEach((id) => {
+    if (map.getLayer(id)) map.removeLayer(id);
+  });
+  ["story-track-past", "story-track"].forEach((id) => {
+    if (map.getSource(id)) map.removeSource(id);
+  });
+  window.__storyTrackOn = false;
+  updateAttribution();
+}
+
+function storyUpdateTrack(s) {
+  const track = STORIES[storyId]?.track;
+  const src = map.getSource("story-track-past");
+  if (!track || !src) return;
+  const t = storyStepMs(s);
+  const pts = track.features;
+  const coords = [];
+  for (let i = 0; i < pts.length; i++) {
+    const ti = Date.parse(pts[i].properties.time_utc);
+    if (t === null || ti <= t) {
+      coords.push(pts[i].geometry.coordinates);
+      continue;
+    }
+    // ステップ時刻が経路点の間に来る場合は補間し、線端を現在時刻の位置まで伸ばす
+    if (coords.length && i > 0) {
+      const t0 = Date.parse(pts[i - 1].properties.time_utc);
+      const r = (t - t0) / (ti - t0);
+      const [x0, y0] = pts[i - 1].geometry.coordinates;
+      const [x1, y1] = pts[i].geometry.coordinates;
+      coords.push([x0 + (x1 - x0) * r, y0 + (y1 - y0) * r]);
+    }
+    break;
+  }
+  src.setData({
+    type: "Feature",
+    geometry: { type: "LineString", coordinates: coords.length > 1 ? coords : [] },
+  });
+}
+
 function storySetBreach(on) {
   const cb = document.querySelector('input[data-breach="typhoon2019_breach"]');
   if (!cb || cb.checked === on) return;
@@ -2186,6 +2269,7 @@ function storyGoto(index) {
   }
 
   storySetBreach(!!(s.layers && s.layers.breach));
+  storyUpdateTrack(s);
   storyUpdateMarker(s);
   map.flyTo({ ...s.camera, bearing: 0, duration: 2400, essential: true });
   storyRenderCard();
@@ -2207,6 +2291,13 @@ async function storyStart(id) {
       return;
     }
   }
+  if (cfg.trackUrl && !cfg.track) {
+    try {
+      cfg.track = await fetch(cfg.trackUrl).then((r) => r.json());
+    } catch (e) {
+      console.warn("台風経路データの読込失敗", e); // 経路なしでもストーリーは続行
+    }
+  }
   storyId = id;
 
   applyPreset(cfg.basePreset);
@@ -2217,6 +2308,7 @@ async function storyStart(id) {
     map.once("styledata", res);
   });
   await peEnable(cfg.eventId);
+  storyAddTrackLayers();
   const srcSelect = document.getElementById("nc-source");
   if (srcSelect) srcSelect.value = cfg.eventId;
 
@@ -2231,6 +2323,7 @@ function storyEnd(markCustom = true) {
   storyActive = false;
   document.getElementById("story-card").hidden = true;
   if (storyMarker) { storyMarker.remove(); storyMarker = null; }
+  storyRemoveTrackLayers();
   // 離脱後は降水を通常表示に戻し、レイヤ状態はそのまま自由操作へ引き継ぐ
   storySetRainVisible(true);
   if (markCustom) {
