@@ -1515,6 +1515,7 @@ function registerBreachPopups() {
               <tr><td>岸</td><td>${p.bank}</td></tr>
               <tr><td>発生</td><td>${p.event}</td></tr>
               ${p.note ? `<tr><td>備考</td><td>${p.note}</td></tr>` : ""}
+              ${p.source ? `<tr><td>典拠</td><td>${p.source}</td></tr>` : ""}
             </table>
           `)
           .addTo(map);

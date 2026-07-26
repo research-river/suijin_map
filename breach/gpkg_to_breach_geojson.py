@@ -1,19 +1,23 @@
 # QGISで編集した破堤地点GeoPackageを、地図表示用のGeoJSONに変換する
 # 使い方: python3 gpkg_to_breach_geojson.py
 import json
+import re
 import sqlite3
 import struct
 import sys
 from pathlib import Path
 
 BASE = Path(__file__).parent
-INPUT = BASE / 'Toki_gawa_breach.gpkg'
+INPUT = BASE / 'breach_points.gpkg'
 OUTPUT = BASE / 'breach_typhoon2019_arakawa.geojson'
 EVENT_NAME = '令和元年東日本台風（台風19号）'
 
 # csv_to_geojson.py と同じ想定範囲チェック
 LAT_RANGE = (34.0, 37.0)
 LON_RANGE = (135.0, 141.0)
+
+# river列は「越辺川右岸0.0k付近」のように河川名+岸+距離標を1文字列で持つため、河川名と岸を分離する
+BANK_PATTERN = re.compile(r'^(.+?)(右岸|左岸)')
 
 
 def parse_gpkg_point(blob):
@@ -33,21 +37,24 @@ def parse_gpkg_point(blob):
 
 con = sqlite3.connect(f'file:{INPUT}?mode=ro', uri=True)
 rows = con.execute(
-  'SELECT fid, year, river, event, note, geometry FROM Toki_gawa_breach ORDER BY fid'
+  'SELECT fid, year, river, event, note, source, geometry FROM breach_points ORDER BY fid'
 ).fetchall()
 con.close()
 
 features = []
 warnings = []
-for i, (fid, year, river_bank, event, note, geom) in enumerate(rows):
+for i, (fid, year, river_detail, event, note, source, geom) in enumerate(rows):
   lon, lat = parse_gpkg_point(geom)
   if not (LAT_RANGE[0] <= lat <= LAT_RANGE[1]) or not (LON_RANGE[0] <= lon <= LON_RANGE[1]):
-    warnings.append(f'  fid={fid}: {river_bank} {event} lat={lat} lon={lon}')
-  bank = river_bank[-2:]
-  river = river_bank[:-2]
+    warnings.append(f'  fid={fid}: {river_detail} {event} lat={lat} lon={lon}')
+  m = BANK_PATTERN.match(river_detail)
+  if not m:
+    print(f'[エラー] fid={fid}: river列から岸(右岸/左岸)を抽出できません: {river_detail}')
+    sys.exit(1)
+  river, bank = m.group(1), m.group(2)
   props = {
     'num': chr(0x2460 + i),  # ①②③…
-    'text': f'{river_bank} {event}',
+    'text': f'{river_detail} {event}',
     'type': event,
     'river': river,
     'bank': bank,
@@ -55,6 +62,7 @@ for i, (fid, year, river_bank, event, note, geom) in enumerate(rows):
     'year': int(str(year).rstrip('年')),
     'event': EVENT_NAME,
     'note': note or '',
+    'source': source or '',
   }
   features.append({
     'type': 'Feature',
