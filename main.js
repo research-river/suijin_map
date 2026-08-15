@@ -572,6 +572,11 @@ const PAST_EVENTS = {
     metaUrl: "rainfall_archive/events/typhoon19_2019/frames.json",
     baseDir: "rainfall_archive/events/typhoon19_2019/frames/",
   },
+  typhoon15_2026: {
+    label: "台風15号(2026年8月)",
+    metaUrl: "rainfall_archive/events/typhoon15_2026/frames.json",
+    baseDir: "rainfall_archive/events/typhoon15_2026/frames/",
+  },
 };
 let peActive  = false;
 let peEventId = null;

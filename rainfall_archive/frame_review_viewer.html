@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>降水ナウキャスト フレーム確認ビュワー</title>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    color: #eee;
+    font-family: system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  #top-bar {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #1c1c1c;
+    border-bottom: 1px solid #333;
+  }
+  #top-bar label { font-size: 13px; }
+  #top-bar input[type="text"] { width: 220px; }
+  #map { flex: 1; }
+  #status { font-size: 13px; color: #aaa; }
+  #controls {
+    padding: 10px 12px;
+    background: #1c1c1c;
+    border-top: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #ctrl-row { display: flex; align-items: center; gap: 10px; }
+  #slider { flex: 1; }
+  button {
+    background: #2a2a2a;
+    color: #eee;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  button:hover { background: #3a3a3a; }
+  #time-label { font-variant-numeric: tabular-nums; min-width: 190px; }
+  #index-label { color: #888; font-size: 12px; min-width: 90px; }
+  #opacity-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #aaa; }
+</style>
+</head>
+<body>
+  <div id="top-bar">
+    <label>event id: <input type="text" id="event-input" value="typhoon15_2026" /></label>
+    <button id="load-btn">読込</button>
+    <span id="status">未読込</span>
+  </div>
+  <div id="map"></div>
+  <div id="controls">
+    <div id="ctrl-row">
+      <button id="btn-first">⏮</button>
+      <button id="btn-prev">◀</button>
+      <button id="btn-play">▶ 再生</button>
+      <button id="btn-next">▶</button>
+      <button id="btn-last">⏭</button>
+      <select id="speed">
+        <option value="600">遅い</option>
+        <option value="300" selected>標準</option>
+        <option value="120">速い</option>
+      </select>
+      <span id="time-label">--</span>
+      <span id="index-label">- / -</span>
+      <div id="opacity-row">
+        濃さ
+        <input type="range" id="opacity" min="0.2" max="1" step="0.05" value="0.75" />
+      </div>
+    </div>
+    <input type="range" id="slider" min="0" max="0" value="0" step="1" />
+  </div>
+
+<script>
+// このビュワーはgitコミット前にフレームを目視確認し、不要な期間を判別するための
+// 使い捨てツール。本体地図(main.js)とは独立させ、events/{id}/frames.json をそのまま読む。
+// 国境アウトライン付きの地図上に降水bboxを重ねることで、位置関係を判断できるようにする
+let frames = [];
+let baseDir = "";
+let bbox = null;
+let current = 0;
+let playing = false;
+let timer = null;
+
+const sliderEl = document.getElementById("slider");
+const timeEl = document.getElementById("time-label");
+const indexEl = document.getElementById("index-label");
+const statusEl = document.getElementById("status");
+const opacityEl = document.getElementById("opacity");
+
+const map = new maplibregl.Map({
+  container: "map",
+  // demotiles: 国境アウトラインのみのシンプルなスタイル(位置関係の確認用途に十分)
+  style: "https://demotiles.maplibre.org/style.json",
+  center: [138.5, 36.0],
+  zoom: 4.2,
+});
+map.addControl(new maplibregl.NavigationControl(), "top-left");
+
+// 都道府県境: demotilesスタイルは国境のみのため、位置確認用に別途重ねる
+// (レビュー専用ツールのため、リポジトリに同梱せずCDN上のデータをその場で読む)
+const JAPAN_PREF_URL = "https://raw.githubusercontent.com/dataofjapan/land/master/japan.geojson";
+map.on("load", () => {
+  map.addSource("japan-pref", { type: "geojson", data: JAPAN_PREF_URL });
+  map.addLayer({
+    id: "japan-pref-line",
+    type: "line",
+    source: "japan-pref",
+    paint: { "line-color": "#ffffff", "line-width": 1, "line-opacity": 0.9 },
+  });
+});
+
+function imageCoords(b) {
+  return [
+    [b.west, b.north],
+    [b.east, b.north],
+    [b.east, b.south],
+    [b.west, b.south],
+  ];
+}
+
+function toJST(utcTs) {
+  const dt = new Date(
+    `${utcTs.slice(0,4)}-${utcTs.slice(4,6)}-${utcTs.slice(6,8)}T${utcTs.slice(9,11)}:${utcTs.slice(11,13)}:00Z`
+  );
+  return dt.toLocaleString("ja-JP", {
+    year: "numeric", month: "numeric", day: "numeric",
+    hour: "2-digit", minute: "2-digit", hour12: false,
+  }) + " JST";
+}
+
+function showFrame(i) {
+  if (!frames.length) return;
+  current = Math.max(0, Math.min(i, frames.length - 1));
+  const f = frames[current];
+  const url = baseDir + f.file;
+  if (map.getSource("rain-src")) {
+    map.getSource("rain-src").updateImage({ url });
+  } else {
+    map.addSource("rain-src", { type: "image", url, coordinates: imageCoords(bbox) });
+    map.addLayer({
+      id: "rain-layer",
+      type: "raster",
+      source: "rain-src",
+      paint: { "raster-opacity": parseFloat(opacityEl.value), "raster-fade-duration": 0 },
+    });
+    // 追加順によって降水ラスタが境界線の上に乗ることがあるため、常に境界線を最前面へ
+    if (map.getLayer("japan-pref-line")) map.moveLayer("japan-pref-line");
+  }
+  timeEl.textContent = toJST(f.time_utc) + `  (${f.file})`;
+  indexEl.textContent = `${current + 1} / ${frames.length}`;
+  sliderEl.value = current;
+}
+
+async function loadEvent(eventId) {
+  statusEl.textContent = "読込中…";
+  const metaUrl = `events/${eventId}/frames.json`;
+  const meta = await fetch(metaUrl).then((r) => {
+    if (!r.ok) throw new Error(`${metaUrl}: ${r.status}`);
+    return r.json();
+  });
+  if (map.getLayer("rain-layer")) map.removeLayer("rain-layer");
+  if (map.getSource("rain-src")) map.removeSource("rain-src");
+  frames = meta.frames;
+  bbox = meta.bbox;
+  baseDir = `events/${eventId}/frames/`;
+  sliderEl.max = frames.length - 1;
+  current = 0;
+  map.fitBounds([[bbox.west, bbox.south], [bbox.east, bbox.north]], { padding: 20, duration: 0 });
+  showFrame(0);
+  statusEl.textContent = `${meta.label ?? eventId}: ${frames.length}フレーム`;
+}
+
+document.getElementById("load-btn").addEventListener("click", () => {
+  stopPlay();
+  loadEvent(document.getElementById("event-input").value.trim()).catch((e) => {
+    statusEl.textContent = "読込失敗: " + e.message;
+  });
+});
+
+sliderEl.addEventListener("input", (e) => {
+  stopPlay();
+  showFrame(parseInt(e.target.value));
+});
+
+opacityEl.addEventListener("input", () => {
+  if (map.getLayer("rain-layer")) map.setPaintProperty("rain-layer", "raster-opacity", parseFloat(opacityEl.value));
+});
+
+document.getElementById("btn-first").addEventListener("click", () => { stopPlay(); showFrame(0); });
+document.getElementById("btn-last").addEventListener("click", () => { stopPlay(); showFrame(frames.length - 1); });
+document.getElementById("btn-prev").addEventListener("click", () => { stopPlay(); showFrame(current - 1); });
+document.getElementById("btn-next").addEventListener("click", () => { stopPlay(); showFrame(current + 1); });
+
+function startPlay() {
+  playing = true;
+  document.getElementById("btn-play").textContent = "⏸ 停止";
+  const ms = parseInt(document.getElementById("speed").value);
+  timer = setInterval(() => {
+    if (current >= frames.length - 1) { showFrame(0); return; }
+    showFrame(current + 1);
+  }, ms);
+}
+function stopPlay() {
+  playing = false;
+  document.getElementById("btn-play").textContent = "▶ 再生";
+  clearInterval(timer);
+  timer = null;
+}
+document.getElementById("btn-play").addEventListener("click", () => {
+  playing ? stopPlay() : startPlay();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") { stopPlay(); showFrame(current + 1); }
+  if (e.key === "ArrowLeft")  { stopPlay(); showFrame(current - 1); }
+  if (e.key === " ") { e.preventDefault(); playing ? stopPlay() : startPlay(); }
+});
+
+map.on("load", () => {
+  loadEvent(document.getElementById("event-input").value.trim()).catch((e) => {
+    statusEl.textContent = "読込失敗: " + e.message;
+  });
+});
+</script>
+</body>
+</html>
