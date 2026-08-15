@@ -590,6 +590,8 @@ const KIKICULO_BASE_URL = "https://www.jma.go.jp/bosai/jmatile/data/risk";
 let kikikuloBasetime  = "";
 let kikikuloValidtime = "";
 let kikikuloMember    = "immed0";
+// ベースマップの地名を判別できるよう、デフォルトでは薄めに表示する
+let kikikuloLandOpacity = 0.6;
 
 function kikikuloTileUrl(element) {
   return `jmaeven://${KIKICULO_BASE_URL.replace("https://", "")}/${kikikuloBasetime}/${kikikuloMember}/${kikikuloValidtime}/surf/${element}/{z}/{x}/{y}.png`;
@@ -656,7 +658,7 @@ const RASTER_OVERLAYS = {
   // z10タイルの拡大表示(オーバーズーム)にならず層が消えて見える。
   // fadeDuration: 0 はナウキャストと同じくズーム境界のクロスフェード点滅対策
   get kikiculo_land() {
-    return { tiles: [kikikuloTileUrl("land")], tileSize: 256, minzoom: 4, maxzoom: 10, fadeDuration: 0 };
+    return { tiles: [kikikuloTileUrl("land")], tileSize: 256, minzoom: 4, maxzoom: 10, fadeDuration: 0, opacity: kikikuloLandOpacity };
   },
   get kikiculo_flood() {
     return { tiles: [kikikuloTileUrl("designated_river")], tileSize: 256, minzoom: 4, maxzoom: 10, fadeDuration: 0 };
@@ -768,6 +770,7 @@ function addRasterOverlay(id) {
   });
   const paint = {};
   if (cfg.fadeDuration !== undefined) paint["raster-fade-duration"] = cfg.fadeDuration;
+  if (cfg.opacity !== undefined) paint["raster-opacity"] = cfg.opacity;
   map.addLayer({ id: `overlay-${id}`, type: "raster", source: `overlay-${id}`, paint });
 }
 
@@ -1605,9 +1608,23 @@ document.querySelectorAll("input[data-overlay]").forEach((cb) => {
         removeRasterOverlay(overlayId);
       }
     });
+    if (id === "kikiculo_land") {
+      document.getElementById("kikiculo-land-opacity-ctrl").classList.toggle("visible", cb.checked);
+    }
     updateAttribution();
     updateKikikuloLegendVisibility();
   });
+});
+
+// --- 土砂災害危険度分布 濃さ調整 ---
+const kikiLandOpacitySlider  = document.getElementById("kikiculo-land-opacity");
+const kikiLandOpacityValSpan = document.getElementById("kikiculo-land-opacity-val");
+kikiLandOpacitySlider.addEventListener("input", () => {
+  kikikuloLandOpacity = parseFloat(kikiLandOpacitySlider.value);
+  kikiLandOpacityValSpan.textContent = Math.round(kikikuloLandOpacity * 100) + "%";
+  if (map.getLayer("overlay-kikiculo_land")) {
+    map.setPaintProperty("overlay-kikiculo_land", "raster-opacity", kikikuloLandOpacity);
+  }
 });
 
 // --- 荒川河道 トグル ---
@@ -1897,6 +1914,7 @@ function applyPreset(presetId) {
   });
 
   updateKikikuloLegendVisibility();
+  document.getElementById("kikiculo-land-opacity-ctrl").classList.toggle("visible", activeOverlays.has("kikiculo_land"));
 
   // ナウキャスト ON/OFF
   if (p.nowcast === true && !ncActive) {
