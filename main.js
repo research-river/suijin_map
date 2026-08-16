@@ -577,6 +577,11 @@ const PAST_EVENTS = {
     metaUrl: "rainfall_archive/events/typhoon15_2026/frames.json",
     baseDir: "rainfall_archive/events/typhoon15_2026/frames/",
   },
+  heavyrain_chiba_2026aug: {
+    label: "令和8年8月千葉豪雨",
+    metaUrl: "rainfall_archive/events/heavyrain_chiba_2026aug/frames.json",
+    baseDir: "rainfall_archive/events/heavyrain_chiba_2026aug/frames/",
+  },
 };
 let peActive  = false;
 let peEventId = null;
