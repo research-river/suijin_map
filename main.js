@@ -582,6 +582,11 @@ const PAST_EVENTS = {
     metaUrl: "rainfall_archive/events/heavyrain_chiba_2026aug/frames.json",
     baseDir: "rainfall_archive/events/heavyrain_chiba_2026aug/frames/",
   },
+  heavy_rain0822_2026: {
+    label: "ゲリラ豪雨(2026年8月22日)",
+    metaUrl: "rainfall_archive/events/heavy_rain0822_2026/frames.json",
+    baseDir: "rainfall_archive/events/heavy_rain0822_2026/frames/",
+  },
 };
 let peActive  = false;
 let peEventId = null;
