@@ -1310,7 +1310,7 @@ body.place-card-active #map {
 
 #place-detail-link {
   display: block;
-  margin-top: 12px;
+  margin: 10px 12px 0;
   padding: 8px 12px;
   border-radius: 8px;
   background: rgba(10, 132, 255, 0.1);
