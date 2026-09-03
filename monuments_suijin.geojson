@@ -21,7 +21,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "手島神社境内にある「水天宮」石碑。状態はとてもよい。特に表面の文字ははっきり見える。",
         "Condition_level": "★★★★★",
-        "photo_filename": "tejima_suitengu_monument.jpg"
+        "photo_filename": "tejima_suitengu_monument.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -44,7 +45,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "笠上部に若干の地衣類付着以外、目立った劣化は見られない。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "myosyu_shrine_suijingu.jpg"
+        "photo_filename": "myosyu_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -67,7 +69,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "木の根元に隠れてしまっている。側面に若干の地衣類。大正四年（1915）三月建立",
         "Condition_level": "★★★★☆",
-        "photo_filename": "myosyu_shrine_suijinokami.jpg"
+        "photo_filename": "myosyu_shrine_suijinokami.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -90,7 +93,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "層状になった濃いめの地衣類付着も表面の刻まれた文字ははっきり見える。水が流れたような跡あり。「大里村の石佛」に記載。遷座された石碑が並ぶ(うち瀧祭神社祠の祭神は瀬織津姫と思われる)",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "takagi_shrine_sujingu.jpg"
+        "photo_filename": "takagi_shrine_sujingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -113,7 +117,8 @@
         "Survey_date": "2025年3月8日",
         "Condition_comment": "(□井　→荒井) 笠部分に黒ずみと分厚い地衣類。表面に若干の地衣類、台座にオレンジの地衣類。洪水常襲地帯。堤防下に注連竹で囲まれ祀られている。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "ewai_suijingu.jpg"
+        "photo_filename": "ewai_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -136,7 +141,8 @@
         "Survey_date": "2025年3月8日",
         "Condition_comment": "側面から裏面にかけて地衣類付着。明治の水害を経験。注連竹で祀られる。JAさいたま広報誌2024年6月号表紙、特集技師にも。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "takao_bridge_suijingu(left).jpg"
+        "photo_filename": "takao_bridge_suijingu(left).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -159,7 +165,8 @@
         "Survey_date": "2025年3月8日",
         "Condition_comment": "比較的新しいはずだが各所に剥落あり。刻まれた文字ははっきり見える。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "takao_bridge_suijingu(right).jpg"
+        "photo_filename": "takao_bridge_suijingu(right).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -182,7 +189,8 @@
         "Survey_date": "2025年3月8日",
         "Condition_comment": "黄色い地衣類に覆われているが正面に刻まれた文字は鮮明である。道の先には冠水橋（沈下橋）である原馬室橋が位置している。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "flooding_bridge_takimamuro_suijingu.jpg"
+        "photo_filename": "flooding_bridge_takimamuro_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -205,7 +213,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "表面が焼けたかのような色になっている。裏面の文字は鮮明。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "koya_suijin.jpg"
+        "photo_filename": "koya_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -228,7 +237,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "2018年頃には亀裂部分から分離していた記録写真ががあるが、調査日には修復されていた。亀裂より下半分は地衣類多く付着。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "kuge_hachimangu_suijingu.jpg"
+        "photo_filename": "kuge_hachimangu_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -251,7 +261,8 @@
         "Survey_date": "2025年3月23日",
         "Condition_comment": "洪水常襲地帯。銘文中「文□四(のこりは判別不能)」正面風化、亀裂、地衣類少し付着。側面の文字は判読可能",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "iijima_shinden_suijingu.jpg"
+        "photo_filename": "iijima_shinden_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -274,7 +285,8 @@
         "Survey_date": "2025年3月23日",
         "Condition_comment": "台座50cm 稲荷大明神境内の、水天宮。正面に地衣類付着も裏面は少ない。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "arako_sujtengu.jpg"
+        "photo_filename": "arako_sujtengu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -297,7 +309,8 @@
         "Survey_date": "2025年3月26日",
         "Condition_comment": "【要再調査】「水神□」は判別可能だが「宮」の文字は判別不可。右側面上部地衣類付着。亀裂、剥落激しい。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "azeyoshi_suwa_shrine_suijingu(left).jpg"
+        "photo_filename": "azeyoshi_suwa_shrine_suijingu(left).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -320,7 +333,8 @@
         "Survey_date": "2025年3月26日",
         "Condition_comment": "一見すると状態は良さそうだが黒ずんだ箇所が点々と見られる。左側面に欠損部あり。笠部に地衣類。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "azeyoshi_suwa_shrine_suijingu(right).jpg"
+        "photo_filename": "azeyoshi_suwa_shrine_suijingu(right).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -343,7 +357,8 @@
         "Survey_date": "2025年3月26日",
         "Condition_comment": "”平方村河岸出入商人衆奉納の石祠”のとなり、覆屋内3基中、一番左が水神宮。御幣で見えにくいが「宮」の字が見える。台座高さ55。埃をかぶっているのみで地衣類は見当たらない。附近に平方河岸があった。",
         "Condition_level": "★★★★★",
-        "photo_filename": "tachibana_shrine_suijingu.jpg"
+        "photo_filename": "tachibana_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -366,7 +381,8 @@
         "Survey_date": "2025年3月26日",
         "Condition_comment": "表面上部黒ずみあり、地衣類は正面と右側面ともに多数。指扇駅ちかくの水神碑と、字体が似ている。さいたま市の市史では明治の水害を経験。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "nisi_asuma_sujingu.jpg"
+        "photo_filename": "nisi_asuma_sujingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -389,7 +405,8 @@
         "Survey_date": "2025年3月26日",
         "Condition_comment": "台座との境界に黒ずみがあるが、クリーニングされている。",
         "Condition_level": "★★★★★",
-        "photo_filename": "sashiogi_station_suijingu.jpg"
+        "photo_filename": "sashiogi_station_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -412,7 +429,8 @@
         "Survey_date": "2025年3月26日",
         "Condition_comment": "台座20cm 、多少はあるものの地衣類の付着少ない。表面の文字しっかりしていて読める",
         "Condition_level": "★★★★★",
-        "photo_filename": "gonda_yakushido_suitengu.jpg"
+        "photo_filename": "gonda_yakushido_suitengu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -435,7 +453,8 @@
         "Survey_date": "2025年3月31日",
         "Condition_comment": "土台高さ32cm 表面剥落激しく、剥がれた破片が下に落ち、早急に対策すべき。表面右に地衣類、裏面は地衣類大量。2019年台風19号で水没。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "simo_oyashiki_suitengu.jpg"
+        "photo_filename": "simo_oyashiki_suitengu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -458,7 +477,8 @@
         "Survey_date": "2025年3月31日",
         "Condition_comment": "右側に地衣類付着。古い。自然石で、風化があるが刻まれた文字は鮮明。銘文等確認できない。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "Iruma_river_outside_suijingu.jpg"
+        "photo_filename": "Iruma_river_outside_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -481,7 +501,8 @@
         "Survey_date": "2025年4月4日",
         "Condition_comment": "荒川の中でも風化、摩耗などトップレベルで激しく状態評価を付けることができない。彩湖は洪水時に貯水池となり水没している。",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "lake_saiko_herabuna_suijingu.jpg"
+        "photo_filename": "lake_saiko_herabuna_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -504,7 +525,8 @@
         "Survey_date": "2025年4月4日",
         "Condition_comment": "彩湖は洪水時に完全に水没するが石碑の状態が悪いわけではなく、文字は鮮明に見える。左上部などに亀裂、右に欠損あり。供え物多数。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "lake_saiko_submerged_suijingu.jpg"
+        "photo_filename": "lake_saiko_submerged_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -527,7 +549,8 @@
         "Survey_date": "2025年4月4日",
         "Condition_comment": "台座に黄色の地衣類。笹目川に注ぐ揚水と彩湖堤防の間に位置する。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "lake_saiko_doman_suijingu.jpg"
+        "photo_filename": "lake_saiko_doman_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -550,7 +573,8 @@
         "Survey_date": "2025年4月7日",
         "Condition_comment": "昭和五十八年三月三日改修。美麗。旧地は荒川堤防上にあり、文政三年二月の記年の銘あり。",
         "Condition_level": "★★★★★",
-        "photo_filename": "shimouchimagi_hikawa_shrine_suijingu(back).jpg"
+        "photo_filename": "shimouchimagi_hikawa_shrine_suijingu(back).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -573,7 +597,8 @@
         "Survey_date": "2025年4月7日",
         "Condition_comment": "調査中、最古の水神碑碑。裏面文字は判別不可も「朝霞市史調査報告書 第9集 (朝霞の石造物 1)」より判明。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "shimouchimagi_hikawa_shrine_suijingu(front).jpg"
+        "photo_filename": "shimouchimagi_hikawa_shrine_suijingu(front).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -596,7 +621,8 @@
         "Survey_date": "2025年4月7日",
         "Condition_comment": "新河岸公園内。下部、台座に地衣類付着。正面に剥落あり。裏面文字は「いたばしの文化財第2集」より。早瀬の渡しに祀られていた(平安期から早瀬の渡しがあった？)板橋区指定文化財。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "sinkasi_park_suijingu.jpg"
+        "photo_filename": "sinkasi_park_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -619,7 +645,8 @@
         "Survey_date": "2025年4月9日",
         "Condition_comment": "笠部地衣類付着。銘は長瀞町史民族編1 p.326より。祭神は弥都波能売神。舟下りの船頭たちの信仰。11月に祭典があり、すぐそばの水神の井戸についても言及されている。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "nagatoro_natural_museum_suijin.jpg"
+        "photo_filename": "nagatoro_natural_museum_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -642,7 +669,8 @@
         "Survey_date": "2025年4月9日",
         "Condition_comment": "正面の地衣類付着について、その量は荒川トップクラスだが、正面、裏面とも刻まれた文字は鮮明。裏は崖で荒川が眼下に流れる。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "kanaishi_waterpipebridge_suijingu_1.jpg"
+        "photo_filename": "kanaishi_waterpipebridge_suijingu_1.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -665,7 +693,8 @@
         "Survey_date": "2025年4月9日",
         "Condition_comment": "自然石。正面右側の文字は地衣類で判別困難も「文化」という文字が読み取れる。正面「水神塔」の文字は鮮明。川の漁師、筏師たちが水難よけに信仰したと伝えられる。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "hatakeyama_suijin.jpg"
+        "photo_filename": "hatakeyama_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -688,7 +717,8 @@
         "Survey_date": "2025年4月9日",
         "Condition_comment": "正面に、金属のさびのような黄色く細かい地衣類付着。柳出井池のほとりに建立。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "fukaya_hanazono_suijin.jpg"
+        "photo_filename": "fukaya_hanazono_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -711,7 +741,8 @@
         "Survey_date": "2025年4月12日",
         "Condition_comment": "剥落はなく風化よりは地衣類付着のために正面の文字判別困難。左上部に濃い地衣類。不心得者に崖下に落とされたことも。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "nagatoro_kasuga_shrine_suijingu.jpg"
+        "photo_filename": "nagatoro_kasuga_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -734,7 +765,8 @@
         "Survey_date": "2025年4月12日",
         "Condition_comment": "正面下部コケ付着。右側亀裂。裏面銘文は強いライトをあてて初めて判別可能となった。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "horaijima_suijingu.jpg"
+        "photo_filename": "horaijima_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -757,7 +789,8 @@
         "Survey_date": "2025年4月17日",
         "Condition_comment": "笠部地、台座衣類付着、祠正面、左右側面中程度の剥落あり。側面の装飾に花は珍しい。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "yanase_suijin.jpg"
+        "photo_filename": "yanase_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -780,7 +813,8 @@
         "Survey_date": "2025年4月17日",
         "Condition_comment": "正面、地衣類付着激しい方か。裏はすぐ本田吉野川。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "honda_yoshino_river_suijin.jpg"
+        "photo_filename": "honda_yoshino_river_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -803,7 +837,8 @@
         "Survey_date": "2025年4月17日",
         "Condition_comment": "表面の地衣類付着著しい。早急に対策必要。判別不能ではないが「水神」の文字が読みにくい。裏面に欠け。2基の塞神碑の中央に位置。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "aketo_hachiman_shrine_suijin.jpg"
+        "photo_filename": "aketo_hachiman_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -826,7 +861,8 @@
         "Survey_date": "2025年4月17日",
         "Condition_comment": "屋根部分に大きい亀裂、修理跡。正面剥落あり。向かって3基のうち、一番右。右隣に、同銘文の金比羅大権現碑。左には庚申塔供養塔。鹿島古墳群となり。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "kasima_tumulus_suijingu.jpg"
+        "photo_filename": "kasima_tumulus_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -849,7 +885,8 @@
         "Survey_date": "2025年4月27日",
         "Condition_comment": "",
         "Condition_level": "",
-        "photo_filename": "tamayodo_suitengu.jpg"
+        "photo_filename": "tamayodo_suitengu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -872,7 +909,8 @@
         "Survey_date": "2025年4月27日",
         "Condition_comment": "地衣類付着少ない。急な斜面を降りていくと祠がある。台座に移設工事について銘がある。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "tamayodo_suitengu_okunoin.jpg"
+        "photo_filename": "tamayodo_suitengu_okunoin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -895,7 +933,8 @@
         "Survey_date": "2025年5月4日",
         "Condition_comment": "笠部欠損、亀裂、剥落あり。正面に刻まれた文字は鮮明。押切橋ちかく。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "oshikiri_mitsumine_suijingu.jpg"
+        "photo_filename": "oshikiri_mitsumine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -918,7 +957,8 @@
         "Survey_date": "2025年5月8日",
         "Condition_comment": "正面地衣類付着少ない。妙楽寺入り口左に3基祀られているうち、一番左。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "myoraku_temple_suijingu.jpg"
+        "photo_filename": "myoraku_temple_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -941,7 +981,8 @@
         "Survey_date": "2025年5月13日",
         "Condition_comment": "状態悪い、早急に対策必要。状態の評価は付けることができない。正面文字も「水」のみ確認できる程度",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "chuten_shrine_suijingu.jpg"
+        "photo_filename": "chuten_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -964,7 +1005,8 @@
         "Survey_date": "2025年5月13日",
         "Condition_comment": "濃くはっきりとした地衣類が正面に付着。正面上部、左右に剥落あり。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "bijyo_hachiman_shrine_suijingu.jpg"
+        "photo_filename": "bijyo_hachiman_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -987,7 +1029,8 @@
         "Survey_date": "2025年5月13日",
         "Condition_comment": "文久二壬戌年八月吉日と刻まれているはずだが、「八」の箇所は削り取られたかのように判別不能。左側裏面欠けあり。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "sanno_shrine_suijingu.jpg"
+        "photo_filename": "sanno_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1010,7 +1053,8 @@
         "Survey_date": "2025年5月13日",
         "Condition_comment": "地衣類が表面より下の層に浸透しているかのように見える。笠部に欠けあり。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "hayase_sengen_shrine_suijingu.jpg"
+        "photo_filename": "hayase_sengen_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1033,7 +1077,8 @@
         "Survey_date": "2025年5月15日",
         "Condition_comment": "今回の調査中、一番剥落が激しく多かった。早急に対策必要、評価不可。近くには天正年中(1575年~)からあったという戸田の渡しがあった。7月に水神祭。",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "toda_suijingu_hunadama.jpg"
+        "photo_filename": "toda_suijingu_hunadama.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1056,7 +1101,8 @@
         "Survey_date": "2025年5月15日",
         "Condition_comment": "右上部欠けあり。樹木に隠れていて近づくことができない。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "toda_osugiokami_suijingu_monument.jpg"
+        "photo_filename": "toda_osugiokami_suijingu_monument.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1079,7 +1125,8 @@
         "Survey_date": "2025年5月15日",
         "Condition_comment": "「このお宮は、昔から蓮沼村の西南にあったが、何度もの洪水で押流(おしなが)されて、今の場所に流寄(ながれよ)せられることが十度にも及んだので、ここに塚を築き、榎(えのき)を植えて神社とした。地域の人は今でも「十度ノ宮」と呼んでいる」",
         "Condition_level": "★★★★★",
-        "photo_filename": "jyudo_no_miya.jpg"
+        "photo_filename": "jyudo_no_miya.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1102,7 +1149,8 @@
         "Survey_date": "2025年5月15日",
         "Condition_comment": "笠部左右に欠けあり、表面の文字ほとんど読めず、光を当てて「水神ー」と読める程度、おそなえの酒が。正面の新河岸川に向かって祀られる。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "ukima_river_crossing_suijingu.jpg"
+        "photo_filename": "ukima_river_crossing_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1125,7 +1173,8 @@
         "Survey_date": "2025年5月15日",
         "Condition_comment": "笠部比較的広い剥落。石で積んだ台座の高さは86cm 屋根が剥がれ落ちそうになっている。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "azusawa_shrine_back_sujingu.jpg"
+        "photo_filename": "azusawa_shrine_back_sujingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1148,7 +1197,8 @@
         "Survey_date": "2025年5月15日",
         "Condition_comment": "表面の文字はすべて篆書体で刻まれている。小型のためもあり状態はよいが右側は剥落か？",
         "Condition_level": "★★★★★",
-        "photo_filename": "azusawa_shrine_forward_sujingu.jpg"
+        "photo_filename": "azusawa_shrine_forward_sujingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1171,7 +1221,8 @@
         "Survey_date": "2025年5月20日",
         "Condition_comment": "調査した中では最大の高さ。正面上部は黒ずんでいる。表面にひっかき傷。左に緑色の地衣類。大正九年まで荒川のちかくに祀られていた。祭神は水波能売神（ミズハノメノカミ）。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "shimookubo_suwa_shrine_suijingu.jpg"
+        "photo_filename": "shimookubo_suwa_shrine_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1194,7 +1245,8 @@
         "Survey_date": "2025年8月22日",
         "Condition_comment": "飯野頼治「地図で歩く秩父路」 には湧水が多い記述がある",
         "Condition_level": "★★★★☆",
-        "photo_filename": "otaki_kunugidaira_sujin.jpg"
+        "photo_filename": "otaki_kunugidaira_sujin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1217,7 +1269,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "土手から転がり落として雨乞いの催事に使われていたが全体的に良い状態。明治四十三年八月の大洪水に流失し、大正15年に再建。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "muraoka_kuzuryu_dragon.jpg"
+        "photo_filename": "muraoka_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1240,7 +1293,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "正面、両側面に層状になった地衣類付着目立つ。隣に一目連大神も。火・水・風の神様であり、台風、雨乞いの祈念。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "panorama_kuzuryu_dragon.jpg"
+        "photo_filename": "panorama_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1263,7 +1317,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "正面、側面、裏面とも地衣類付着。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "hitotsugi_kuzuryu_dragon.jpg"
+        "photo_filename": "hitotsugi_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1286,7 +1341,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "正面、側面、裏面、刻まれた文字見えづらいほどの地衣類の付着が激しい。台座にオレンジ色の地衣類付着(写真は3月8日)",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "myosyu_kuzuryu_dragon.jpg"
+        "photo_filename": "myosyu_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1309,7 +1365,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "正面に地衣類付着も刻まれた文字ははっきり見える。笠部分が欠損、倒壊し石碑後方に置かれている。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "kou_shrine_kuzuryu_dragon.jpg"
+        "photo_filename": "kou_shrine_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1332,7 +1389,8 @@
         "Survey_date": "2025年3月8日",
         "Condition_comment": "洪水常襲地帯。大囲堤。表面黒ずんでいるが文字ははっきり。正面亀裂。裏面に黒いカビ？となりの石碑は文政十三年",
         "Condition_level": "★★★★☆",
-        "photo_filename": "kubota_shinden_kuzuryu_dragon.jpg"
+        "photo_filename": "kubota_shinden_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1355,7 +1413,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "正面の文字は比較的鮮明も地衣類付着。裏面上部に白緑の地衣類多く付着。左側面も地衣類で真っ白だが「文化十」は判読可能。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "koya_kuzuryu_dragon.jpg"
+        "photo_filename": "koya_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1378,7 +1437,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "正面「九頭龍大権現」の文字は判読可能。風化・摩耗激しい。上部に四角い穴があり笠部があったと考えられる。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "kuge_hachimangu_kuzuryu_dragon.jpg"
+        "photo_filename": "kuge_hachimangu_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1401,7 +1461,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "荒川北縁水防事務組合水防倉庫大10号棟横。表面カビか？真っ白になっている。右半分に少しの亀裂。裏面世話人等の名前は判読可能。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "flood_control_warehouse_kuzuryu_dragon.jpg"
+        "photo_filename": "flood_control_warehouse_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1424,7 +1485,8 @@
         "Survey_date": "2025年3月23日",
         "Condition_comment": "正面「九頭龍」の文字判別可能。笠部分地衣類付着。左側面にも地衣類。側面銘文は判読不可。(銘文内容は「石仏入門 日下部朝一郎 著 国書刊行会 1972」)",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "kuge_river_crossing_kuzuryu_dragon.jpg"
+        "photo_filename": "kuge_river_crossing_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1447,7 +1509,8 @@
         "Survey_date": "2025年3月23日",
         "Condition_comment": "丸形の自然石。洪水のイメージ強い地区。刻まれた文字も鮮明、状態はよい方か。台座高さ40cm",
         "Condition_level": "★★★★★",
-        "photo_filename": "otsuma_inari_kuzuryu_dragon.jpg"
+        "photo_filename": "otsuma_inari_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1470,7 +1533,8 @@
         "Survey_date": "2025年3月31日",
         "Condition_comment": "正面全体的に白い地衣類に覆われている？台座高さ18cm 泉地の龍水神、鳥羽井沼は江戸時代に市野川の度重なる洪水でできた沼。",
         "Condition_level": "★★★★★",
-        "photo_filename": "tobai_pond_dragon.jpg"
+        "photo_filename": "tobai_pond_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1493,7 +1557,8 @@
         "Survey_date": "2025年3月31日",
         "Condition_comment": "多少の欠損があるのみ。享保2年の決壊に長野県戸隠神社から勧請(「川島郷土史」p.186にも詳細あり)。隣には水難よけといわれる一目連大神宮。",
         "Condition_level": "★★★★★",
-        "photo_filename": "tobai_pond_kuzuryu_dragon.jpg"
+        "photo_filename": "tobai_pond_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1516,7 +1581,8 @@
         "Survey_date": "2025年4月4日",
         "Condition_comment": "正面、むしろ地衣類が鮮明な状態。刻まれた文字ははっきり見える。幣束で祀られ、供え物が多い。横田興業となり。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "bin_pond_kuzuryu_dragon.jpg"
+        "photo_filename": "bin_pond_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1539,7 +1605,8 @@
         "Survey_date": "2025年4月4日",
         "Condition_comment": "正面は細かい地衣類、右側面に地衣類多数。びん沼川新砂原樋管近く、揚水ポンプのフェンス横。右側面銘文判別不明だが、明治二年建立。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "sunatuka_bridge_kuzuryu_dragon.jpg"
+        "photo_filename": "sunatuka_bridge_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1562,7 +1629,8 @@
         "Survey_date": "2025年5月4日",
         "Condition_comment": "笠部剥落、亀裂あり。左側面の文字4行刻まれているが風化して判別不能。墓地にはいっていく通路の一番奥、小高い盛り土の上。村岡の九頭龍大権現よりも上流。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "oshikiri_mochida_inari_kuzuryu_dragon.jpg"
+        "photo_filename": "oshikiri_mochida_inari_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1585,7 +1653,8 @@
         "Survey_date": "2025年5月8日",
         "Condition_comment": "状態はよい。高尾橋水神碑のちかく",
         "Condition_level": "★★★★★",
-        "photo_filename": "takao_hakuryuokami.jpg"
+        "photo_filename": "takao_hakuryuokami.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1608,7 +1677,8 @@
         "Survey_date": "2025年8月14日",
         "Condition_comment": "早俣橋北。風化、摩耗、剥落がは激しく「九」と「大権現」のみ判別可能。右側面にわずかに「慶應」と読める程度。早急な対策必要。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "hayamata_bridge_north_kuzuryu_dragon.jpg"
+        "photo_filename": "hayamata_bridge_north_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1631,7 +1701,8 @@
         "Survey_date": "2025年8月14日",
         "Condition_comment": "早俣橋南。劣化度合いは「北」と同様。北の九頭竜大権現とほとんど同寸。全体と表面の形状も似ているのでこの2基は同型で、同時期に祀られたと自然に考えられる。「九」と「現」は判別できる。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "hayamata_bridge_south_kuzuryu_dragon.jpg"
+        "photo_filename": "hayamata_bridge_south_kuzuryu_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1654,7 +1725,8 @@
         "Survey_date": "2026年3月6日",
         "Condition_comment": "もともとは堤外地に位置し、木製の祠に九頭龍神社という扁額があったが令和東日本台風で損壊（それでも流されなかったと地元住民の言葉）したため現在の位置に移転。",
         "Condition_level": "★★★★★",
-        "photo_filename": "kuzubukuro_kuzuryudragon.jpg"
+        "photo_filename": "kuzubukuro_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1677,7 +1749,8 @@
         "Survey_date": "2026年3月6日",
         "Condition_comment": "明治43年の大洪水でできたおっぽり沼のふちに所在（九頭龍沼とも）。線香皿、日本酒が供えられていた。裏面中央に亀裂あり。表面の状態は美麗である。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "oppori_numa_kuzuryudragon.jpg"
+        "photo_filename": "oppori_numa_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1700,7 +1773,8 @@
         "Survey_date": "2026年3月6日",
         "Condition_comment": "表面地衣類付着あり。幅方向に亀裂、裏面に剥落跡あり。毎年の水難に悩まされた人々は土手を築いたが、明治43年の大洪水で堤防は決壊する。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "akuto_kuzuryudragon.jpg"
+        "photo_filename": "akuto_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1723,7 +1797,8 @@
         "Survey_date": "2026年3月15日",
         "Condition_comment": "覆屋設置も、欠損ひどく、修復済だが中央部に破断跡あり。正面「九頭龍大権現」の文字はかろうじて判読可能。右側の欠損をはじめ様々な箇所に欠損あり。覆屋内は比較的広い。早俣子供広場（旧早俣グランド）に位置する。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "hayamata_children_play_area_kuzuryudragon.jpg"
+        "photo_filename": "hayamata_children_play_area_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1746,7 +1821,8 @@
         "Survey_date": "2026年3月15日",
         "Condition_comment": "正面「□頭龍大権現」の文字判読可能も風化が見られる。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "hakusan_shrine_kuzuryudragon1.jpg"
+        "photo_filename": "hakusan_shrine_kuzuryudragon1.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1769,7 +1845,8 @@
         "Survey_date": "2026年3月15日",
         "Condition_comment": "「白山神社の九頭龍大権現祠1」の左横に位置し、同時期建立で同型と見られる。正面の文字は鮮明。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "hakusan_shrine_itimokuren.jpg"
+        "photo_filename": "hakusan_shrine_itimokuren.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1792,7 +1869,8 @@
         "Survey_date": "2026年3月15日",
         "Condition_comment": "向かって左から「白山社本殿」「八坂神社」「愛宕神社社」と建てられたうち、愛宕神社右横に位置する。「埼玉の神社」によると九頭龍講祭典は毎年7月21日。「坂戸市史 民俗史料編 2 (石造遺物)」pp.290写真は「権」と「四」の文字からこの「白山神社の九頭龍大権現祠2」と思われる。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "hakusan_shrine_kuzuryudragon2.jpg"
+        "photo_filename": "hakusan_shrine_kuzuryudragon2.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1815,7 +1893,8 @@
         "Survey_date": "2026年3月20日",
         "Condition_comment": "向かって右に欠損あり。正面に刻まれた文字と、左側面の「府川村中」は鮮明だが、右側面の文字は「文政三」以外は欠損のため判別できない。正面に地衣類少し付着。昆虫類の巣等が付着。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "irumagawa_hukawa_kuzuryudragon.jpg"
+        "photo_filename": "irumagawa_hukawa_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1838,7 +1917,8 @@
         "Survey_date": "2026年3月20日",
         "Condition_comment": "写真裏の白い建物が水防倉庫。樹木と4本の注連竹に囲まれ、スイセンも植えられている。正面地衣類付着多く、特に左側面は著しい。裏面にも地衣類付着著しく、左剥がれあり。発起人については「柳正博_九頭龍神と二〇一九年の台風十九号について」を参照した。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "igusa_watasi_flood_storage_kuzuryudragon.jpg"
+        "photo_filename": "igusa_watasi_flood_storage_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1861,7 +1941,8 @@
         "Survey_date": "2026年3月20日",
         "Condition_comment": "4本の注連竹に囲われ、正面の文字は鮮明。右上に地衣類の付着あり。明治43年8月5日、6日は豪雨連日、8日には荒川、入間川、越辺川、市野川が氾濫し、この時上伊草、下伊草、角泉地内堤 1 か所決潰。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "igusa_watasi_kuzuryudragon.jpg"
+        "photo_filename": "igusa_watasi_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1884,7 +1965,8 @@
         "Survey_date": "2026年3月15日",
         "Condition_comment": "当社の創祀は永禄年中。明治四一年に町西の九頭竜社を合祀。",
         "Condition_level": "",
-        "photo_filename": "simada_tenjin_shrine.jpg"
+        "photo_filename": "simada_tenjin_shrine.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1907,7 +1989,8 @@
         "Survey_date": "2026年3月27日",
         "Condition_comment": "台座高さ88cm。正面裏面ともに地衣類付着著しいが正面の文字は充分判別可能。裏面文字は強いライトをあててやっと判読出来た。台座文字は、ライトを当てると一部判読可能。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "simada_kuzuryudragon.jpg"
+        "photo_filename": "simada_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1930,7 +2013,8 @@
         "Survey_date": "2026年3月27日",
         "Condition_comment": "覆屋あり。正面文字は判別は可能だが鮮明ではない。笠部において垂直な割れあり、金属製のかすがいで止められている。下部に欠損あり、その破片が台座に散らばっている。日本酒が供えられている。意義側面「明治十二年卯五月」は視認できたが、左側面は判別不可。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "kamiyosida_kuzuryudragon.jpg"
+        "photo_filename": "kamiyosida_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1953,7 +2037,8 @@
         "Survey_date": "2026年3月27日",
         "Condition_comment": "本坪鈴まで付いた覆屋あり。ところどころに欠損が確認でき、右側面の地衣類付着も。日本酒が供えられていた。堤内地に位置するがここに至るまでの階段等はなく「堤防斜面通行禁止」の看板がある。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "north_otuka_kuzuryudragon.jpg"
+        "photo_filename": "north_otuka_kuzuryudragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1976,7 +2061,8 @@
         "Survey_date": "2026年3月27日",
         "Condition_comment": "左右側面地衣類付着著しい。随所に小さい欠損も見られるが正面の文字は迫力がある。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "simada_suijingu.jpg"
+        "photo_filename": "simada_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -1999,7 +2085,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "経緯年劣化による黒ずみ、正面、左側面に地衣類の付着",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "kabo_inari_shrine_benzaitennyo(front).jpg"
+        "photo_filename": "kabo_inari_shrine_benzaitennyo(front).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2022,7 +2109,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "平成元年建立、状態美麗。しかしドロバチ類の巣が弁財天左右肩にある。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "kabo_inari_shrine_benzaiten(center).jpg"
+        "photo_filename": "kabo_inari_shrine_benzaiten(center).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2045,7 +2133,8 @@
         "Survey_date": "2025年3月2日",
         "Condition_comment": "社のなかに祀られ薄い膜のような地衣類に全面覆われている。浮彫の部には破損等確認できない。吉見町史下巻には、牛の供養のため建立されたというよりは巳日待供養塔である、との記述あり。7/28祭礼",
         "Condition_level": "★★★★★",
-        "photo_filename": "fuchigamachi_benten.jpg"
+        "photo_filename": "fuchigamachi_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2068,7 +2157,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "池の中島に祀られている。笠部分「弁才天」と判読できるが、正面文字は風化し判読できない。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "jyoei_temple_benten.jpg"
+        "photo_filename": "jyoei_temple_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2091,7 +2181,8 @@
         "Survey_date": "2025年3月14日",
         "Condition_comment": "正面「辨財天」、世話人の名前も判読可能。久下神社の裏、久下小学校横　他に九頭龍大神碑があるはずだが未確認",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "kuge_shrine_benten.jpg"
+        "photo_filename": "kuge_shrine_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2114,7 +2205,8 @@
         "Survey_date": "2025年3月23日",
         "Condition_comment": "台座高さ20cm 現在のハザードマップでは高リスク箇所にある。正面左下に向かって深い亀裂。点々とした地衣類左上部、「弁」の文字に白の、また台座に地衣類、黄色のものも見られる。左側面の白い地衣類広く分布。右に5基、馬頭觀音3体など。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "marunuki_benten.jpg"
+        "photo_filename": "marunuki_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2137,7 +2229,8 @@
         "Survey_date": "2025年3月31日",
         "Condition_comment": "笠部に亀裂、修復の跡。正面の文字はかなり鮮明に読める。「拯月吉辰」　吉辰は吉日と同意　　ちかくに齋藤治水翁彰功碑がある。\n八幡神社はびん沼川の左岸縁、びん沼川は昭和初期、かなりの蛇行があった。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "iida_shinden_hachiman_benten.jpg"
+        "photo_filename": "iida_shinden_hachiman_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2160,7 +2253,8 @@
         "Survey_date": "2025年4月27日",
         "Condition_comment": "大量の地衣類にて真っ白。台座高さ80cm 矢那瀬の水神祠につづく道の入り口左に位置。右隣は如意輪観音碑。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "yanase_sekison_ichikishimahime.jpg"
+        "photo_filename": "yanase_sekison_ichikishimahime.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2183,7 +2277,8 @@
         "Survey_date": "2025年4月27日",
         "Condition_comment": "細かい地衣類付着。矢那瀬の石碑群のうちの1基。薄い碑のため、前方に倒れそう。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "yanase_grouped_monument_ichikishimahime.jpg"
+        "photo_filename": "yanase_grouped_monument_ichikishimahime.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2206,7 +2301,8 @@
         "Survey_date": "2025年4月27日",
         "Condition_comment": "緑色の細かい地衣類、下部にも。種子 सु(ソ) が刻まれている。延享三。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "yanase_grouped_monument_benten.jpg"
+        "photo_filename": "yanase_grouped_monument_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2229,7 +2325,8 @@
         "Survey_date": "2025年5月4日",
         "Condition_comment": "正面右側地衣類付着、正面左側剥落のため欠字。熊谷デジタルミュージアムの写真の方が地衣類付着がひどい。その後クリーニングされたか現在はみられない。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "naminori_benten.jpg"
+        "photo_filename": "naminori_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2252,7 +2349,8 @@
         "Survey_date": "2025年5月4日",
         "Condition_comment": "剥落、左部に欠損あり。右側面に地衣類付着し銘文判別不能。上新田の石仏石塔群のなかの1基。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "kamishinden_benten.jpg"
+        "photo_filename": "kamishinden_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2275,7 +2373,8 @@
         "Survey_date": "2025年5月4日",
         "Condition_comment": "8本の腕(八臂弁財天)。波頭に立っているようにも見えるが足下にも地衣類付着著しい。笠部欠損あり。台座に苔と黄色の地衣類付着。他に8体以上の石碑が並ぶ。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "narusawa_akagi_shrine_benten.jpg"
+        "photo_filename": "narusawa_akagi_shrine_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2298,7 +2397,8 @@
         "Survey_date": "2025年5月8日",
         "Condition_comment": "正面文字「才天」箇所に緑の地衣類。部滝馬室氷川神社には神池(弁財池)がありそのほとりに祀られている。表面上部に蛇の線画あり。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "takimamuro_hikawa_benten.jpg"
+        "photo_filename": "takimamuro_hikawa_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2321,7 +2421,8 @@
         "Survey_date": "2025年5月8日",
         "Condition_comment": "覆屋のように外側と内側に祠がある構造になっている。外側の祠は笠部剥落激しい。妙楽寺入り口左に3基祀られているうち、一番右。中央に1678年建立の庚申塔が位置する。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "myoraku_temple_benten.jpg"
+        "photo_filename": "myoraku_temple_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2344,7 +2445,8 @@
         "Survey_date": "2025年5月20日",
         "Condition_comment": "弁天池は湧水。しめ縄が龍の形になっている。龍がこの池の杉（龍燈杉）より昇天したとの伝説がある。",
         "Condition_level": "",
-        "photo_filename": "kitamototakaohikawa_shrine_benten.jpg"
+        "photo_filename": "kitamototakaohikawa_shrine_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2367,7 +2469,8 @@
         "Survey_date": "2025年8月9日",
         "Condition_comment": "弁天講がある。",
         "Condition_level": "★★★★★",
-        "photo_filename": "kamegaike_pond_benten.jpg"
+        "photo_filename": "kamegaike_pond_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2390,7 +2493,8 @@
         "Survey_date": "2025年8月12日",
         "Condition_comment": "笠部に地衣類。全体的に黒ずんでいるが浮彫は状態がよい。銘文は「石仏 改定版 (文化財シリーズ ; 第79集) (いたばしの石造文化財 ; その4)」より。状態良い。台座と屋根に地衣類。笠付角柱に、像容は陽刻されている。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "chotokuji_temple_benten.jpg"
+        "photo_filename": "chotokuji_temple_benten.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2413,7 +2517,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "全体的に欠損が見られ、特に傘部の剥落が著しい。正面の文字はわずかに判読可能。左隣庚申塔とともに覆屋設置。",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "adati_horiunouti_suijin_2.jpg"
+        "photo_filename": "adati_horiunouti_suijin_2.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2436,7 +2541,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "鉄筋コンクリート造りの倉庫屋上に建てられた、1639年創建と伝えられる扇御嶽神社。屋上にあがると覆屋内に寛政五年建立庚申塔と共に水神宮碑が鎮座。美麗、状態はよい。",
         "Condition_level": "★★★★★",
-        "photo_filename": "adati_ougimitake_shrine_suijin_1.jpg"
+        "photo_filename": "adati_ougimitake_shrine_suijin_1.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2459,7 +2565,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "台座高さ69cm。多少黒ずんでいる箇所があるが美麗。宮城氷川神社はかつて荒川の河川敷に鎮座し、放水路工事のために現在の場所へ遷移。",
         "Condition_level": "★★★★★",
-        "photo_filename": "adati_miyagihikawa_suijin1.jpg"
+        "photo_filename": "adati_miyagihikawa_suijin1.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2482,7 +2589,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "正面文字は比較的判別可能。笠部に欠損、黄色い地衣類付着。側面に銘文なし。同地に置かれた扁額にはわずかに「水神」と読める。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "adati_miyagihikawa_suijin2.jpg"
+        "photo_filename": "adati_miyagihikawa_suijin2.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2505,7 +2613,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "となりに空堀となった弁天池。黒いすすのようなものが全体に見られるも覆屋内で状態はよい。右側面に松。近傍の小台橋付近には「尾久の渡し」。",
         "Condition_level": "★★★★★",
-        "photo_filename": "adati_oguhatiman_itukusima.jpg"
+        "photo_filename": "adati_oguhatiman_itukusima.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2528,7 +2637,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "台座高さ112cm。覆屋はないが大変美麗。境内他の碑には水神宮由緒もあり、元和年間（1615-1624）に船方村人により奉斎（神仏や御神札を慎んでおまつりすること）されたと思われる、との銘あり。大正中期までは水神祭にて子どもたちによる初泳ぎが奉納されたが第二次大戦の空襲で焦土と化し、また再興へ。",
         "Condition_level": "★★★★★",
-        "photo_filename": "funakata_shrine_suijin1.jpg"
+        "photo_filename": "funakata_shrine_suijin1.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2551,7 +2661,8 @@
         "Survey_date": "2026年4月7日",
         "Condition_comment": "台座高さ35cm。裏面確認できずも正面の文字は鮮明。緑の地衣類付着で\"苔むした\"という表現が適切な状況、古びた情緒が感じられる。すぐ裏手には隅田川堤防が位置している。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "funakata_shrine_suijin2.jpg"
+        "photo_filename": "funakata_shrine_suijin2.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2574,7 +2685,8 @@
         "Survey_date": "2026年4月26日",
         "Condition_comment": "木造の水神社。境内に記念の碑が配置されている。目立った損傷は見られない。中川まで400m。",
         "Condition_level": "★★★★★",
-        "photo_filename": "kitakasai_jyuuhatiken_suijingu.jpg"
+        "photo_filename": "kitakasai_jyuuhatiken_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2597,7 +2709,8 @@
         "Survey_date": "2026年4月26日",
         "Condition_comment": "木造の水神社。新川と宇喜田川に挟まれた場所に鎮座している。",
         "Condition_level": "★★★★★",
-        "photo_filename": "kitasakai_sitikentyo_suijingu.jpg"
+        "photo_filename": "kitasakai_sitikentyo_suijingu.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2620,7 +2733,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "風化が激しく、正面に刻まれているはずの文字も判別不可能。どちらが水神祠か判明していない。",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "kojima_hatiman_suijin.jpg"
+        "photo_filename": "kojima_hatiman_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2643,7 +2757,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "水神社自体に劣化は視認できない。",
         "Condition_level": "",
-        "photo_filename": "kasai_yakumo_shrine.jpg"
+        "photo_filename": "kasai_yakumo_shrine.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2666,7 +2781,8 @@
         "Survey_date": "2026年5月5日",
         "Condition_comment": "竜神社に特筆すべき保存状態の劣化はない。\n",
         "Condition_level": "",
-        "photo_filename": "kuwakawa_shrine_dragon.jpg"
+        "photo_filename": "kuwakawa_shrine_dragon.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2689,7 +2805,8 @@
         "Survey_date": "2026年5月5日",
         "Condition_comment": "社に特筆すべき劣化は見当たらない。",
         "Condition_level": "",
-        "photo_filename": "simoimai_inari_suijin.jpg"
+        "photo_filename": "simoimai_inari_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2712,7 +2829,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "特筆すべき劣化は確認できない",
         "Condition_level": "",
-        "photo_filename": "simoimai_kumano_shrine_suijin.jpg"
+        "photo_filename": "simoimai_kumano_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2735,7 +2853,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "笠部に黒ずみがある以外良好。花崗岩系統の石材が使われている。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "funabori_misima_shrine_suijin.jpg"
+        "photo_filename": "funabori_misima_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2758,7 +2877,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "覆屋内に位置し、小さい欠損はあるが状態良好",
         "Condition_level": "★★★★★",
-        "photo_filename": "kasi_suijin.jpg"
+        "photo_filename": "kasi_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2781,7 +2901,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "覆屋はないが、向かって右の小祠は状態がよく、裏面に平成九年の銘がある。笠部に黒ずみ（地衣類？）が確認できる。",
         "Condition_level": "★★★★★",
-        "photo_filename": "simo_suijin(right).jpg"
+        "photo_filename": "simo_suijin(right).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2804,7 +2925,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "2基の「志茂の水神宮」における、向かって左に位置する水神祠は、状態が大変悪い。全体的に剥落が著しく、これ以上剥落が進まないよう金属製のバンドでしめられている。\n右側面に「明」の文字が判読できる。\n\n明がつく年号も限られているため、「抹香亭となりの一之江水神宮」と同様、天明年間に建立されたのではと推測されるが定かではない。<br>\n江戸川区史第3巻[^1]によると、<span style=\"color:red;\">天明の洪水は江戸川区における洪水のうちで、これまでにない最大のものであったと想像される</span>、という記述がある。",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "simo_suijin(left).jpg"
+        "photo_filename": "simo_suijin(left).jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2827,7 +2949,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "覆屋はない。欠損も認められ、うっすらと地衣類付着がみられるも総じて状態はよい。鳥居については、\"笠木（かさぎ）\"、\"貫（ぬき）\"とも地衣類付着が激しく、\"柱\"にも付着が認められる。\n台座左側面に「天明八□戌申年六月吉日」の銘あり。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "makkotei_itinoe_suijin.jpg"
+        "photo_filename": "makkotei_itinoe_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2850,7 +2973,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "小野原稲荷神社境内の水神社には2基の小祠が祀られているが、どちらも銘はなく詳細は不明。向かって右の小祠にはわずかに「矢沢」という文字が判読できる。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "onohara_inari_shrine_suijin.jpg"
+        "photo_filename": "onohara_inari_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2873,7 +2997,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "小野原稲荷神社境内の水神宮には2基の小祠が祀られているが、どちらも銘はなく詳細は不明。向かって右の小祠にはわずかに「矢沢」という文字が判読できる。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "onohara_inari_shrine_suijin.jpg"
+        "photo_filename": "onohara_inari_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2896,7 +3021,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "台座に地衣類付着、笠部剥落あり。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "gobuiti_suijin（right）.jpg"
+        "photo_filename": "gobuiti_suijin（right）.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2919,7 +3045,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "2基とも、右側面はクリーニングが施されたかのようになっており、銘文が読みやすくなっている。\n扉破損と、笠部に地衣類付着がみられる。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "gobuiti_suijin（left）.jpg"
+        "photo_filename": "gobuiti_suijin（left）.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2942,7 +3069,8 @@
         "Survey_date": "2026年5月6日",
         "Condition_comment": "覆屋はなく、上記写真ではわかりづらいが玉垣が大変狭く、その関係で寸法計測が困難である。裏面に「昭和三十五年八月吉日」との銘がある。祭神はミズハメノミコト。",
         "Condition_level": "★★★★★",
-        "photo_filename": "sinkoiwa_katori_shrine_suijin.jpg"
+        "photo_filename": "sinkoiwa_katori_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2965,7 +3093,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "今回の調査したのは水神宮と刻まれた「水神道標碑」である。水神社としての隅田川神社調査は次回とする。\n水神道標碑については、地衣類が付着しているものの、正面に刻まれた文字は鮮明。裏面には比較的大きな剥落が見られる。2020年5月頃のブログによる写真と比較すると、剥落の進行が見られる。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "sumidagawa_shrine_suijin.jpg"
+        "photo_filename": "sumidagawa_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -2988,7 +3117,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "水神社内石祠について直接調査はできないが、水神社の劣化は確認できない",
         "Condition_level": "",
-        "photo_filename": "kameido_suijin.jpg"
+        "photo_filename": "kameido_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3011,7 +3141,8 @@
         "Survey_date": "2026年5月24日",
         "Condition_comment": "本来は坂下の渡しへの路傍に建つ。本田中央集会所と吉野川の中間地点。",
         "Condition_level": "★☆☆☆☆",
-        "photo_filename": "honda_suijin.jpg"
+        "photo_filename": "honda_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3034,7 +3165,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "",
         "Condition_level": "",
-        "photo_filename": "kameido_katori_shrine_suijin.jpg"
+        "photo_filename": "kameido_katori_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3057,7 +3189,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "木造の水神祠に劣化は確認できない。",
         "Condition_level": "",
-        "photo_filename": "higasikomatugawa_watasiba_suijin.jpg"
+        "photo_filename": "higasikomatugawa_watasiba_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3080,7 +3213,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "正面に刻まれた文字は水神のみ判読ができたが、左右側面文字はそれぞれ1文字しか判読できず、総じて劣化が激しい。石材は軽石のような火成岩系統と思われた。剥落顕著。",
         "Condition_level": "☆☆☆☆☆",
-        "photo_filename": "higasikomatugawa_sirahige_shrine_suijin.jpg"
+        "photo_filename": "higasikomatugawa_sirahige_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3103,7 +3237,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "鍵の付いたフェンスに囲まれ、近寄ることができない。\nフェンス越しにも剥落が見え、台座にもそれが確認できた。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "oegawa_suijin.jpg"
+        "photo_filename": "oegawa_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3126,7 +3261,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "表面黒ずんで、虫が這った跡のような模様になっているが正面の文字は鮮明。\n裏面までは確認できず。",
         "Condition_level": "★★★★☆",
-        "photo_filename": "nakanoniwa_suijin.jpg"
+        "photo_filename": "nakanoniwa_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3149,7 +3285,8 @@
         "Survey_date": "2026年4月11日",
         "Condition_comment": "笠部左上に亀裂、修復跡、緑色の地衣類付着あり。\n各所に小さい欠損、剥落がある。\n幣束に隠れていたが「水」という文字は判読可能。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "kaminoniwa_suijin.jpg"
+        "photo_filename": "kaminoniwa_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3172,7 +3309,8 @@
         "Survey_date": "2026年4月26日",
         "Condition_comment": "台座・笠部に欠損・剥落がある。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "irinoniwa_suijin.jpg"
+        "photo_filename": "irinoniwa_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3195,7 +3333,8 @@
         "Survey_date": "2026年4月26日",
         "Condition_comment": "社に劣化は確認できない。",
         "Condition_level": "",
-        "photo_filename": "funabori_inari_shrine_suijin.jpg"
+        "photo_filename": "funabori_inari_shrine_suijin.jpg",
+        "detail_filename": ""
       }
     },
     {
@@ -3218,7 +3357,8 @@
         "Survey_date": "2026年7月15日",
         "Condition_comment": "地衣類付着が顕著で正面の文字については篆書体で刻まれ、判読は可能。調査日は、草木が生い茂り、裏面にまわることは困難だった。",
         "Condition_level": "★★☆☆☆",
-        "photo_filename": "hebisaka_suijin.jpg"
+        "photo_filename": "hebisaka_suijin.jpg",
+        "detail_filename": "hebisaka_suijin.html"
       }
     },
     {
@@ -3241,7 +3381,8 @@
         "Survey_date": "2026年7月15日",
         "Condition_comment": "正面に地衣類付着。側面に亀裂、剥落あり。",
         "Condition_level": "★★★☆☆",
-        "photo_filename": "kamigarako_tukita_bridge_suijin.jpg"
+        "photo_filename": "kamigarako_tukita_bridge_suijin.jpg",
+        "detail_filename": ""
       }
     }
   ]

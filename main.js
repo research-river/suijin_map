@@ -5,6 +5,7 @@ const placePhoto     = document.getElementById("place-photo");
 const placePhotoWrap = document.getElementById("place-photo-wrap");
 const placeName      = document.getElementById("place-name");
 const placeRows      = document.getElementById("place-rows");
+const placeDetailLink = document.getElementById("place-detail-link");
 
 function openPlaceCard(p) {
   placeCard.classList.remove("type-water", "type-dragon", "type-benten", "type-other");
@@ -42,6 +43,13 @@ function openPlaceCard(p) {
     .map(([k, v]) => `<div class="place-row"><span class="place-key">${k}</span><span class="place-val">${v}</span></div>`)
     .join("");
 
+  if (p.detail_filename) {
+    placeDetailLink.dataset.href = `monumentphoto/monument_detail/${p.detail_filename}`;
+    placeDetailLink.style.display = "";
+  } else {
+    placeDetailLink.style.display = "none";
+  }
+
   placeCard.classList.add("open");
   placeCard.setAttribute("aria-hidden", "false");
   document.body.classList.add("place-card-active");
@@ -55,6 +63,13 @@ function closePlaceCard() {
 }
 
 document.getElementById("place-card-close").addEventListener("click", closePlaceCard);
+
+// window.open() 経由で開けば、詳細ページ側の window.close() が確実に効く
+placeDetailLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  const href = placeDetailLink.dataset.href;
+  if (href) window.open(href, "_blank", "noopener");
+});
 
 function createMarkerEl(p) {
   const el = document.createElement("div");
