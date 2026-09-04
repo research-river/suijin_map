@@ -554,6 +554,38 @@ body.place-card-active #map {
   color: var(--text);
 }
 
+#nowcast-ctrl.collapsed #nc-body {
+  display: none;
+}
+
+#nc-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+#nc-panel-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-sub);
+  letter-spacing: 0.02em;
+}
+
+#nc-collapse-btn {
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--text-sub);
+  padding: 2px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+#nc-collapse-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
 #nc-header {
   display: flex;
   align-items: center;
@@ -619,6 +651,28 @@ body.place-card-active #map {
   font-size: 10px;
   color: var(--text-sub);
   margin-top: 4px;
+}
+
+#nc-opacity-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 2px 8px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+#nc-opacity-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+#nc-opacity-row span:last-child {
+  min-width: 32px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--text);
 }
 
 #nc-btn-row {

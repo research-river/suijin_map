@@ -160,53 +160,77 @@
 
         <!-- ナウキャスト 再生コントローラ（下部フローティング） -->
         <div id="nowcast-ctrl" hidden>
-            <div id="nc-source-row">
-                <select id="nc-source" title="表示するデータ">
-                    <option value="live">ライブ（現在のナウキャスト）</option>
-                    <option value="typhoon19_2019">令和元年東日本台風 (2019/10/12-13)</option>
-                    <option value="typhoon15_2026">台風15号 (2026/8/11-12)</option>
-                    <option value="heavyrain_chiba_2026aug">令和8年8月千葉豪雨 (2026/8/13-14)</option>
-                    <option value="heavy_rain0822_2026">ゲリラ豪雨 (2026/8/22 13:35-21:15)</option>
-                </select>
+            <div id="nc-panel-header">
+                <span id="nc-panel-title">降水ナウキャスト</span>
+                <i
+                    class="ti ti-minus"
+                    id="nc-collapse-btn"
+                    aria-label="畳む"
+                    role="button"
+                    tabindex="0"
+                ></i>
             </div>
-            <div id="nc-header">
-                <span id="nc-time-label">--</span>
-                <span id="nc-badge" class="nc-badge nc-obs">観測</span>
-                <span id="nc-loading" hidden>読込中…</span>
-            </div>
-            <div id="nc-slider-row">
-                <input
-                    type="range"
-                    id="nc-slider"
-                    min="0"
-                    max="23"
-                    value="0"
-                    step="1"
-                />
-                <div id="nc-tick-row">
-                    <span id="nc-tick-start">−60分</span>
-                    <span id="nc-tick-mid">現在</span>
-                    <span id="nc-tick-end">+60分</span>
+            <div id="nc-body">
+                <div id="nc-source-row">
+                    <select id="nc-source" title="表示するデータ">
+                        <option value="live">ライブ（現在のナウキャスト）</option>
+                        <option value="typhoon19_2019">令和元年東日本台風 (2019/10/12-13)</option>
+                        <option value="typhoon15_2026">台風15号 (2026/8/11-12)</option>
+                        <option value="heavyrain_chiba_2026aug">令和8年8月千葉豪雨 (2026/8/13-14)</option>
+                        <option value="heavy_rain0822_2026">ゲリラ豪雨 (2026/8/22 13:35-21:15)</option>
+                    </select>
                 </div>
-            </div>
-            <div id="nc-btn-row">
-                <button id="nc-btn-first" title="最初へ">⏮</button>
-                <button id="nc-btn-prev" title="前へ">◀</button>
-                <button id="nc-btn-play">▶ 再生</button>
-                <button id="nc-btn-next" title="次へ">▶</button>
-                <button id="nc-btn-last" title="最後へ">⏭</button>
-                <div class="nc-sep"></div>
-                <select id="nc-speed" title="再生速度">
-                    <option value="800">遅い</option>
-                    <option value="500" selected>標準</option>
-                    <option value="300">速い</option>
-                    <option value="150">最速</option>
-                </select>
-                <select id="nc-element" title="観測種別">
-                    <option value="hrpns">降水</option>
-                    <option value="thns">雷</option>
-                    <option value="trns">竜巻</option>
-                </select>
+                <div id="nc-header">
+                    <span id="nc-time-label">--</span>
+                    <span id="nc-badge" class="nc-badge nc-obs">観測</span>
+                    <span id="nc-loading" hidden>読込中…</span>
+                </div>
+                <div id="nc-slider-row">
+                    <input
+                        type="range"
+                        id="nc-slider"
+                        min="0"
+                        max="23"
+                        value="0"
+                        step="1"
+                    />
+                    <div id="nc-tick-row">
+                        <span id="nc-tick-start">−60分</span>
+                        <span id="nc-tick-mid">現在</span>
+                        <span id="nc-tick-end">+60分</span>
+                    </div>
+                </div>
+                <div id="nc-opacity-row">
+                    <span class="slider-label">濃さ</span>
+                    <input
+                        type="range"
+                        id="nc-opacity"
+                        min="0.2"
+                        max="1"
+                        step="0.05"
+                        value="1"
+                    />
+                    <span id="nc-opacity-val">100%</span>
+                </div>
+                <div id="nc-btn-row">
+                    <button id="nc-btn-first" title="最初へ">⏮</button>
+                    <button id="nc-btn-prev" title="前へ">◀</button>
+                    <button id="nc-btn-play">▶ 再生</button>
+                    <button id="nc-btn-next" title="次へ">▶</button>
+                    <button id="nc-btn-last" title="最後へ">⏭</button>
+                    <div class="nc-sep"></div>
+                    <select id="nc-speed" title="再生速度">
+                        <option value="800">遅い</option>
+                        <option value="500" selected>標準</option>
+                        <option value="300">速い</option>
+                        <option value="150">最速</option>
+                    </select>
+                    <select id="nc-element" title="観測種別">
+                        <option value="hrpns">降水</option>
+                        <option value="thns">雷</option>
+                        <option value="trns">竜巻</option>
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -1342,6 +1366,19 @@
                 _collapseBtn.classList.toggle("ti-minus", !collapsed);
                 _collapseBtn.classList.toggle("ti-plus", collapsed);
                 _collapseBtn.setAttribute(
+                    "aria-label",
+                    collapsed ? "展開" : "畳む",
+                );
+            });
+
+            // ===== ナウキャストパネルの折りたたみ =====
+            const _ncPanel = document.getElementById("nowcast-ctrl");
+            const _ncCollapseBtn = document.getElementById("nc-collapse-btn");
+            _ncCollapseBtn.addEventListener("click", () => {
+                const collapsed = _ncPanel.classList.toggle("collapsed");
+                _ncCollapseBtn.classList.toggle("ti-minus", !collapsed);
+                _ncCollapseBtn.classList.toggle("ti-plus", collapsed);
+                _ncCollapseBtn.setAttribute(
                     "aria-label",
                     collapsed ? "展開" : "畳む",
                 );

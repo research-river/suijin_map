@@ -575,6 +575,7 @@ let ncRefreshTimer = null;
 // ncGeneration は採番カウンタ、ncDisplayGen は現在表示中の世代
 let ncGeneration   = 0;
 let ncDisplayGen   = 0;
+let ncOpacityScale = 1.0; // 「濃さ」スライダー(0.2-1.0)。基準opacityへ乗算する
 // 静止表示中にタイル取得を許すフレーム範囲(現在±2枚)。
 // 全24フレームを常時取得するとズームのたびにリクエストが殺到し、
 // 表示中フレームのタイル到着が遅れて雨雲が途切れて見える
@@ -916,7 +917,7 @@ function ncShowFrame(index) {
     map.setPaintProperty(ncLayerId(ncDisplayGen, prev), "raster-opacity", 0);
 
   const f = ncFrames[ncCurrent];
-  const opacity = f.type === "fcst" ? 0.55 : 0.78;
+  const opacity = (f.type === "fcst" ? 0.55 : 0.78) * ncOpacityScale;
   if (map.getLayer(ncLayerId(ncDisplayGen, ncCurrent)))
     map.setPaintProperty(ncLayerId(ncDisplayGen, ncCurrent), "raster-opacity", opacity);
 
@@ -1102,7 +1103,7 @@ function peAddLayer() {
     id: "pe-img-layer",
     type: "raster",
     source: "pe-img-src",
-    paint: { "raster-opacity": 0.75, "raster-fade-duration": 0 },
+    paint: { "raster-opacity": 0.75 * ncOpacityScale, "raster-fade-duration": 0 },
   });
 }
 
@@ -2116,6 +2117,15 @@ document.getElementById("nc-element").addEventListener("change", async (e) => {
   ncElement = e.target.value;
   await ncInitialize();
   if (wasPlaying) ncPlay();
+});
+document.getElementById("nc-opacity").addEventListener("input", (e) => {
+  ncOpacityScale = parseFloat(e.target.value);
+  document.getElementById("nc-opacity-val").textContent = Math.round(ncOpacityScale * 100) + "%";
+  if (peActive) {
+    if (map.getLayer("pe-img-layer")) map.setPaintProperty("pe-img-layer", "raster-opacity", 0.75 * ncOpacityScale);
+  } else if (ncActive) {
+    ncShowFrame(ncCurrent);
+  }
 });
 
 // ⌘K（またはCtrl+K）で検索フィールドにフォーカス
