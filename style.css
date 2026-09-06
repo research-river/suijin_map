@@ -1362,13 +1362,14 @@ body.place-card-active #map {
   border-top: none;
 }
 
+/* 詳細リンクボタン：種別ごとに塗り潰し色を変える（「みんなで石仏調査」ポップアップの詳細ボタンを参考） */
 #place-detail-link {
   display: block;
   margin: 10px 12px 0;
   padding: 8px 12px;
   border-radius: 8px;
-  background: rgba(10, 132, 255, 0.1);
-  color: var(--accent-blue, #185fa5);
+  background: #0a84ff;
+  color: #fff;
   font-size: 13px;
   font-weight: 600;
   text-align: center;
@@ -1377,7 +1378,31 @@ body.place-card-active #map {
 }
 
 #place-detail-link:hover {
-  background: rgba(10, 132, 255, 0.18);
+  background: #0968d6;
+}
+
+#place-card.type-dragon #place-detail-link {
+  background: #34c759;
+}
+
+#place-card.type-dragon #place-detail-link:hover {
+  background: #2aa84a;
+}
+
+#place-card.type-benten #place-detail-link {
+  background: #ff9500;
+}
+
+#place-card.type-benten #place-detail-link:hover {
+  background: #db8000;
+}
+
+#place-card.type-other #place-detail-link {
+  background: #6c6c70;
+}
+
+#place-card.type-other #place-detail-link:hover {
+  background: #58585c;
 }
 
 .place-key {
