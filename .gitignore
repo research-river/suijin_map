@@ -1,5 +1,8 @@
 ﻿# 国土地理院DEMデータ等の大容量生成物（容量が大きいためバージョン管理対象外）
 dem_pipeline/
+dem_pipeline
+DEM/
+evacuation_area/
 
 __pycache__/
 *.pyc
@@ -15,6 +18,7 @@ nowcast/
 qgis/
 register_monument.py
 route/
+generate_tree_note.py
 GITHUB_SETUP.html
 main_apple_ui_backup.js
 monuments_suijin_backup.csv
