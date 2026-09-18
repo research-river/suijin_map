@@ -1855,63 +1855,34 @@ document.getElementById("terrain-exaggeration").addEventListener("input", (e) =>
   if (terrain3dActive) map.setTerrain({ source: "local-dem-terrain", exaggeration: val });
 });
 
-// ---- カーソル位置の標高表示（右下） ----
-// map.setTerrain()経由だとpitch0でも地形が視覚的にずれるため、
-// pmtilesタイルを直接デコードして数値だけ取得する（表示への副作用なし）
+// ---- クリック地点の標高表示（右下） ----
+// 25GBのdem.pmtilesは配信コストの都合でGitHub Pages上に置けないため、
+// 国土地理院の標高API（無料・追加データ不要）にクリック時だけ問い合わせる方式にする。
+// mousemoveで連打するとAPIへの負荷が大きいため、クリック時のみ取得する
 const elevReadoutEl = document.getElementById("elevation-display");
-const elevReadoutPMTiles = new pmtiles.PMTiles(LOCAL_DEM_URL.replace("pmtiles://", ""));
-const elevTileCache = new Map(); // "z/x/y" -> ImageData（256x256）
-const ELEV_READOUT_ZOOM = 14; // local-dem-hs/terrainのmaxzoomと合わせる
+const GSI_ELEVATION_API = "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php";
 
-function lngLatToTilePixel(lng, lat, z) {
-  const n = 2 ** z;
-  const x = ((lng + 180) / 360) * n;
-  const latRad = (lat * Math.PI) / 180;
-  const y = ((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n;
-  const tileX = Math.floor(x);
-  const tileY = Math.floor(y);
-  return { tileX, tileY, px: Math.floor((x - tileX) * 256), py: Math.floor((y - tileY) * 256) };
+async function fetchGsiElevation(lng, lat) {
+  const url = `${GSI_ELEVATION_API}?lon=${lng}&lat=${lat}&outtype=JSON`;
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`GSI標高API失敗: ${resp.status}`);
+  return resp.json(); // { elevation: number|"-----", hsrc: string }
 }
 
-async function getTileImageData(z, x, y) {
-  const key = `${z}/${x}/${y}`;
-  if (elevTileCache.has(key)) return elevTileCache.get(key);
-  const tile = await elevReadoutPMTiles.getZxy(z, x, y);
-  if (!tile) { elevTileCache.set(key, null); return null; }
-  const bitmap = await createImageBitmap(new Blob([tile.data]));
-  const canvas = new OffscreenCanvas(256, 256);
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(bitmap, 0, 0);
-  const imgData = ctx.getImageData(0, 0, 256, 256);
-  elevTileCache.set(key, imgData);
-  return imgData;
-}
-
-let elevReadoutPending = false;
-async function updateElevReadout(lng, lat) {
-  if (elevReadoutPending) return;
-  elevReadoutPending = true;
-  try {
-    const { tileX, tileY, px, py } = lngLatToTilePixel(lng, lat, ELEV_READOUT_ZOOM);
-    const imgData = await getTileImageData(ELEV_READOUT_ZOOM, tileX, tileY);
-    if (!imgData) { elevReadoutEl.textContent = "標高: データなし"; return; }
-    const i = (py * 256 + px) * 4;
-    const r = imgData.data[i], g = imgData.data[i + 1], b = imgData.data[i + 2];
-    // terrariumエンコード: elevation = R*256 + G + B/256 - 32768
-    const elev = r * 256 + g + b / 256 - 32768;
-    elevReadoutEl.textContent = elev < -1000 ? "標高: データなし" : `標高: ${elev.toFixed(1)} m`;
-  } catch {
-    elevReadoutEl.textContent = "標高: データなし";
-  } finally {
-    elevReadoutPending = false;
-  }
-}
-
-map.on("mousemove", (e) => {
+map.on("click", async (e) => {
+  const { lng, lat } = e.lngLat;
   elevReadoutEl.classList.add("visible");
-  updateElevReadout(e.lngLat.lng, e.lngLat.lat);
+  elevReadoutEl.textContent = "標高: 取得中…";
+  try {
+    const data = await fetchGsiElevation(lng, lat);
+    elevReadoutEl.textContent =
+      data.elevation === "-----" || data.elevation == null
+        ? "標高: データなし"
+        : `標高: ${data.elevation} m`;
+  } catch {
+    elevReadoutEl.textContent = "標高: 取得失敗";
+  }
 });
-map.on("mouseout", () => elevReadoutEl.classList.remove("visible"));
 
 // --- シナリオプリセット ---
 const PRESETS = {
