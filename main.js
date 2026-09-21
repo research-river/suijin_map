@@ -1179,6 +1179,7 @@ async function peEnable(eventId) {
   peEventId = eventId;
   document.getElementById("nowcast-toggle").checked = true;
   document.getElementById("nowcast-ctrl").hidden = false;
+  document.getElementById("nc-opacity-ctrl").classList.add("visible");
   const elementSelect = document.getElementById("nc-element");
   if (elementSelect) elementSelect.hidden = true;
 
@@ -1980,10 +1981,12 @@ function applyPreset(presetId) {
   if (p.nowcast === true && !ncActive) {
     const ncToggleEl = document.getElementById("nowcast-toggle");
     if (ncToggleEl) ncToggleEl.checked = true;
+    document.getElementById("nc-opacity-ctrl").classList.add("visible");
     ncEnable();
   } else if (p.nowcast === false && ncActive) {
     const ncToggleEl = document.getElementById("nowcast-toggle");
     if (ncToggleEl) ncToggleEl.checked = false;
+    document.getElementById("nc-opacity-ctrl").classList.remove("visible");
     ncDisable();
   }
 
@@ -2096,6 +2099,7 @@ setInterval(() => { if (floodLabelsEnabled) fetchFloodWarnings(); }, 600_000);
 // #nowcast-ctrl のスライダー・再生ボタン群はライブ(nc*)と過去イベント(pe*)で共用する。
 // peActive の真偽で分岐し、どちらの再生エンジンを操作するか切り替える
 document.getElementById("nowcast-toggle").addEventListener("change", (e) => {
+  document.getElementById("nc-opacity-ctrl").classList.toggle("visible", e.target.checked);
   if (e.target.checked) {
     const src = document.getElementById("nc-source")?.value ?? "live";
     src === "live" ? ncEnable() : peEnable(src);
