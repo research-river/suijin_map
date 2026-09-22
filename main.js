@@ -603,6 +603,11 @@ const PAST_EVENTS = {
     metaUrl: "rainfall_archive/events/heavy_rain0822_2026/frames.json",
     baseDir: "rainfall_archive/events/heavy_rain0822_2026/frames/",
   },
+  typhoon25_2026: {
+    label: "台風25号(2026年9月)",
+    metaUrl: "rainfall_archive/events/typhoon25_2026/frames.json",
+    baseDir: "rainfall_archive/events/typhoon25_2026/frames/",
+  },
 };
 let peActive  = false;
 let peEventId = null;
