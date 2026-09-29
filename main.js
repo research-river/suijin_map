@@ -559,6 +559,8 @@ const activeTypes = new Set(["water", "dragon", "benten"]);
 const activeRivers = new Set();
 const activeOverlays = new Set();
 const activeBreach = new Set();
+const activeFlood = new Set();
+let floodOpacity = 0.5;
 let currentBaseLayer = "pale";
 
 // --- ナウキャスト状態 ---
@@ -817,6 +819,101 @@ function removeRasterOverlay(id) {
 
 function addRasterOverlays() {
   activeOverlays.forEach((id) => addRasterOverlay(id));
+}
+
+// ---- 洪水浸水想定区域（河川管理者公表・国土数値情報） ----
+
+const HAZARD_PMTILES_BASE = "https://pub-6f7d915a556b4c2aab93d0ad18fc694f.r2.dev";
+const GSI_DISAPORTAL_RASTER = "https://disaportaldata.gsi.go.jp/raster";
+// z12未満は地理院タイル、z12以上は自前pmtilesに切り替える境界
+const FLOOD_SWITCH_ZOOM = 12;
+
+// 配色は地理院の凡例に合わせ、ズーム切替で色が変わらないようにする
+const FLOOD_DEPTH_COLORS = ["#f7f5a9", "#ffd8c0", "#ffb7b7", "#ff9191", "#f285c9", "#dc7adc"];
+const FLOOD_DURATION_COLORS = ["#b4ebfa", "#82c8f0", "#5a9fe6", "#6f7fe0", "#8a5fd0", "#a03fb8", "#7a1f8f"];
+
+const FLOOD_LAYERS = {
+  l2: {
+    label: "想定最大規模", file: "flood_l2_depth.pmtiles", gsi: "01_flood_l2_shinsuishin_data",
+    kind: "fill", colors: FLOOD_DEPTH_COLORS, exclusive: true,
+  },
+  l1: {
+    label: "計画規模", file: "flood_l1_depth.pmtiles", gsi: "01_flood_l1_shinsuishin_newlegend_data",
+    kind: "fill", colors: FLOOD_DEPTH_COLORS, exclusive: true,
+  },
+  duration: {
+    label: "浸水継続時間", file: "flood_duration.pmtiles", gsi: "01_flood_l2_keizoku_data",
+    kind: "fill", colors: FLOOD_DURATION_COLORS, exclusive: true,
+  },
+  collapse_overflow: {
+    label: "家屋倒壊(氾濫流)", file: "flood_collapse_overflow.pmtiles", gsi: "01_flood_l2_kaokutoukai_hanran_data",
+    kind: "outline", color: "#d6336c",
+  },
+  collapse_erosion: {
+    label: "家屋倒壊(河岸侵食)", file: "flood_collapse_erosion.pmtiles", gsi: "01_flood_l2_kaokutoukai_kagan_data",
+    kind: "outline", color: "#7048e8",
+  },
+};
+
+function floodRankColorExpr(colors) {
+  const expr = ["match", ["get", "rank"]];
+  colors.forEach((c, i) => expr.push(i + 1, c));
+  expr.push(colors[colors.length - 1]);
+  return expr;
+}
+
+function addFloodLayer(id) {
+  const cfg = FLOOD_LAYERS[id];
+  const rasterId = `flood-${id}-gsi`;
+  const vectorId = `flood-${id}-vec`;
+  map.addSource(rasterId, {
+    type: "raster",
+    tiles: [`${GSI_DISAPORTAL_RASTER}/${cfg.gsi}/{z}/{x}/{y}.png`],
+    tileSize: 256,
+    minzoom: 2,
+    maxzoom: FLOOD_SWITCH_ZOOM - 1,
+  });
+  map.addLayer({
+    id: rasterId, type: "raster", source: rasterId,
+    maxzoom: FLOOD_SWITCH_ZOOM,
+    paint: { "raster-opacity": floodOpacity, "raster-fade-duration": 0 },
+  });
+  map.addSource(vectorId, {
+    type: "vector",
+    url: `pmtiles://${HAZARD_PMTILES_BASE}/${cfg.file}`,
+  });
+  if (cfg.kind === "fill") {
+    map.addLayer({
+      id: vectorId, type: "fill", source: vectorId, "source-layer": "flood",
+      minzoom: FLOOD_SWITCH_ZOOM,
+      paint: { "fill-color": floodRankColorExpr(cfg.colors), "fill-opacity": floodOpacity },
+    });
+  } else {
+    // 面が重なる家屋倒壊は、下の浸水深を隠さないよう薄い塗り+枠線で重ねる
+    map.addLayer({
+      id: vectorId, type: "fill", source: vectorId, "source-layer": "flood",
+      minzoom: FLOOD_SWITCH_ZOOM,
+      paint: { "fill-color": cfg.color, "fill-opacity": 0.15 },
+    });
+    map.addLayer({
+      id: `${vectorId}-line`, type: "line", source: vectorId, "source-layer": "flood",
+      minzoom: FLOOD_SWITCH_ZOOM,
+      paint: { "line-color": cfg.color, "line-width": 1.5 },
+    });
+  }
+}
+
+function removeFloodLayer(id) {
+  [`flood-${id}-vec-line`, `flood-${id}-vec`, `flood-${id}-gsi`].forEach((lid) => {
+    if (map.getLayer(lid)) map.removeLayer(lid);
+  });
+  [`flood-${id}-vec`, `flood-${id}-gsi`].forEach((sid) => {
+    if (map.getSource(sid)) map.removeSource(sid);
+  });
+}
+
+function addFloodLayers() {
+  activeFlood.forEach((id) => addFloodLayer(id));
 }
 
 async function refreshKikikuloLayers() {
@@ -1279,9 +1376,6 @@ function updateHazardSummary() {
   if (activeOverlays.has("kikiculo_land"))  parts.push("土砂危険度");
   if (activeOverlays.has("kikiculo_flood")) parts.push("河川洪水");
   if (ncActive)                             parts.push("ナウキャスト");
-  if (activeOverlays.has("typhoon2019"))    parts.push("台風19号");
-  if (activeBreach.has("typhoon2019_breach")) parts.push("破堤(R1)");
-  if (activeBreach.has("meiji43_breach"))   parts.push("破堤(M43)");
   if (floodLabelsEnabled) {
     const n = lastFloodWarnings.size;
     parts.push(n > 0 ? `洪水予報(${n}河川)` : "洪水予報表示中");
@@ -1506,6 +1600,7 @@ document.querySelectorAll('input[name="base-layer"]').forEach((radio) => {
       if (elevationActive) addElevationLayer();
       addMarkers();
       addActiveBuffers();
+      addFloodLayers();
       addRiverLayers();
       addRasterOverlays();
       addBreachLayers();
@@ -1565,6 +1660,47 @@ function registerBreachPopups() {
     });
 }
 
+// --- 洪水浸水想定区域 濃さ調整 ---
+// 家屋倒壊の輪郭は面の濃さと独立させ、区域の位置が薄くて見えなくなるのを避ける
+const floodOpacitySlider = document.getElementById("flood-opacity");
+floodOpacitySlider.addEventListener("input", () => {
+  floodOpacity = parseFloat(floodOpacitySlider.value);
+  document.getElementById("flood-opacity-val").textContent = Math.round(floodOpacity * 100) + "%";
+  activeFlood.forEach((id) => {
+    if (FLOOD_LAYERS[id].kind !== "fill") return;
+    map.setPaintProperty(`flood-${id}-gsi`, "raster-opacity", floodOpacity);
+    map.setPaintProperty(`flood-${id}-vec`, "fill-opacity", floodOpacity);
+  });
+});
+
+// --- 洪水浸水想定区域 トグル ---
+document.querySelectorAll("input[data-flood]").forEach((cb) => {
+  cb.addEventListener("change", () => {
+    const id = cb.dataset.flood;
+    if (cb.checked) {
+      // 面で塗るカテゴリは同時に1つだけ(重なると浸水深が読めなくなる)
+      if (FLOOD_LAYERS[id].exclusive) {
+        Object.keys(FLOOD_LAYERS).forEach((other) => {
+          if (other === id || !FLOOD_LAYERS[other].exclusive || !activeFlood.has(other)) return;
+          activeFlood.delete(other);
+          removeFloodLayer(other);
+          document.querySelector(`input[data-flood="${other}"]`).checked = false;
+        });
+      }
+      activeFlood.add(id);
+      addFloodLayer(id);
+    } else {
+      activeFlood.delete(id);
+      removeFloodLayer(id);
+    }
+    // 面のカテゴリがONのときだけ表示（家屋倒壊のみでは効かないため）
+    const hasFill = [...activeFlood].some((k) => FLOOD_LAYERS[k].kind === "fill");
+    document.getElementById("flood-opacity-ctrl").classList.toggle("visible", hasFill);
+    updateAttribution();
+    updateHazardSummary();
+  });
+});
+
 // --- 破堤箇所 トグル ---
 document.querySelectorAll("input[data-breach]").forEach((cb) => {
   cb.addEventListener("change", () => {
@@ -1607,6 +1743,9 @@ function updateAttribution() {
   }
   if (activeBreach.has("meiji43_breach")) {
     parts.push("明治四十三年埼玉県水害誌付録地図による、荒川流域における十間以上の破堤箇所");
+  }
+  if (activeFlood.size > 0) {
+    parts.push("洪水浸水想定区域: 国土数値情報(国土交通省・埼玉県・東京都)");
   }
   if (elevationActive) {
     parts.push("色別標高図 ©国土地理院（DEMタイル）");
