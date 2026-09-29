@@ -918,15 +918,127 @@
                         </div>
                     </div>
 
-                    <!-- ハザード情報 -->
-                    <div class="acc-row" data-key="hazard">
+                    <!-- 浸水想定区域 -->
+                    <div class="acc-row" data-key="flood">
                         <button class="acc-head">
                             <i
-                                class="ti ti-alert-triangle acc-icon"
+                                class="ti ti-map-2 acc-icon"
                                 aria-hidden="true"
                             ></i>
                             <div class="acc-text">
-                                <div class="acc-title">ハザード情報</div>
+                                <div class="acc-title">浸水想定区域</div>
+                                <div class="acc-summary">非表示</div>
+                            </div>
+                            <i
+                                class="ti ti-chevron-down acc-chevron"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                        <div class="acc-body">
+                            <div class="opt-row">
+                                <span
+                                    class="dot"
+                                    style="background: #ff9191"
+                                ></span>
+                                <span class="lbl">想定最大規模</span>
+                                <label class="sw-wrap"
+                                    ><input
+                                        type="checkbox"
+                                        data-flood="l2"
+                                        data-key="flood"
+                                        data-label="想定最大規模" /><span
+                                        class="sw-visual"
+                                    ></span
+                                ></label>
+                            </div>
+                            <div class="opt-row">
+                                <span
+                                    class="dot"
+                                    style="background: #ffd8c0"
+                                ></span>
+                                <span class="lbl">計画規模</span>
+                                <label class="sw-wrap"
+                                    ><input
+                                        type="checkbox"
+                                        data-flood="l1"
+                                        data-key="flood"
+                                        data-label="計画規模" /><span
+                                        class="sw-visual"
+                                    ></span
+                                ></label>
+                            </div>
+                            <div class="opt-row">
+                                <span
+                                    class="dot"
+                                    style="background: #5a9fe6"
+                                ></span>
+                                <span class="lbl">浸水継続時間</span>
+                                <label class="sw-wrap"
+                                    ><input
+                                        type="checkbox"
+                                        data-flood="duration"
+                                        data-key="flood"
+                                        data-label="浸水継続時間" /><span
+                                        class="sw-visual"
+                                    ></span
+                                ></label>
+                            </div>
+                            <div class="opt-row">
+                                <span
+                                    class="dot"
+                                    style="background: #d6336c"
+                                ></span>
+                                <span class="lbl">家屋倒壊(氾濫流)</span>
+                                <label class="sw-wrap"
+                                    ><input
+                                        type="checkbox"
+                                        data-flood="collapse_overflow"
+                                        data-key="flood"
+                                        data-label="家屋倒壊(氾濫流)" /><span
+                                        class="sw-visual"
+                                    ></span
+                                ></label>
+                            </div>
+                            <div class="opt-row">
+                                <span
+                                    class="dot"
+                                    style="background: #7048e8"
+                                ></span>
+                                <span class="lbl">家屋倒壊(河岸侵食)</span>
+                                <label class="sw-wrap"
+                                    ><input
+                                        type="checkbox"
+                                        data-flood="collapse_erosion"
+                                        data-key="flood"
+                                        data-label="家屋倒壊(河岸侵食)" /><span
+                                        class="sw-visual"
+                                    ></span
+                                ></label>
+                            </div>
+                            <div id="flood-opacity-ctrl" class="slider-row">
+                                <span class="slider-label">濃さ</span>
+                                <input
+                                    type="range"
+                                    id="flood-opacity"
+                                    min="0.2"
+                                    max="1"
+                                    step="0.05"
+                                    value="0.5"
+                                />
+                                <span id="flood-opacity-val">50%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 過去の水害 -->
+                    <div class="acc-row" data-key="history">
+                        <button class="acc-head">
+                            <i
+                                class="ti ti-history acc-icon"
+                                aria-hidden="true"
+                            ></i>
+                            <div class="acc-text">
+                                <div class="acc-title">過去の水害</div>
                                 <div class="acc-summary">非表示</div>
                             </div>
                             <i
@@ -943,13 +1055,13 @@
                                     class="dot"
                                     style="background: #a32d2d"
                                 ></span>
-                                <span class="lbl">浸水想定区域</span>
+                                <span class="lbl">浸水推定範囲(R1)</span>
                                 <label class="sw-wrap"
                                     ><input
                                         type="checkbox"
                                         data-overlay="typhoon2019"
-                                        data-key="hazard"
-                                        data-label="浸水想定区域" /><span
+                                        data-key="history"
+                                        data-label="浸水推定範囲(R1)" /><span
                                         class="sw-visual"
                                     ></span
                                 ></label>
@@ -964,7 +1076,7 @@
                                     ><input
                                         type="checkbox"
                                         data-breach="typhoon2019_breach"
-                                        data-key="hazard"
+                                        data-key="history"
                                         data-label="破堤箇所(R1)" /><span
                                         class="sw-visual"
                                     ></span
@@ -982,13 +1094,32 @@
                                     ><input
                                         type="checkbox"
                                         data-breach="meiji43_breach"
-                                        data-key="hazard"
+                                        data-key="history"
                                         data-label="破堤箇所(M43)" /><span
                                         class="sw-visual"
                                     ></span
                                 ></label>
                             </div>
+                        </div>
+                    </div>
 
+                    <!-- 現在の気象 -->
+                    <div class="acc-row" data-key="hazard">
+                        <button class="acc-head">
+                            <i
+                                class="ti ti-alert-triangle acc-icon"
+                                aria-hidden="true"
+                            ></i>
+                            <div class="acc-text">
+                                <div class="acc-title">現在の気象</div>
+                                <div class="acc-summary">非表示</div>
+                            </div>
+                            <i
+                                class="ti ti-chevron-down acc-chevron"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                        <div class="acc-body">
                             <div class="opt-group-label weather-group-label">
                                 現在の気象
                                 <span id="kikiculo-time">--:-- JST</span>
@@ -1522,7 +1653,7 @@
             }
 
             function refreshAllSummaries() {
-                ["monument", "river", "course", "hazard", "terrain"].forEach(
+                ["monument", "river", "course", "flood", "history", "hazard", "terrain"].forEach(
                     refreshSummary,
                 );
             }
