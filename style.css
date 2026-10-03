@@ -1620,6 +1620,43 @@ body.place-card-active #map {
   padding: 10px 12px 12px;
 }
 
+#elev-preset-row,
+#elev-preset-save-row,
+#elev-preset-io-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+#elev-preset-select,
+#elev-preset-name {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 6px;
+  font-size: 12px;
+  border: 1px solid #b0b8c4;
+  border-radius: 5px;
+  user-select: text;
+}
+
+#elev-preset-delete,
+#elev-preset-save,
+#elev-preset-export,
+#elev-preset-import {
+  padding: 4px 10px;
+  font-size: 12px;
+  border: 1px solid #b0b8c4;
+  border-radius: 5px;
+  background: #f4f6f8;
+  cursor: pointer;
+}
+
+#elev-preset-export,
+#elev-preset-import { flex: 1; }
+
+#elev-preset-save { background: #1565c0; border-color: #1565c0; color: #fff; }
+#elev-preset-delete:hover { color: #b3261e; }
+
 #elev-bands-table {
   width: 100%;
   border-collapse: collapse;

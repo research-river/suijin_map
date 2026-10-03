@@ -121,6 +121,19 @@
                 </button>
             </div>
             <div id="elevation-popup-body">
+                <div id="elev-preset-row">
+                    <select id="elev-preset-select" aria-label="保存した配色"></select>
+                    <button id="elev-preset-delete" title="選んだ配色を削除">削除</button>
+                </div>
+                <div id="elev-preset-save-row">
+                    <input id="elev-preset-name" type="text" maxlength="30" placeholder="配色名（例: 1m間隔）" />
+                    <button id="elev-preset-save">保存</button>
+                </div>
+                <div id="elev-preset-io-row">
+                    <button id="elev-preset-export">書き出し</button>
+                    <button id="elev-preset-import">読み込み</button>
+                    <input id="elev-preset-file" type="file" accept="application/json,.json" hidden />
+                </div>
                 <table id="elev-bands-table">
                     <thead>
                         <tr>

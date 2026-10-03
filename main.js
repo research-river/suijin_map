@@ -271,6 +271,138 @@ function renderElevBandsTable() {
   });
 }
 
+// ---- 色別標高図 配色プリセットの保存・呼び出し ----
+const ELEV_PRESET_KEY = "suijin_elev_presets_v1";
+const ELEV_DEFAULT_PRESET = "標準（荒川低地）";
+const elevDefaultBands = JSON.parse(JSON.stringify(elevBands));
+
+function loadElevPresets() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(ELEV_PRESET_KEY) ?? "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveElevPresets(presets) {
+  try {
+    localStorage.setItem(ELEV_PRESET_KEY, JSON.stringify(presets));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function renderElevPresetSelect(selected) {
+  const sel = document.getElementById("elev-preset-select");
+  const names = Object.keys(loadElevPresets());
+  sel.innerHTML = "";
+  const head = document.createElement("option");
+  head.value = "";
+  head.textContent = "配色を呼び出す…";
+  sel.appendChild(head);
+  [ELEV_DEFAULT_PRESET, ...names].forEach((name) => {
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = name;
+    sel.appendChild(opt);
+  });
+  sel.value = selected ?? "";
+}
+
+function applyElevPreset(name) {
+  const preset = name === ELEV_DEFAULT_PRESET
+    ? { bands: elevDefaultBands, opacity: 0.85, hillshade: true }
+    : loadElevPresets()[name];
+  if (!preset || !Array.isArray(preset.bands) || preset.bands.length === 0) return;
+  elevBands = JSON.parse(JSON.stringify(preset.bands));
+  const opacity = preset.opacity ?? 0.85;
+  document.getElementById("elev-opacity").value = opacity;
+  document.getElementById("elev-opacity-val").textContent = Math.round(opacity * 100) + "%";
+  document.getElementById("elev-chk-hillshade").checked = preset.hillshade ?? true;
+  renderElevBandsTable();
+  if (elevationActive) reloadElevTiles();
+}
+
+document.getElementById("elev-preset-select").addEventListener("change", (e) => {
+  const name = e.target.value;
+  if (!name) return;
+  applyElevPreset(name);
+  document.getElementById("elev-preset-name").value = name === ELEV_DEFAULT_PRESET ? "" : name;
+});
+
+document.getElementById("elev-preset-save").addEventListener("click", () => {
+  const nameInput = document.getElementById("elev-preset-name");
+  const name = nameInput.value.trim();
+  if (!name) { nameInput.focus(); return; }
+  if (name === ELEV_DEFAULT_PRESET) { alert("この名前は標準配色用に予約されています。"); return; }
+  const presets = loadElevPresets();
+  if (presets[name] && !confirm(`「${name}」を上書きしますか？`)) return;
+  presets[name] = {
+    bands: JSON.parse(JSON.stringify(elevBands)),
+    opacity: parseFloat(document.getElementById("elev-opacity").value),
+    hillshade: document.getElementById("elev-chk-hillshade").checked,
+  };
+  if (!saveElevPresets(presets)) { alert("ブラウザの保存領域に書き込めませんでした。"); return; }
+  renderElevPresetSelect(name);
+});
+
+document.getElementById("elev-preset-delete").addEventListener("click", () => {
+  const sel = document.getElementById("elev-preset-select");
+  const name = sel.value;
+  if (!name || name === ELEV_DEFAULT_PRESET) return;
+  if (!confirm(`「${name}」を削除しますか？`)) return;
+  const presets = loadElevPresets();
+  delete presets[name];
+  saveElevPresets(presets);
+  renderElevPresetSelect();
+});
+
+document.getElementById("elev-preset-export").addEventListener("click", () => {
+  const presets = loadElevPresets();
+  if (Object.keys(presets).length === 0) { alert("保存済みの配色がありません。"); return; }
+  const blob = new Blob([JSON.stringify(presets, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "elev_presets.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+document.getElementById("elev-preset-import").addEventListener("click", () => {
+  document.getElementById("elev-preset-file").click();
+});
+
+document.getElementById("elev-preset-file").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  e.target.value = "";
+  if (!file) return;
+  let incoming;
+  try {
+    incoming = JSON.parse(await file.text());
+  } catch {
+    alert("JSONとして読み込めませんでした。");
+    return;
+  }
+  const valid = {};
+  Object.entries(incoming ?? {}).forEach(([name, p]) => {
+    const ok = p && Array.isArray(p.bands) && p.bands.length > 0 &&
+      p.bands.every((b) => /^#[0-9a-fA-F]{6}$/.test(b.color) && (b.upper === null || Number.isFinite(b.upper)));
+    if (ok && name !== ELEV_DEFAULT_PRESET) valid[name] = p;
+  });
+  const names = Object.keys(valid);
+  if (names.length === 0) { alert("読み込める配色がありませんでした。"); return; }
+  const presets = loadElevPresets();
+  const overwritten = names.filter((n) => presets[n]);
+  if (overwritten.length && !confirm(`同名の配色を上書きします: ${overwritten.join("、")}`)) return;
+  if (!saveElevPresets({ ...presets, ...valid })) { alert("ブラウザの保存領域に書き込めませんでした。"); return; }
+  renderElevPresetSelect();
+  alert(`${names.length}件の配色を読み込みました。`);
+});
+
+renderElevPresetSelect();
+
 // ---- 色別標高図 パネルのドラッグ ----
 {
   const popup = document.getElementById("elevation-popup");
