@@ -955,7 +955,7 @@ function addRasterOverlays() {
 
 // ---- 洪水浸水想定区域（河川管理者公表・国土数値情報） ----
 
-const HAZARD_PMTILES_BASE = "https://pub-6f7d915a556b4c2aab93d0ad18fc694f.r2.dev";
+const HAZARD_PMTILES_BASE = "https://tiles.suijin-stela.com";
 const GSI_DISAPORTAL_RASTER = "https://disaportaldata.gsi.go.jp/raster";
 // z12未満は地理院タイル、z12以上は自前pmtilesに切り替える境界
 const FLOOD_SWITCH_ZOOM = 12;
