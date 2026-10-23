@@ -1,3 +1,18 @@
+// CSV・外部データ由来の文字列をinnerHTMLへ入れる前に必ず通す
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (c) => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+  ));
+}
+
+// 銘文の改行・赤字(<br>, <span style="color:red;">)だけはCSV側で意図的に使っているため許可する
+function escapeHtmlAllowMarkup(value) {
+  return escapeHtml(value)
+    .replace(/&lt;br\s*\/?&gt;/gi, "<br>")
+    .replace(/&lt;span style=&quot;color:\s*red;?&quot;&gt;/gi, '<span style="color:red;">')
+    .replace(/&lt;\/span&gt;/gi, "</span>");
+}
+
 // ---- プレイスカード ----
 
 const placeCard      = document.getElementById("place-card");
@@ -40,7 +55,7 @@ function openPlaceCard(p) {
 
   placeRows.innerHTML = fields
     .filter(([, v]) => v)
-    .map(([k, v]) => `<div class="place-row"><span class="place-key">${k}</span><span class="place-val">${v}</span></div>`)
+    .map(([k, v]) => `<div class="place-row"><span class="place-key">${k}</span><span class="place-val">${escapeHtmlAllowMarkup(v)}</span></div>`)
     .join("");
 
   if (p.detail_filename) {
@@ -1775,14 +1790,14 @@ function registerBreachPopups() {
         breachPopup
           .setLngLat(e.lngLat)
           .setHTML(`
-            <strong>${p.text}</strong>
+            <strong>${escapeHtml(p.text)}</strong>
             <table>
-              <tr><td>種別</td><td>${p.type}</td></tr>
-              <tr><td>河川</td><td>${p.river}</td></tr>
-              <tr><td>岸</td><td>${p.bank}</td></tr>
-              <tr><td>発生</td><td>${p.event}</td></tr>
-              ${p.note ? `<tr><td>備考</td><td>${p.note}</td></tr>` : ""}
-              ${p.source ? `<tr><td>典拠</td><td>${p.source}</td></tr>` : ""}
+              <tr><td>種別</td><td>${escapeHtml(p.type)}</td></tr>
+              <tr><td>河川</td><td>${escapeHtml(p.river)}</td></tr>
+              <tr><td>岸</td><td>${escapeHtml(p.bank)}</td></tr>
+              <tr><td>発生</td><td>${escapeHtml(p.event)}</td></tr>
+              ${p.note ? `<tr><td>備考</td><td>${escapeHtml(p.note)}</td></tr>` : ""}
+              ${p.source ? `<tr><td>典拠</td><td>${escapeHtml(p.source)}</td></tr>` : ""}
             </table>
           `)
           .addTo(map);
@@ -1959,7 +1974,7 @@ const riverPopup = new maplibregl.Popup({
 ["current", "tributaries", "tonegawa", "tamagawa", "sagamigawa"].forEach((id) => {
   map.on("click", `river-${id}`, (e) => {
     const name = e.features[0].properties.W05_004;
-    riverPopup.setLngLat(e.lngLat).setHTML(`<strong>${name}</strong>`).addTo(map);
+    riverPopup.setLngLat(e.lngLat).setHTML(`<strong>${escapeHtml(name)}</strong>`).addTo(map);
   });
   map.on("mouseenter", `river-${id}`, () => {
     map.getCanvas().style.cursor = "pointer";
@@ -2319,8 +2334,8 @@ function runSearch(query) {
     .map((f, i) => {
       const p = f.properties;
       return `<div class="search-item" data-idx="${i}">
-        <span class="search-item-name">${p.name ?? ""}</span>
-        <span class="search-item-sub">${p.address ?? ""}</span>
+        <span class="search-item-name">${escapeHtml(p.name)}</span>
+        <span class="search-item-sub">${escapeHtml(p.address)}</span>
       </div>`;
     })
     .join("");
@@ -2645,7 +2660,7 @@ function storySetBreach(on) {
 }
 
 function storyLinkify(text) {
-  return text.replace(
+  return escapeHtml(text).replace(
     /https?:\/\/[^\s]+/g,
     (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`
   );
